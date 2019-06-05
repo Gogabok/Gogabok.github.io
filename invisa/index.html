@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/jquery-spincrement.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<title>INVISA-Золотая виза</title>
+	<link rel="stylesheet" href="media.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.png" type="pixes/x-icon">
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="nav">
+					<div class="logo ml-auto">
+						<img class="logo__img" src="images/logo.png" alt="logo">
+					</div>
+					<div class="menu ml-auto col-lg-6">
+						<ul class="menu__list d-flex">
+							<li class="menu__paragraph"><a class="none" href="index.html">Золотая Виза</a></li>
+							<li class="menu__paragraph"><a class="none" href="docs.html">Документы</a></li>
+							<li class="menu__paragraph"><a class="none" href="faq.html">faq</a></li>
+							<li class="menu__paragraph"><a class="none" href="cost.html">стоимость</a></li>
+							<li class="menu__paragraph"><a class="none" href="contacts.html">контакты</a></li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="fullscreen-bg col-lg-12">
+					<div class="overlay">
+       				<h1>Золотая виза инвестора<br>-<br>ваши неограниченные возможности</h1>
+  				    </div>
+						<video loop muted autoplay poster="video/sea.png" class="fullscreen-bg__video">
+				        <source src="video/sea.mp4" type="video/mp4">
+				        <source src="video/sea.webm" type="video/webm">
+				    	</video>
+				</div>
+				<img class="flag" src="images/flag.png" alt="flag">
+				<div class="form_section ">
+					<div class="form_section__form center-block">
+						<form id="contact-form" role="form" action="send.php" method="post">
+						<ul class="form__ul d-flex">
+							<li class="form__li col-lg-2">
+							<div class="form-group">
+								<input type="text" class="form-control" name="name" placeholder="Ваше имя" required="">
+							</div>
+							</li>
+							<li class="form__li col-lg-2">
+							<div class="form-group">
+								<input type="email" class="form-control" name="contact" placeholder="Ваш e-mail (обязательно)" required="">
+							</div>
+							</li>
+							<li class="form__li col-lg-2">
+							<div class="form-group">
+								<input type="tel" class="form-control" name="tel" placeholder="+79161234567" required="">
+							</div>
+							</li>
+						</ul>
+						<div class="toknow col-lg-12">
+							<input type="submit" class="btn" value="Узнать подробнее"></input>
+						</div>
+					</form>
+					</div>
+				</div>
+				<div class="about col-lg-12">
+					<div class="about__text_ col-lg-12">
+					<p class="about__text__text">О нас</p></div>
+					<div class="about__text__div">
+						<p class="about__text">наша компания создана для оказания помощи в получении золотой визы и состоит из российских и испанских специалистов, готовых оказать поддержку не только на территории россии, но и на территории испании</p>
+					</div>
+					<details>
+							<summary>
+							<div class="about__ul__div">
+							<h6 class="about__ul">Почему INVISA?</h6></div>
+						</summary>
+							<li class="about__li">&nbsp Наша команда знает уникальные способы получения такого документа, минуя личный визит в Консульство Испании. Позвоните 917-75-75 и узнайте подробнее.</li>
+							<li class="about__li"> &nbsp Мы окажем Вам поддержку и сопровождение в течение всего периода изготовления документов, где бы Вы ни находились – в Испании или в России.</li>
+							<li class="about__li"> &nbsp Мы справимся даже с самыми сложными задачами в кратчайшие сроки и гарантируем результат за 14-28 календарных дней.</li>
+							<li class="about__li"> &nbsp Индивидуальный подход к каждому клиенту – INVISA составит чёткий план действий, подходящий именно Вам уже после первой консультации.</li>
+							<li class="about__li">&nbsp Мы ценим каждого нашего клиента, поддерживаем уровень качества на высоком уровне, и собираем каждый комплект документов так кропотливо и тщательно, словно делаем это для самого себя и своей семьи.</li>
+					</details>
+				</div>
+				<div class="law col-lg-12">
+					<h2 class="law__caption">Закон о золотой визе</h2>
+					<p class="law__text text-left">В 2013 году вступил в силу о «Закон о предпринимателях» - опубликован официальный Государственный Бюллетень № 233, заверенный королевской подписью. Статья 63 закона определяет лимит от 500.000 евро как основание иностранцам ускоренно получить Вид на жительство на основе инвестиций, в т.ч. и при покупке недвижимости.<br>В 2015 году в закон был внесён <a class="changes" href="changes.html">ряд изменений</a> с целью сделать Закон о Предпринимателях более привлекательным в глазах потенциальных зарубежных инвесторов</p>
+				</div>
+				<div class="summ__caption col-lg-12">
+					<h3 class="summ__caption__caption">какую сумму евро нужно инвестировать? на выбор:</h3>
+				</div>
+				<div class="summ d-flex">
+					<div class="summ__help col-lg-3">
+						<div class="summ__part ">
+							<p class="summ__money"><span class="spincrement">500000</span></p>
+							<p class="summ__text">Недвижимость</p>
+						</div>
+					</div>
+					<div class="summ__help1 col-lg-3" data-title="В этом случае Ваши инвестиции могут расти.">
+						<div class="summ__part">
+							<p class="summ__money"><span class="spincrement">1000000</span></p>
+							<p class="summ__text">депозит в испанском банке</p>
+						</div>
+				   </div>
+				   <div class="summ__help2 col-lg-3" data-title="В этом случае Ваши инвестиции могут расти.">
+						<div class="summ__part">
+							<p class="summ__money"><span class="spincrement">1000000</span></p>
+							<p class="summ__text">акции испанских компаний</p>
+						</div>
+					</div>
+					<div class="summ__help col-lg-3">
+						<div class="summ__part ">
+						<p class="summ__money"><span class="spincrement">2000000</span></p>
+						<p class="summ__text">государственные облигации</p>
+					</div>
+				</div>
+				</div>
+				<div class="right">
+					<details>
+						<summary>
+							<div class="right__caption col-lg-12">
+								<h4 class="right__caption__caption">Инвестирование дает вам право получить особый вид на жительство. Какие он даёт преимущества?</h4>
+							</div>
+						</summary>
+						<div class="right__list">
+							<div class="right__list__part">
+								<ul>
+									<div class="right__list__part col-lg-12">
+										<li class="right__list__part__text">Вы можете находиться на территории Испании 365 дней в году, или не находиться там вообще.
+										</li>
+									</div>
+									<div class="right__list__part col-lg-12">
+										<li class="right__list__part__text">Вы имеете право жить и работать в Испании, будучи налоговым резидентом другой страны.
+										</li>
+									</div>
+									<div class="right__list__part col-lg-12">
+										<li class="right__list__part__text">Мы быстро оформим этот документ не только для Вас, но и для Вашей семьи.
+										</li>
+									</div>
+									<div class="right__list__part col-lg-12">
+										<li class="right__list__part__text">Свободно перемещайтесь по Европе.
+										</li>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</details>
+					</div>
+				<div class="can">
+					<div class="can__caption col-lg-12">
+						<h5>Вы можете получить «Золотую визу», если:</h5>
+					</div>
+					<div class="can__list d-flex">
+						<div class="can__list__part col-lg-2">
+							<div class="help1" data-title="Для получения золотой визы Вам необходимо купить недвижимость в Испании. Мы поможем Вам с этим.">
+								<img class="can__list__part__image" src="images/icon1.png" alt="right-item-1">
+								<p class="can__list__part__text">Вы имеете<br>недвижимость в <br>испании</p>
+						</div>
+						</div>
+						<div class="can__list__part col-lg-2">
+							<div class="help2" data-title="При рассмотрении вашей заявки консульство проверит легальность Вашего нахождения на территории Испании.">
+								<img class="can__list__part__image" src="images/icon2.png" alt="right-item-2">
+								<p class="can__list__part__text">Вы не находитесь<br>нелегально на<br>территории испании</p>
+							</div>
+					</div>
+						<div class="can__list__part col-lg-2">
+							<div class="help3" data-title="Для получения золотой визы Вам необходимо иметь установленную сумму для обеспечения Вас и Вашей семьи.">
+								<img class="can__list__part__image" src="images/icon5.png" alt="right-item-4">
+								<p class="can__list__part__text">Вы имеете сумму,<br> необходимую для<br>проживания в испании<br>вас и вашей семьи</p>
+							</div>
+					</div>
+					</div>
+					<p class="myself">все необходимые <a href="docs.html">документы</a> мы подготовим и переведем для вас самостоятельно.</p>
+				</div>
+				<div class="pack">
+					<div class="pack__caption col-lg-12">
+						<h6 class="pack__caption__caption">Стоимость получения золотой визы</h6>
+					</div>
+					<div class="pack__choose">
+						<p class="pack__choose__text col-lg-12">Выберите свой пакет:</p>
+						<div class="pack__choose__packs d-flex">
+							<a  class= "a__pack" href="#openModal"><div class="first__pack">
+								<p class="pack__choose_packs__caption">Парный</p>
+								<p class="pack__choose_packs__people">2 человека</p>
+								<p class="pack__choose_packs__cost">360 000 руб.</p>
+							</div></a>
+							<a  class= "a__pack" href="#openModal2"><div class="second__pack">
+								<p class="pack__choose_packs__caption3">Бизнес</p>
+								<p class="pack__choose_packs__people3">1 человек</p>
+								<p class="pack__choose_packs__cost3">220 000 руб.</p>
+							</div></a>
+							<a  class= "a__pack" href="#openModal3"><div class="third__pack">
+								<p class="pack__choose_packs__caption2">Семейный</p>
+								<p class="pack__choose_packs__people2">3 человека<br>и более</p>
+								<p class="pack__choose_packs__cost2">160 000<br>
+								руб./чел.</p>
+							</div></a>
+						</div>
+						<div class="ready__div">
+						<a href="ready.html"><h6 class="ready col-lg-12">Ещё сомневаетесь?</h6></a></div>
+					</div>
+				</div>
+
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">X</a>
+		<h2 class="h2">ПАРНЫЙ</h2>
+		<h4>В ПАКЕТ ВКЛЮЧЕНО:</h4>
+		<h5>Пакет услуг, необходимый для получения золотой визы двоим людям</h5>
+		<p>1. Профессиональная консультация специалиста</p>
+		<p>2. Подготовка документов</p>
+		<p>3. Легализация требуемых документов Консульством</p>
+		<p>4. Грамотный перевод на Испанский язык</p>
+		<p>5. Апостилирование всех требуемых документов</p>
+		<p>6. Оказание помощи в открытии депозита в Испанском банке</p>
+		<p>7. Оказание содействия в приобретении жилья в Испании (стоимость жилья и вознаграждение агента оплачиваются отдельно)</p>
+		<p>8. Подача Ваших документов в Генеральное Консульство без Вашего личного присутствия</p>
+		<p>9. Полное сопровождение, при необходимости, на территории Испании во время визита в государственные органы</p>
+		<p>10. Поддержка и консультирование в течение всего процесса изготовления документа</p>
+		<p class="last">11. Выдача Вам готового документа.</p>
+		<a href="contacts.html" class="pm__us">СВЯЖИТЕСЬ С НАМИ</a>
+	</div>
+</div>			
+
+<div id="openModal2" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">X</a>
+		<h2 class="h2">БИЗНЕС</h2>
+		<h4>В ПАКЕТ ВКЛЮЧЕНО:</h4>
+		<h5>Пакет услуг, необходимый для получения золотой визы одному человеку</h5>
+		<p>1. Профессиональная консультация специалиста</p>
+		<p>2. Подготовка документов</p>
+		<p>3. Легализация требуемых документов Консульством</p>
+		<p>4. Грамотный перевод на Испанский язык</p>
+		<p>5. Апостилирование всех требуемых документов</p>
+		<p>6. Оказание помощи в открытии депозита в Испанском банке</p>
+		<p>7. Оказание содействия в приобретении жилья в Испании (стоимость жилья и вознаграждение агента оплачиваются отдельно)</p>
+		<p>8. Подача Ваших документов в Генеральное Консульство без Вашего личного присутствия</p>
+		<p>9. Полное сопровождение, при необходимости, на территории Испании во время визита в государственные органы</p>
+		<p>10. Поддержка и консультирование в течение всего процесса изготовления документа</p>
+		<p class="last">11. Выдача Вам готового документа.</p>
+		<a href="contacts.html" class="pm__us">СВЯЖИТЕСЬ С НАМИ</a>
+	</div>
+</div>	
+
+<div id="openModal3" class="modalDialog">
+	<div>
+		<a href="#close" title="Закрыть" class="close">X</a>
+		<h2 class="h2">СЕМЕЙНЫЙ</h2>
+		<h4>В ПАКЕТ ВКЛЮЧЕНО:</h4>
+		<h5>Пакет услуг, необходимый для получения золотой визы Вам и Вашей семье</h5>
+		<p>1. Профессиональная консультация специалиста</p>
+		<p>2. Подготовка документов</p>
+		<p>3. Легализация требуемых документов Консульством</p>
+		<p>4. Грамотный перевод на Испанский язык</p>
+		<p>5. Апостилирование всех требуемых документов</p>
+		<p>6. Оказание помощи в открытии депозита в Испанском банке</p>
+		<p>7. Оказание содействия в приобретении жилья в Испании (стоимость жилья и вознаграждение агента оплачиваются отдельно)</p>
+		<p>8. Подача Ваших документов в Генеральное Консульство без Вашего личного присутствия</p>
+		<p>9. Полное сопровождение, при необходимости, на территории Испании во время визита в государственные органы</p>
+		<p>10. Поддержка и консультирование в течение всего процесса изготовления документа</p>
+		<p class="last">11. Выдача Вам готового документа.</p>
+		<a href="contacts.html" class="pm__us">СВЯЖИТЕСЬ С НАМИ</a>
+	</div>
+</div>		
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+		</div>
+	</section>
+	<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){ var widget_id = 'MgEn8wnQKH';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
+</body>
+</html>

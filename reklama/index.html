@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="jquery-spincrement.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery-3.3.1.min.js"></script>
+	<!--Title-->
+	<title>Реклама в руки</title>
+	<!--Styles-->
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="hover.css">
+	<link rel="stylesheet" href="style.css">
+	<!--Favicon-->
+	<link rel="shortcut icon" href="pixes/favicon.ico" type="pixes/x-icon">
+</head>
+<body>
+	<header id="header">
+		<div class="container">
+			<div class="row">
+				<div class="header col-lg-12 p-0">
+					<nav class="gamb_1 col-lg-12 p-0">
+						<ul id="top_nav" class="p-0 menure col-lg-12">
+							<div class="menus col-lg-12 p-0 d-flex">
+						    	<a class="vk_a ml-auto" href="#">
+								<div class="vk col-lg-12 col-md-12 d-flex">
+								<object class="vk__img" type="image/svg+xml" data="images/vk-social-network-logo.svg" width="27px" height= "16px" ></object>
+								<p class="vk__text">Мы Вконтакте</p>
+						</div>
+					</a>
+							</div>
+						</ul>
+					</nav>
+					</div></div></div></header>
+		<div class="container mg">
+			<div class="row">
+				</div>
+				<div class="logo col-lg-12 p-0">
+					<div class="logo_div col-lg-2 col-md-2">
+						<img src="images/logo.png" alt="logo" class="logo">
+					</div>
+					<div class="phone col-lg-2 col-md-2 p-0">
+						<div class="d-flex p-0">
+						<object class="phone__img d-flex" type="image/svg+xml" data="images/phone.svg" width="27px" height= "27px" ></object>
+						<p class="phone__text">8 (951) 741-67-44,&nbsp8 (963) 736-60-37</p></div><p  class="adress_ul">Вологда, ул. Мальцева, 52</p>
+					</div>
+				</div>
+				<div class="caption col-lg-12">
+					<h1 class="caption_h1 jackInTheBox">Распространим<br/>рекламу в Вологде</h1>
+				</div>
+				<div class="btn">
+					<a href="#openModal">
+						<button class="btn__item d-flex">
+							<p class="my-auto">Оставить заявку</p>
+							<object class="arrow__img" type="image/svg+xml" data="images/right-arrow.svg">
+							</object>
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+		<div class="first"></div>
+		<div class="second fadeIn"></div>
+		<div class="bg"></div>
+		<div class="Ellipse_3"></div>
+		<div id="openModal" class="modalDialog col-12">
+		<div>
+
+			<a href="#close" title="Закрыть" class="close text-left">
+				<object class="close__img" type="image/svg+xml" data="images/close.svg"></object>
+			</a>
+			<div class="main">
+				<p class="main__caption col-lg-7 col-md-7 col-12 text-left">Оставить заявку</p>
+				<form action="send.php" method="post">
+					<p class="main__text col-lg-4 col-md-4 col-12 text-left">Ваше имя</p>
+					<input type="text" name="name" required="" class="main__input col-lg-10 col-md-10">
+					<p class="main__text_2 col-lg-7 col-md-7 col-12 text-left">Ваш телефон или e-mail</p>
+					<input type="text" name="email" required="" class="main__input col-lg-10 col-md-10">
+					<p class="main__text_3 col-lg-4 col-md-4 col-12 text-left p-0">Что желаете?</p>
+					<textarea name="want" class="want col-lg-10 col-md-10" id="want" cols="10" rows="4" required=""></textarea>
+					<input type="submit" class="input__item submit col-lg-6 col-md-6" value="Отправить заявку">
+					<p class="our fs14">Или можете просто позвонить нам:</p>
+					<p class="number fs14">8 (8172) 55-34-35</p>
+				</form>
+			</div>
+		</div>
+		</div>
+		<div id="thanks" class="modalDialog col-12">
+		<div>
+
+			<a href="#close" title="Закрыть" class="close text-left">
+				<object class="close__img" type="image/svg+xml" data="images/close.svg"></object>
+			</a>
+			<div class="main">
+				<div class="pbbb col-12 col-lg-12 p-0 my text-center">
+					<p class="sec_2_phone col-12">Ваша заявка успешно отправлена, спасибо!</p>
+					<p class="sec_2_phone_text col-12">В ближайшее время с вами свяжется наш сотрудник для уточнения деталей</p>
+					<div class="col-12 text-center">
+						<img src="images/good.png" alt="good">
+					</div>
+					<div class="col-12 text-center">
+						<p class="text_last col-12">
+							Если у вас остались вопросы, 
+всегда рады ответить на них по телефону
+						</p>
+						<span class="bold m6 pbbb">8 (8172) 55-34-35</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div id="menu" class="modalDialog">
+		<div>
+			<a href="#close" title="Закрыть" class="close">
+				<object class="close__img" type="image/svg+xml" data="images/close.svg"></object>
+			</a>
+			<div class="main">
+				<p class="main__caption col-lg-7 col-md-7">Оставить заявку</p>
+				<form action="send.php" method="post">
+					<p class="main__text col-lg-4 col-md-4">Ваше имя</p>
+					<input type="text" name="name" required="" class="main__input col-lg-10 col-md-10">
+					<p class="main__text_2 col-lg-7 col-md-7">Ваш телефон или e-mail</p>
+					<input type="text" name="email" required="" class="main__input col-lg-10 col-md-10">
+					<p class="main__text_3 col-lg-4 col-md-4">Что желаете?</p>
+					<textarea name="want" class="want col-lg-10 col-md-10" id="want" cols="10" rows="4"></textarea>
+					<input type="submit" class="input__item submit col-lg-6 col-md-6" value="Отправить заявку">
+					<p class="our">Или можете просто позвонить нам:</p>
+					<p class="number">8 (8172) 55-34-35</p>
+
+				</form>
+			</div>
+		</div>
+		</div>
+	<section id="section_2">
+		<div class="container fadeInRight">
+			<div class="row">
+				<div class="section_2_caption col-lg-12 col-12">
+					<h2 class="section_2_caption_item">Наши услуги</h2>
+				</div>
+				<div class="services">
+					<ul class="services__ul d-flex">
+						<li class="services__ul__item">
+							<div class="caption_li col-lg-12 d-flex">
+								<p class="li_caption">Нарисуем</p>
+								<object class="draw__img ml-auto" type="image/svg+xml" data="images/draw.svg"></object>
+							</div>
+							<p class="li_text">Разработаем дизайн-макет ваших<br> рекламных материалов</p>
+						</li>
+						<li class="services__ul__item">
+							<div class="caption_li col-lg-12 d-flex">
+								<p class="li_caption">Напечатаем</p>
+								<object class="printer__img ml-auto" type="image/svg+xml" data="images/printer.svg"></object>
+							</div>
+							<p class="li_text">Качественно напечатаем по выгодным ценам</p>
+						</li>
+						<li class="services__ul__item">
+							<div class="caption_li col-lg-12 d-flex">
+								<p class="li_caption">Распространим</p>
+								<object class="voting__img ml-auto" type="image/svg+xml" data="images/voting.svg"></object>
+							</div>
+							<p class="li_text">Распространим листовки, дорхенгеры, каталоги, газеты, билеты в общ. транспорте</p>
+						</li>
+						<li class="services__ul__item">
+							<div class="caption_li col-lg-12 d-flex">
+								<p class="li_caption">Расклеим</p>
+								<object class="poster__img ml-auto" type="image/svg+xml" data="images/poster.svg"></object>
+							</div>
+							<p class="li_text">Расклеим листовки под дверной звонок квартир и на доски объявлений</p>
+						</li>
+						<li class="services__ul__item">
+							<div class="caption_li col-lg-12 d-flex">
+								<p class="li_caption">Раздадим</p>
+								<object class="blank__img ml-auto" type="image/svg+xml" data="images/blank.svg"></object>
+							</div>
+							<p class="li_text">Раздадим листовки лично в руки на улице или в торговом центре</p>
+						</li>
+						<li class="services__ul__item">
+							<div class="caption_li col-lg-12 d-flex">
+								<p class="li_caption">Развесим</p>
+								<object class="doorhunt__img ml-auto" type="image/svg+xml" data="images/doorhunt.svg"></object>
+							</div>
+							<p class="li_text">Развесим рекламу на ручках дверей в жилых домах</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="section_3">
+		<div class="container">
+			<div class="row">
+				<div class="section_2_caption col-lg-12 sec_3">
+					<h2 class="section_2_caption_item">Рекомендуем</h2>
+				</div>
+				<p class="add sec_3">Самая эффективная реклама<span class="yellow">*</span></p>
+				<div class="doors col-lg-12 d-flex">
+					<div class="door_1 col-lg-7 col-md-12 col-12">
+						<p class="door_1_title col-7 p-0">Дорхенгеры — реклама на дверных ручках</p
+						>
+						<object class="door_1__img" type="image/svg+xml" data="images/door_1.svg"></object>
+						<div class="inline p-0">
+							<div class="procent">
+								<span class="red spincrement">90</span><p class="red_2">%</p>
+							</div>
+							<p class="door_1_text col-lg-7 col-8 ">Вашу рекламу <span class="bold">прочитают до 90%</span> ваших<br>
+							потенциальных клиентов</p>
+						</div>
+					</div>
+					<div class="door_2 fadeIn col-lg-15 col-md-15 col-15">
+						<p class="door_1_title col-lg-10 p-0">Под дверной замок</p>
+						<div class="inline_2">
+							<p class="door_2_text col-lg-10 p-0">Расклейка листовок<br>под дверной замок</p>
+							<object class="bell_1__img" type="image/svg+xml" data="images/bell.svg"></object>
+							<object class="door_2__img" type="image/svg+xml" data="images/door_2.svg"></object>
+						</div>
+					</div>
+				</div>
+				<p class="opinion">* По мнению 86% рекламных агентств в России</p>
+			</div>
+		</div>
+	</section>
+	<section id="section_4">
+		<div class="container bounceInUp">
+			<div class="row">
+				<div class="section_2_caption doorhang_mt col-lg-12">
+					<h3 class="section_2_caption_item">Виды дорхенгеров</h3>
+				</div>
+				<div class="doorhang col-lg-12">
+					<ul class="doorhang_ul col-lg-12 d-flex">
+						<li class="doorhang_li col-lg-4 col-md-6 col-12 d-flex">
+							<object class="doorhang_1__img " type="image/svg+xml" data="images/doorhang_1.svg"></object>
+							<div class="">
+								<p class="doorhang_caption">Классический</p>
+								<p class="doorhang_text fs14 doorhang_text_2_1">Размер 85х192</p>
+								<div class="d-flex">
+									<object class="per__img" type="image/svg+xml" data="images/per.svg"></object>
+									<p class="doorhang_text_2 fs14 doorhang_text_2_1">Самый бюджетный<br>в своем классе</p>
+								</div>
+							</div>
+						</li>
+						<li class="doorhang_li col-lg-4 col-12 col-md-6 d-flex">
+							<object class="doorhang_1__img " type="image/svg+xml" data="images/doorhang_2.svg"></object>
+							<div class="">
+								<p class="doorhang_caption">Евро-1</p>
+								<p class="doorhang_text fs14 doorhang_text_2_1">Размер 85х192</p>
+								<p class="doorhang_text_2 fs14 doorhang_text_2_1">  <span class="tire">-</span> С отрывным купоном «Скидка»</p>
+								<p class="doorhang_text_2 fs14">  <span class="tire">-</span> Два типа размера Евро и А6</p>
+							</div>
+						</li>
+						<li class="doorhang_li col-lg-4 col-12 col-md-6 d-flex">
+							<object class="doorhang_1__img " type="image/svg+xml" data="images/doorhang_3.svg"></object>
+							<div class="">
+								<p class="doorhang_caption">Евро-2</p>
+								<p class="doorhang_text fs14 doorhang_text_2_1">Размер 85х192</p>
+								<p class="doorhang_text_2 fs14 doorhang_text_2_1">  <span class="tire">-</span> С местом под Вашу «Визитку»</p>
+								<p class="doorhang_text_2 fs14">  <span class="tire">-</span> Два типа размера Евро и А6</p>
+							</div>
+						</li>
+						<li class="doorhang_li col-lg-4 col-12 col-md-6 d-flex">
+							<object class="doorhang_1__img " type="image/svg+xml" data="images/doorhang_4.svg"></object>
+							<div class="">
+								<p class="doorhang_caption">Буклет</p>
+								<p class="doorhang_text fs14 doorhang_text_2_1">Размер 85х192</p>
+								<p class="doorhang_text_2 doorhang_text_2_1 fs14">  <span class="tire">-</span> Больше места для<br> вашей рекламы</p>
+								<p class="doorhang_text_2 fs14">  <span class="tire">-</span> Два типа размера Евро и А6</p>
+							</div>
+						</li>
+						<li class="doorhang_li col-lg-4 col-12 col-md-6 d-flex">
+							<object class="doorhang_1__img " type="image/svg+xml" data="images/doorhang_5.svg"></object>
+							<div class="">
+								<p class="doorhang_caption">Листовка-каталог</p>
+								<p class="doorhang_text fs14 doorhang_text_2_1">Размер 85х192</p>
+								<p class="doorhang_text_2 fs14 doorhang_text_2_1">  <span class="tire">-</span> Идеальный формат для<br>     каталога товаров / услуг</p>
+								<p class="doorhang_text_2 fs14">  <span class="tire">-</span> Любое количество листов</p>
+							</div>
+						</li>
+						<li class="doorhang_li col-lg-4 col-12 col-md-6 d-flex">
+							<object class="doorhang_1__img " type="image/svg+xml" data="images/doorhang_6.svg"></object>
+							<div class="paddd">
+								<p class="doorhang_caption1">Каталог<br> на подвесе</p>
+								<object class="per__img1" type="image/svg+xml" data="images/per2.svg"></object>
+								<p class="doorhang_text_3 fs14"> Идеальное решение<br> для каталогов и газет</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="section_5">
+		<div class="container zoomIn">
+			<div class="row">
+				<div class="section_2_caption col-lg-12 col-md-12 sec_3">
+					<h4 class="section_2_caption_item">Фотогаллерея</h4>
+				</div>
+				<ul class="photos photos_1 col-12 col-12">
+					<li class="photo_1 zoomIn col-lg-4 col-md-6">
+						<img src="images/photo_1.png" alt="photo">
+						<p class="photo_caption">Дорхенгер на ручке</p>
+						<p class="photo_text">Раздадим листовки лично в руки на улице<br> или в торговом центре</p>
+					</li>
+					<div class="jjj col-lg-8 col-md-6 col-12 p-0 d-flex">
+						<li class="photo_2 zoomIn col-lg-6 col-md-12 col-12">
+							<img src="images/photo_2.png" alt="photo">
+							<p class="photo_caption">Раздача флаеров</p>
+							<p class="photo_text">Раздадим листовки лично в руки на улице <br>или в торговом центре</p>
+						</li>
+						<li class="photo_2 col-lg-6 col-md-12 zoomIn">
+							<img src="images/photo_3.png" alt="photo">
+							<p class="photo_caption">Листовка под звонок</p>
+							<p class="photo_text">Раздадим листовки лично в руки <br>на улице или в торговом центре</p>
+						</li>
+						<li class="photo_2 col-lg-6 mtp col-md-12 zoomIn">
+							<img src="images/photo_4.png" alt="photo">
+							<p class="photo_caption">Реклама в почтовые ящики</p>
+							<p class="photo_text">Раздадим листовки лично в руки <br>на улице или в торговом центре</p>
+						</li>
+						<li class="photo_2 col-lg-6 mtp col-md-12 zoomIn">
+							<img src="images/photo_5.png" alt="photo">
+							<p class="photo_caption">Расклейка объявлений</p>
+							<p class="photo_text">Раздадим листовки лично в руки на улице <br>или в торговом центре</p>
+						</li>
+					</div>
+				</ul>
+				<ul class="photos photos_2">
+					<li class="photo_1 col-lg-4 col-md-6">
+						<img src="images/photo_1.png" alt="photo">
+						<p class="photo_caption">Дорхенгер на ручке</p>
+						<p class="photo_text">Раздадим листовки лично в руки на улице<br> или в торговом центре</p>
+					</li>
+
+					<div class="jjj col-lg-8 col-md-6">
+						<li class="photo_2 col-lg-6 col-md-12">
+							<img src="images/photo_2.png" alt="photo">
+							<p class="photo_caption">Раздача флаеров</p>
+							<p class="photo_text">Раздадим листовки лично в руки на улице <br>или в торговом центре</p>
+						</li>
+						<li class="photo_2 col-lg-6 col-md-12">
+							<img src="images/photo_3.png" alt="photo">
+							<p class="photo_caption">Листовка под звонок</p>
+							<p class="photo_text">Раздадим листовки лично в руки <br>на улице или в торговом центре</p>
+						</li>
+					</div>
+						<li class="photo_2 col-lg-6 col-md-6 p-0">
+							<img src="images/photo_4.png" alt="photo">
+							<p class="photo_caption">Реклама в почтовые ящики</p>
+							<p class="photo_text">Раздадим листовки лично в руки <br>на улице или в торговом центре</p>
+						</li>
+						<li class="photo_2 col-lg-6 col-md-6">
+							<img src="images/photo_5.png" alt="photo">
+							<p class="photo_caption">Расклейка объявлений</p>
+							<p class="photo_text">Раздадим листовки лично в руки на улице <br>или в торговом центре</p>
+						</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section id="section_6">
+		<div class="container cont">
+			<div class="row">
+				<div class="section_2_caption cap d-flex col-lg-12 col-md-12 p-0">
+					<h5 class="section_2_caption_item col-lg-6 col-md-6 col-11 p-0">С нами приятно работать</h5>
+					<div class="col-lg-6 ml-auto col-0">
+						<a class="dn" href="#openModal">
+							<button class="btn__item_2 d-flex ml-auto">
+								<p class="my-auto">Оставить заявку</p>
+								<object class="arrow__img_2" type="image/svg+xml" data="images/right-arrow.svg">
+								</object>
+							</button>
+						</a>
+					</div>
+				</div>
+				<ul class="services_ul d-flex col-lg-12 col-md-12 flipInX">
+					<li class="services_li col-lg-3 col-md-3 col-sm-6">
+						<object class="serv_1__img" type="image/svg+xml" data="images/serv_1.svg">
+						</object>
+						<p class="photo_caption mr">Низкие цены</p>
+						<p class="photo_text serv_text mrr fs14">Вы получите выгодную цену <br>на распространение и на печать <br>листовок, ниже чем у конкурентов!</p>
+					</li>
+					<li class="services_li serv col-lg-3 col-md-3 col-sm-6">
+						<object class="serv_1__img" type="image/svg+xml" data="images/serv_2.svg">
+						</object>
+						<p class="photo_caption serv_1 mr">Качество без обмана!</p>
+						<p class="photo_text serv_text mrr fs14">Вам не придётся переживать - <br>мы работаем честно.<br>Гарантированное качество!</p>
+					</li>
+					<li class="services_li col-lg-3 col-md-3 col-sm-6">
+						<object class="serv_1__img" type="image/svg+xml" data="images/serv_3.svg">
+						</object>
+						<p class="photo_caption serv_1 mr">Заключаем договор</p>
+						<p class="photo_text serv_text mrr fs14">Работаем по договору. Несём <br>ответственность за работу.</p>
+					</li>
+					<li class="services_li col-lg-3 col-md-3 col-sm-6">
+						<object class="serv_1__img" type="image/svg+xml" data="images/serv_4.svg">
+						</object>
+						<p class="photo_caption serv_2 mr">Ежедневный отчёт</p>
+						<p class="photo_text serv_text mrr fs14">Вы всегда в курсе как идёт Ваша <br>рекламная кампания.</p>
+					</li>
+					<li class="services_li col-lg-3  col-md-3 col-sm-6">
+						<object class="serv_1__img" type="image/svg+xml" data="images/serv_5.svg">
+						</object>
+						<p class="photo_caption serv_2 mr">Совместные проверки</p>
+						<p class="photo_text serv_text mrr fs14">Нам нечего скрывать! Проведём  <br>совместную проверку по Вашему <br>желанию.</p>
+					</li>
+					<li class="services_li col-lg-3  col-md-3 col-sm-6">
+						<object class="serv_1__img" type="image/svg+xml" data="images/serv_6.svg">
+						</object>
+						<p class="photo_caption serv_2 mr">Распро&shyстране&shyние <br>«Под ключ»</p>
+						<p class="photo_text serv_text mrr fs14">Комплексная услуга (Макет <br>+ Печать + Распространение). <br>Экономия времени и денег!</p>
+					</li>
+					<li class="services_li col-lg-3  col-md-3 col-sm-6">
+						<object class="serv_1__img" type="image/svg+xml" data="images/serv_7.svg">
+						</object>
+						<p class="photo_caption serv_2 mr">Скидки</p>
+						<p class="photo_text serv_text mrr fs14">Для постоянных клиентов <br>готовы работать почти даром!</p>
+					</li>
+					<li class="services_li col-lg-3  col-md-3 col-sm-6">
+						<object class="serv_1__img" type="image/svg+xml" data="images/serv_8.svg">
+						</object>
+						<p class="photo_caption serv_2 mr">GPS-контроль</p>
+						<p class="photo_text serv_text mrr fs14">Контролируем своих <br>распространителей из космоса!</p>
+					</li>
+					<a class="dn_2" href="#openModal">
+							<button class="btn__item_2 d-flex ml-auto">
+								<p class="my-auto ">Оставить заявку</p>
+								<object class="arrow__img_2" type="image/svg+xml" data="images/right-arrow.svg">
+								</object>
+							</button>
+						</a>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section id="section_7">
+		<div class="container redcont">
+			<div class="row">
+				<div class="section_3_caption col-lg-6 col-md-6 bounce">
+					<h6 class="section_3_caption_item">Тарифы</h6>
+				</div>
+				<div class="padding col-lg-7 col-md-7">
+				<p class="text_7">Подходящие планы для ваших задач. Свяжитесь с нами, чтобы узнать тарифы</p>
+				</div>
+				<div class="money col-lg-3 col-md-3 ml-auto">
+					<img src="images/money.png" alt="money">
+				</div>
+				<div class="padding margin col-lg-7 col-md-7">
+					<a href="#openModal">
+						<button class="btn__item_2 btnbtn mtt mt d-flex">
+							<p class="my-auto">Связаться с нами</p>
+							<object class="arrow__img_2" type="image/svg+xml" data="images/right-arrow.svg">
+							</object>
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="section_8">
+		<div class="container slideInUp">
+			<div class="row row_1">
+				<div class="section_2_caption col-lg-6 sec_3">
+					<h6 class="section_2_caption_item">Контакты</h6>
+				</div>
+				<div class="section_2_caption col-lg-6">
+					<h6 class="section_2_caption_item">Написать нам</h6>
+				</div>
+				<div class="contacts col-lg-6 p-0">
+					<div class="col-lg-12 p-0 d-flex">
+						<object class="telephone__img" type="image/svg+xml" data="images/telephone.svg">
+						</object>
+						<div class="text_1 col-lg-10 p-0">
+							<p class="contacts_text_1 col-lg-12">Телефон</p>
+							<p class="contacts_text_2 col-lg-12">8 (921) 123-45-67</p>
+						</div>
+					</div>
+
+					<div class="adress col-lg-12 p-0 d-flex">
+						<object class="adress__img" type="image/svg+xml" data="images/adress.svg">
+						</object>
+						<div class="text_1 col-lg-10 p-0">
+							<p class="contacts_text_1 col-lg-12">Адрес офиса</p>
+							<p class="contacts_text_2 col-lg-12">Вологда, ул. Мальцева, 53, офис 123</p>
+						</div>
+					</div>
+
+					<div class="mail col-lg-12 p-0 d-flex">
+						<object class="mail__img" type="image/svg+xml" data="images/mail.svg">
+						</object>
+						<div class="text_1 col-lg-10 p-0">
+							<p class="contacts_text_1 col-lg-12">Электронная почта</p>
+							<p class="contacts_text_2 col-lg-12">info@reklamavruki.ru</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 p-0">
+					<form class="pad" action="send.php" method="post">
+						<div class="ops d-flex p-0">
+							<div class="name col-lg-4 col-12 p-0">
+								<p class="form_text col-lg-12 p-0">Ваше имя</p>
+								<input type="text" name="name" required="" class="name_input col-lg-12 col-12">
+							</div>
+							<div class="name col-lg-7 p-0 col-12">
+								<p class="form_text col-lg-12 p-0">Ваше телефон или e-mail</p>
+								<input type="text" name="email" required="" class="name_input col-lg-12">
+							</div>
+						</div>
+						<div class="name col-lg-12 p-0">
+							<p class="form_text col-lg-12 p-0">Ваше сообщение</p>
+							<textarea name="want" class="name_area col-lg-12" id="wants" cols="5" rows="3"></textarea>
+						</div>
+						<input type="submit" class="input__item col-lg-5" value="Отправить сообщение">
+					</form>
+				</div>
+				<iframe src="https://yandex.ru/map-widget/v1/-/CBBIeRH~KB"frameborder="0" allowfullscreen="false" class="map_2 col-lg-12 p-0" height="290"></iframe>
+			</div>
+			<div class="row row_2">
+				<div class="section_2_caption col-lg-6 col-md-12">
+					<h6 class="section_2_caption_item">Контакты</h6>
+				</div>
+				<div class="contacts col-lg-6 p-0">
+					<div class="col-lg-12 p-0 d-flex">
+						<object class="telephone__img" type="image/svg+xml" data="images/telephone.svg">
+						</object>
+						<div class="text_1 col-lg-10 p-0">
+							<p class="contacts_text_1 col-lg-12">Телефон</p>
+							<p class="contacts_text_2 col-lg-12">8 (921) 123-45-67</p>
+						</div>
+					</div>
+
+					<div class="adress col-lg-12 p-0 d-flex">
+						<object class="adress__img" type="image/svg+xml" data="images/adress.svg">
+						</object>
+						<div class="text_1 col-lg-10 p-0">
+							<p class="contacts_text_1 col-lg-12">Адрес офиса</p>
+							<p class="contacts_text_2 col-lg-12">Вологда, ул. Мальцева, 53, офис 123</p>
+						</div>
+					</div>
+
+					<div class="mail col-lg-12 p-0 d-flex">
+						<object class="mail__img" type="image/svg+xml" data="images/mail.svg">
+						</object>
+						<div class="text_1 col-lg-10 p-0">
+							<p class="contacts_text_1 col-lg-12">Электронная почта</p>
+							<p class="contacts_text_2 col-lg-12">info@reklamavruki&shy.ru</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="section_2_caption col-lg-6 col-md-12">
+					<h6 class="section_2_caption_item">Написать нам</h6>
+				</div>
+				<div class="col-lg-6 col-md-12 p-0">
+					<form class="pad" action="send.php" method="post">
+						<div class="ops d-flex p-0">
+							<div class="name col-lg-4 col-md-5 p-0">
+								<p class="form_text col-lg-12 p-0">Ваше имя</p>
+								<input type="text" name="name" required="" class="name_input col-lg-12">
+							</div>
+							<div class="name col-lg-7 col-md-6 p-0">
+								<p class="form_text col-lg-12 p-0">Ваше телефон или e-mail</p>
+								<input type="text" name="email" required="" class="name_input col-lg-12">
+							</div>
+						</div>
+						<div class="name col-lg-12 col-md-12 p-0">
+							<p class="form_text col-lg-12 p-0">Ваше сообщение</p>
+							<textarea name="want" class="name_area col-lg-12" id="wants" cols="5" rows="3"></textarea>
+						</div>
+						<div class="p-0 col-md-12 text-center">
+							<input type="submit" class="input__item " value="Отправить сообщение">
+						</div>
+					</form>
+				</div>		
+				
+			</div>
+		</div>
+	</section>
+	<p class="copyright col-lg-12">© Реклама в руки, 2018</p>
+	<script type="text/javascript">
+  		$("#header").fadeIn(1000);
+</script>
+</body>
+</html>
