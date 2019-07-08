@@ -1,3 +1,4 @@
+/*К сожалению, нашел только довольно кривые демо-версии шрифтов*/
 @font-face {
   font-family: "CeraRoundPro-Bold";
   src: url("fonts/CeraRoundPro-Bold.otf"); }
@@ -190,4 +191,4 @@ body {
   border-radius: 100px;
   margin: 20px 0px;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer }
