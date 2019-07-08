@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "CeraRoundPro-Bold";
+  src: url("fonts/CeraRoundPro-Bold.otf"); }
+
+@font-face {
+  font-family: "CeraRoundPro-Medium";
+  src: url("fonts/CeraRoundPro-Medium.otf"); }
+
+@font-face {
+  font-family: "CeraRoundPro-Light";
+  src: url("fonts/CeraRoundPro-Light.otf"); }
+
+@font-face {
+  font-family: "CeraRoundPro-Regular";
+  src: url("fonts/CeraRoundPro-Regular.otf"); }
+
+@font-face {
+  font-family: "Geometria-Medium";
+  src: url("fonts/Geometria-Medium.ttf"); }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+.container {
+  background: url("img/lines.png") no-repeat; }
+
+.section {
+  max-width: 1160px;
+  margin: 0 auto; }
+
+.section__first {
+  padding-bottom: 150px;
+  position: relative; }
+
+.background-first {
+  background: url("img/bg.png") no-repeat;
+  position: relative;
+  z-index: 999999; }
+
+.section__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.nav__list__item {
+  list-style: none;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'CeraRoundPro-Bold';
+  font-size: 16px;
+  margin: 0px 30px; }
+
+.nav__list__item a {
+  color: #fff;
+  font-weight: bold;
+  font-family: 'CeraRoundPro-Bold';
+  font-size: 16px;
+  text-decoration: none; }
+
+.section__nav__button {
+  background: none;
+  border: 3px solid #5489c3;
+  border-radius: 50px;
+  padding: 20px 30px;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'CeraRoundPro-Bold';
+  font-size: 16px;
+  margin: 0px 10px;
+  outline: none;
+  cursor: pointer; }
+
+.text {
+  text-align: center;
+  width: 750px;
+  margin: 0 auto;
+  margin-top: 80px; }
+
+.text__caption {
+  color: #fff;
+  font-size: 36px;
+  font-family: 'CeraRoundPro-Medium'; }
+
+.text__p {
+  color: #fff;
+  font-size: 24px;
+  font-family: 'CeraRoundPro-Medium';
+  margin-top: 40px; }
+
+.section__first__button {
+  border: 0;
+  background: #e70067;
+  padding: 20px 30px;
+  color: #fff;
+  font-family: 'Geometria-Medium';
+  font-size: 16px;
+  border-radius: 100px;
+  margin: 50px 0px;
+  outline: none;
+  cursor: pointer; }
+
+.checkbox {
+  width: 55px;
+  border: 1px solid #5489c3;
+  padding: 10px 20px;
+  border-radius: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0px auto;
+  margin-top: 80px; }
+
+.checkbox__line {
+  width: 20px;
+  height: 1px;
+  background: #5489c3; }
+
+.checkbox__line-active {
+  background: #fff; }
+
+.section__second {
+  margin-top: 80px; }
+
+.main__text__caption {
+  font-family: 'CeraRoundPro-Medium';
+  font-size: 36px;
+  color: #60759d; }
+
+.section__second__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.main__text {
+  margin-left: 40px; }
+
+.main__text__list-caption {
+  color: #60759d;
+  font-size: 16px;
+  font-family: 'CeraRoundPro-Medium'; }
+
+.main__text__list {
+  padding: 0px 18px;
+  margin: 0;
+  width: 500px; }
+
+.main__text__list__item {
+  margin: 25px 0px;
+  color: #60759d;
+  font-size: 16px;
+  font-family: 'CeraRoundPro-Medium'; }
+
+.section__second__button {
+  border: 0;
+  background: #e70067;
+  padding: 20px 30px;
+  color: #fff;
+  font-family: 'Geometria-Medium';
+  font-size: 16px;
+  border-radius: 100px;
+  margin: 20px 0px;
+  outline: none;
+  cursor: pointer; }
