@@ -62,7 +62,7 @@ header {
 
 .head-caption {
 	white-space: pre;
-	line-height: 30px;
+	line-height: 25px;
 	font-family: 'SFProDisplay-Medium';
 	letter-spacing: 2px;
 }
@@ -71,7 +71,7 @@ header {
 	text-align: center;
 	color:#fff;
 	font-size: 22px;
-	margin: 15px 0px;
+	margin: 20px 0px;
 	font-family: 'SFProDisplay-Medium'
 }
 
@@ -108,7 +108,7 @@ header {
 	color:#fff;
 	text-transform: uppercase;
 	font-size: 22px;
-	margin: 0px 1px 15px 0px;
+	margin: 0px 1px 20px 0px;
 	cursor: pointer;
 	transition-duration: .2s;
 	font-family: 'SFProDisplay-Thin'
@@ -135,7 +135,8 @@ header {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 20px;
-	font-family: 'SFProDisplay-Medium'
+	font-family: 'SFProDisplay-Medium';
+	margin: 1px 0px;
 }
 
 .head-list-oplata-2 {
@@ -143,24 +144,30 @@ header {
 }
 
 .jusflex {
+	margin-top: 20px;
 	justify-content: space-between;
+}
+
+.jusflex div {
+	margin: 0;
 }
 
 .head-list-text {
 	color:#fff;
 	text-transform: uppercase;
 	font-size: 24px;
-	font-family: 'SFProDisplay-Medium'
+	font-family: 'SFProDisplay-Medium';
 }
 
 .head-list-text-2 {
 	color:#fff;
 	text-transform: uppercase;
 	font-size: 22px;
+	font-family: 'SFProDisplay-Medium';
 }
 
 .head-list-text-2-extra {
-	font-family: 'SFProDisplay-Medium'
+	font-family: 'SFProDisplay-Medium';
 }
 
 .mm {
@@ -392,10 +399,10 @@ input:checked+span {
 }
 
 #section-4 {
-	background:url(../assets/1234.png) 50% no-repeat;
-	background-size:cover;
+	background:url(../assets/1234.png) no-repeat;
 	padding-top: 200px;
 	padding-bottom: 20px;
+	background-position: center, top;
 }
 
 .text-sec-4 {
@@ -431,7 +438,7 @@ input:checked+span {
 }
 
 .owl-carousel {
-	margin-top: 600px;
+	margin-top: 450px;
 }
 
 .owl-carousel .item img {
