@@ -1,0 +1,11 @@
+.sample-choice {
+	display: flex;
+	width: 1000px;
+}
+
+.sample-choice-item {
+	width: 195px;
+	height: 195px;
+	background: url(images/1.jpg)
+}
+
