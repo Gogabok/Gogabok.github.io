@@ -1,0 +1,157 @@
+@font-face {
+font-family: "ft40";
+src: url("assets/ft40.ttf"); 
+}
+
+@font-face {
+font-family: "PN-black";
+src: url("assets/ProximaNova-Black.ttf"); 
+}
+
+@font-face {
+font-family: "PN-bold";
+src: url("assets/ProximaNova-Bold.ttf"); 
+}
+
+@font-face {
+font-family: "PN-extrabold";
+src: url("assets/ProximaNova-Extrabld.ttf"); 
+}
+
+@font-face {
+font-family: "PN-light";
+src: url("assets/ProximaNova-Light.ttf"); 
+}
+
+@font-face {
+font-family: "PN-regular";
+src: url("assets/ProximaNova-Regular.ttf"); 
+}
+
+@font-face {
+font-family: "PN-semibold";
+src: url("assets/ProximaNova-Semibold.ttf"); 
+}
+
+.container-fluid {
+	padding: 20px 70px;
+}
+
+@media screen and (max-width: 1680px) {
+	html {
+		display: flex !important;
+		justify-content: center !important;
+		zoom:80%;
+		display: block;
+		margin: 0 auto !important;
+	}
+	.tradingview-widget-container {
+		zoom:120%;
+	}
+}
+@media screen and (max-width: 1540px) {
+	html {
+		display: flex !important;
+		justify-content: center !important;
+		zoom:70%;
+		display: block;
+		margin: 0 auto !important;
+	}
+	.tradingview-widget-container {
+		zoom:130%;
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	html {
+		display: flex !important;
+		justify-content: center !important;
+		zoom:65%;
+		display: block;
+		margin: 0 auto !important;
+	}
+	.tradingview-widget-container {
+		zoom:131%;
+	}
+}
+
+#mainbody {
+	overflow-x:hidden !important;
+}
+
+/*@media screen and (max-width: 1350px) {
+	#app {
+		zoom:65%;
+		display: block;
+		margin: 0 auto;
+	}
+	.tradingview-widget-container {
+		zoom:135%;
+	}
+}*/
+
+
+/*.container-fluid-widjet {
+	padding: 0px 70px !important;
+}
+*/
+.container-fluid {
+	width: 1900px !important;
+}
+
+.container-fluid-2 {
+	width: 1900px !important;
+}
+
+.row {
+	width:100% !important;
+	overflow-x: visible !important;
+}
+
+.col-lg-12 {
+	width:100% !important;
+	overflow-x: visible !important;
+}
+
+section, #mainbody, footer, .widjScroll {
+	width:1900px !important;
+}
+
+html {
+	background: #161616
+}
+
+.section-8-list-logos {
+	display: flex;
+	align-items: flex-end !important;
+	margin-top: 50px;
+}
+
+.sec-1-login {
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	top:-30px;
+	align-items: center;
+	z-index: 9996;
+}
+.sec-1-login-login {
+	font-family: 'PN-regular';
+	font-size: 14px;
+	list-style-type:none;
+	color:#fff;
+	border:none;
+	text-decoration: none;
+	transition-duration: .3s;
+	margin: 0px 0px;
+	margin-right: 200px;
+}
+.sec-1-login-login-online {
+	font-family: 'PN-regular';
+	font-size: 14px;
+	list-style-type:none;
+	color:#fff;
+	border:none;
+	text-decoration: none;
+	transition-duration: .3s;
+}
