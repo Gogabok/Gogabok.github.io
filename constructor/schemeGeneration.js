@@ -8,52 +8,62 @@ function layoutScheme(payload) {
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 {
                     title: Math.random(),
                     src: "",
-                    rotation: 0
+                    rotation: 0,
+                    price: 0
                 },
                 
             ]
@@ -67,102 +77,122 @@ function layoutScheme(payload) {
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                 ]
             )
@@ -176,152 +206,182 @@ function layoutScheme(payload) {
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                 ]
             )
@@ -335,202 +395,242 @@ function layoutScheme(payload) {
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                     {
                         title: Math.random(),
                         src: "",
-                        rotation: 0
+                        rotation: 0,
+                        price: 0
                     },
                 ]
             )
