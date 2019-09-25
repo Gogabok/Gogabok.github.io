@@ -24,9 +24,26 @@
 				<img src="assets/Investis_png.png" alt="">
 			</a>
 			<ul class="appNav-list col-lg-9 col-md-9 col-sm-9 col-9">
-				<a class="appNav-list-item" href="index.html">Инвестиции</a>
-				<a class="appNav-list-item thisTitle" href="market.html">Валютный рынок</a>
-				<a class="appNav-list-item" href="crypto.html">Криптовалюты</a>
+				<div id="menu-1">
+					<p class="appNav-list-item thisTitle" id="menu-about-1">Инвестиции</p>
+					<div class="menu-item-N" id="menu-item-1">
+						<a class="appNav-list-item appNav-list-item-menu" href="index.html">Инвестиции</a>
+						<a class="appNav-list-item appNav-list-item-menu thisTitle" href="market.html">Валютный рынок</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="crypto.html">Криптовалюты</a>
+					</div>
+				</div>
+				<div id="menu-2">
+					<p class="appNav-list-item appNav-list-item-menu" id="menu-about-2">Типы счетов</p>
+					<div class="menu-item-N" id="menu-item-2">
+						<a class="appNav-list-item appNav-list-item-menu" href="test.html">Test</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="bronze.html">Bronze</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="silver.html">Silver</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="gold.html">Gold</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="pro.html">Pro</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="elite.html">Elite</a>
+					</div>
+				</div>
+				<a class="appNav-list-item" href="analitics.html">Аналитики exGlobal</a>
 				<a class="appNav-list-item" href="center.html">Обучение</a>
 				<a class="appNav-list-item" href="about.html">О компании</a>
 				<a class="appNav-list-item" href="index_english.html">EN</a>
@@ -38,20 +55,8 @@
     	<div class="container-fluid">
 			<div class="sec-1-login">
 				<span class="sec-1-login-login">Онлайн: <span class="sec-1-login-login-online" id="online"></span></span>
-				<a class="appNav-list-item-fot" href="http://tradersroom.exglobal.pro/signin">Личный кабинет</a>
+				<a class="appNav-list-item-fot appNav-list-item-fot-cabinet" href="http://tradersroom.exglobal.pro/signin">Личный кабинет</a>
 			</div>
-			<script>
-				$(document).ready(function () {
-					let count = Math.random();
-					let result = Math.floor(count * (6500 - 5000) + 5000)
-					$("#online").html(result)
-					setInterval(() => {
-						let count = Math.random();
-						let result = Math.floor(count * (6500 - 5000) + 5000)
-						$("#online").html(result)
-					}, 10000);
-				})
-			</script>
     		<div class="row sec-1-cont">
     			<div class="col-lg-12">
 	    			<div class="invest-caption col-lg-12 p-0">
@@ -195,7 +200,7 @@
 							<p>Более двухста валютных пар и инструментов</p>
 						</div>
 					</div>
-					<a class="btn-invest-white-a" href="#footer"><button class="btn-invest-white">Инвестировать</button></a>
+					<a class="btn-invest-white-a" href="http://tradersroom.exglobal.pro/signup" target="_blank"><button class="btn-invest-white">Инвестировать</button></a>
 				</div>
     		</div>
     	</div>
@@ -347,7 +352,7 @@
 							<p>Трейдеров доверяют exGlobal</p>
 						</div>
 					</div>
-					<a class="btn-invest-white-a" href="#footer"><button class="btn-invest-white btn-invest-white-mt">Инвестировать</button></a>
+					<a class="btn-invest-white-a" href="http://tradersroom.exglobal.pro/signup" target="_blank"><button class="btn-invest-white btn-invest-white-mt">Инвестировать</button></a>
 				</div>
     		</div>
     	</div>
@@ -413,7 +418,7 @@
 						<img class="mttt" src="assets/Steps-market-item-2.png" alt="">
 		    		</div>
 	    		</div>
-	    		<a class="btn-invest-white-a" href="#footer"><button class="btn-invest-white">Подробнее</button></a>
+					<a class="btn-invest-white-a" href="http://tradersroom.exglobal.pro/signup" target="_blank"><button class="btn-invest-white">Подробнее</button></a>
     		</div>
     	</div>
     	<img class="section-6-men-bg" src="assets/Investis-section-3-phone-2.png" alt="">
@@ -497,8 +502,8 @@
     			</div>
     				<div class="footer-copyright col-lg-9">
     				<p>&copy 2019 Copyright <span class="footer-copyright-markered">exGlobal Capital Company</span></p>
-    				<p>+7 (911) 543-12-52</p>
-    				<p>+7 (544) 765-39-43</p>
+    				<p>+491(573)599-81-95</p>
+    				<p>+44(741)835-06-42</p>
     				<p>info@exglobal.pro</p>
     			</div>
     		</div>
@@ -1307,6 +1312,12 @@
 		padding: 8px 15px;
 		border-radius: 7px;
 		outline: none;
+	}
+	.appNav-list-item-fot-cabinet {
+		padding: 7px 25px;
+		background: #f59520;
+		border-radius: 7px;
+		font-weight: bold;
 	}
 	</style>
 

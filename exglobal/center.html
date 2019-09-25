@@ -24,9 +24,26 @@
 				<img src="assets/Investis_png.png" alt="">
 			</a>
 			<ul class="appNav-list col-lg-9 col-md-9 col-sm-9 col-9">
-				<a class="appNav-list-item" href="index.html">Инвестиции</a>
-				<a class="appNav-list-item" href="market.html">Валютный рынок</a>
-				<a class="appNav-list-item" href="crypto.html">Криптовалюты</a>
+				<div id="menu-1">
+					<p class="appNav-list-item" id="menu-about-1">Инвестиции</p>
+					<div class="menu-item-N" id="menu-item-1">
+						<a class="appNav-list-item appNav-list-item-menu" href="index.html">Инвестиции</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="market.html">Валютный рынок</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="crypto.html">Криптовалюты</a>
+					</div>
+				</div>
+				<div id="menu-2">
+					<p class="appNav-list-item appNav-list-item-menu" id="menu-about-2">Типы счетов</p>
+					<div class="menu-item-N" id="menu-item-2">
+						<a class="appNav-list-item appNav-list-item-menu" href="test.html">Test</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="bronze.html">Bronze</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="silver.html">Silver</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="gold.html">Gold</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="pro.html">Pro</a>
+						<a class="appNav-list-item appNav-list-item-menu" href="elite.html">Elite</a>
+					</div>
+				</div>
+				<a class="appNav-list-item" href="analitics.html">Аналитики exGlobal</a>
 				<a class="appNav-list-item thisTitle" href="center.html">Обучение</a>
 				<a class="appNav-list-item" href="about.html">О компании</a>
 				<a class="appNav-list-item" href="index_english.html">EN</a>
@@ -38,20 +55,8 @@
     	<div class="container-fluid">
 			<div class="sec-1-login">
 				<span class="sec-1-login-login">Онлайн: <span class="sec-1-login-login-online" id="online"></span></span>
-				<a class="appNav-list-item-fot" href="http://tradersroom.exglobal.pro/signin">Личный кабинет</a>
+				<a class="appNav-list-item-fot appNav-list-item-fot-cabinet" href="http://tradersroom.exglobal.pro/signin">Личный кабинет</a>
 			</div>
-			<script>
-				$(document).ready(function () {
-					let count = Math.random();
-					let result = Math.floor(count * (6500 - 5000) + 5000)
-					$("#online").html(result)
-					setInterval(() => {
-						let count = Math.random();
-						let result = Math.floor(count * (6500 - 5000) + 5000)
-						$("#online").html(result)
-					}, 10000);
-				})
-			</script>
     		<div class="row sec-1-cont">
     			<div class="col-lg-12">
 	    			<div class="sec-1-content">
@@ -88,7 +93,7 @@
 	    						Психология трейдинга и управление рисками
 	    					</div>
 	    				</div>
-	    				<a class="btn-invest-white-a" href="#footer"><button type="button" class="btn btn-success-form">Начать обучение</button></a>
+						  <a class="btn-invest-white-a" href="http://tradersroom.exglobal.pro/signup" target="_blank"><button type="button" class="btn btn-success-form">Начать обучение</button></a>
 	    			</div>
 	    		</div>
     		</div>
@@ -215,7 +220,7 @@
 						торговля на форекс – это получение прибыли за счет разницы между ценами «покупки/продажи» или 
 						«продажи/покупки». Это самая настоящая спекуляция валютой – товаром, который на валютной бирже 
 						одни готовы продать/купить, а вторые готовы купить/продать.</p>
-    					<a href="/Как торговать на Форекс?.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
+    					<a href="/HowToTrade.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
     				</div>
     				<div class="sec-5-center-item col-lg-6">
     					<p class="sec-5-center-item-caption">Графики Форекс. Как их читать и анализировать?</p>
@@ -224,7 +229,7 @@
 						Именно они играют ключевую роль. Графики Форекс нужно уметь читать, ведь именно от них зависит 
 						вся ваша торговля в целом. График торгов на рынке Форекс состоит из двух осей: вертикальная 
 						ось и горизонтальная.</p>
-    					<a href="/Графики Форекс. Как их читать и анализировать?.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
+    					<a href="/GraphicsForex.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
     				</div>
     				<div class="sec-5-center-item col-lg-6">
     					<p class="sec-5-center-item-caption">Торговля на Форекс для начинающих</p>
@@ -232,7 +237,7 @@
 						заинтересовался им и самое интересное то, что не отпускает уже никогда. Хотим добавить, торговля на 
 						Форекс – не просто увлекательная, но и требовательная. Чтобы стать действительно успешным трейдером 
 						необходимо приложить много усилий; стоять на месте ни в коем случае нельзя. Нужно постоянно учиться.</p>
-    					<a href="/Торговля на Форекс для начинающих.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
+    					<a href="/ForexForBeginners.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
     				</div>
     				<div class="sec-5-center-item col-lg-6">
     					<p class="sec-5-center-item-caption">Технический и фундаментальный анализ рынка и его основы</p>
@@ -241,7 +246,7 @@
 						другое.  Фундаментальный анализ рынка Форекс – это прогноз цен на валютных рынках. Суть данного
 						анализа – изучить, по какой причине, цена изменилась. На валютном рынке достаточно много трейдеров, 
 						которые предпочитают данный вид анализа.</p>
-    					<a href="/Технический и фундаментальный анализ рынка и его основы.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
+    					<a href="/MarketAnalysis.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
     				</div>
     				<div class="sec-5-center-item col-lg-6">
     					<p class="sec-5-center-item-caption">Когда лучше торговать на Форекс?</p>
@@ -249,7 +254,7 @@
 						когда лучше торговать на форекс. Учитывая, что рынок функционирует и ожидает наших действий 
 						на протяжении 24 суток пять дней в неделю. Разная валютная пара ведет себя по разному в 
 						одно и тоже время торговли на Форекс. Так когда же лучше торговать?</p>
-    					<a href="/Как торговать на Форекс?.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
+    					<a href="/WhenTrade.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
     				</div>
     				<div class="sec-5-center-item col-lg-6">
     					<p class="sec-5-center-item-caption">Линия тренда</p>
@@ -258,7 +263,7 @@
 						тренд и понимать его тенденции. В терминологии биржевой торговли есть выражение «trend is your 
 						friend», рекомендующее не торговать против тренда. Игнорирование трендовых тенденций не 
 						позволит трейдеру получить желаемый профит с минимальным риском.</p>
-    					<a href="/Линия тренда.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
+    					<a href="/LineOfTrade.pdf" download><button class="btn-invest-white btn-invest-white-5">Скачать курс</button></a>
     				</div>
     			</div>
 			</div>
@@ -354,7 +359,7 @@
 		    			</div>
 		    		</div>
 	    		</div>
-	    		<a class="btn-invest-white-a" href="#footer"><button class="btn-invest-white">Начать обучение</button></a>
+					<a class="btn-invest-white-a" href="http://tradersroom.exglobal.pro/signup" target="_blank"><button class="btn-invest-white">Начать обучение</button></a>
     		</div>
     	</div>
     	<img class="section-6-men-bg" src="assets/Investis-section-6-man.png" alt="">
@@ -438,8 +443,8 @@
     			</div>
     			<div class="footer-copyright col-lg-9">
     				<p>&copy 2019 Copyright <span class="footer-copyright-markered">exGlobal Capital Company</span></p>
-    				<p>+7 (911) 543-12-52</p>
-    				<p>+7 (544) 765-39-43</p>
+    				<p>+491(573)599-81-95</p>
+    				<p>+44(741)835-06-42</p>
     				<p>info@exglobal.pro</p>
     			</div>
     		</div>
@@ -1425,6 +1430,12 @@
 	}
 	.appNav-fixed {
 		margin-top: 120px;
+	}
+	.appNav-list-item-fot-cabinet {
+		padding: 7px 25px;
+		background: #f59520;
+		border-radius: 7px;
+		font-weight: bold;
 	}
 	</style>
 

@@ -37,6 +37,13 @@ src: url("assets/ProximaNova-Semibold.ttf");
 	padding: 20px 70px;
 }
 
+	body {
+		background: #161616;
+	}
+#mainbody {
+	background: #161616;
+	margin: 0 auto !important;
+}
 @media screen and (max-width: 1680px) {
 	html {
 		display: flex !important;
@@ -154,4 +161,68 @@ html {
 	border:none;
 	text-decoration: none;
 	transition-duration: .3s;
+}
+#menu-item-1 {
+	display: none;
+	position: absolute;
+	top:50px;
+	right: 1140px;
+	background: #191919;
+	padding: 10px 25px;
+	border-radius: 7px;
+	text-align: center;
+	white-space: nowrap;
+}
+#menu-item-1::before {
+    content: ''; 
+    position: absolute;
+    left: calc(50% - 20px);
+    top:-30px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid #191919;
+}
+#menu-item-1 a {
+	margin: 0;
+	margin: 10px 0px;
+	display: block;
+}
+#menu-item-2 {
+	display: none;
+	position: absolute;
+	top:50px;
+	right:945px;
+	background: #191919;
+	padding: 10px 25px;
+	border-radius: 7px;
+	text-align: center;
+}
+#menu-item-2::before {
+    content: ''; 
+    position: absolute;
+    left: calc(50% - 20px);
+    top:-30px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid #191919;
+}
+#menu-item-2 a {
+	margin: 0;
+	margin: 10px 0px;
+	display: block;
+}
+.appNav-list-item-menu {
+	cursor: pointer;
+}
+.appNav-list-item {
+	cursor: pointer;
+	user-select: none;
+}
+.appNav-list {
+	position: relative;
+}
+.sec-1-login-login {
+	background: #00AC5E;
+	padding: 10px 0px;
+	text-align: center;
+	border-radius: 7px;
+	width: 140px;
 }

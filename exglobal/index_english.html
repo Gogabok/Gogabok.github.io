@@ -20,16 +20,30 @@
 
 	<div id="appNav" class="container-fluid">
 		<nav>
-			<a href="index_english.html" class="image col-lg-3 col-md-3 col-sm-3 col-3">
+			<a href="index.html" class="image col-lg-3 col-md-3 col-sm-3 col-3">
 				<img src="assets/Investis_png.png" alt="">
 			</a>
 			<ul class="appNav-list col-lg-9 col-md-9 col-sm-9 col-9">
-				<a class="appNav-list-item thisTitle" href="index_english.html">Investments</a>
-				<a class="appNav-list-item" href="market_english.html">Currency market</a>
-				<a class="appNav-list-item" href="crypto_english.html">Cryptocurrencies</a>
+				<p class="appNav-list-item thisTitle" id="menu-about-1">Investments</p>
+				<div class="menu-item-N" id="menu-item-1">
+					<a class="appNav-list-item appNav-list-item-menu thisTitle" href="index_english.html">Investments</a>
+					<a class="appNav-list-item appNav-list-item-menu" href="market_english.html">Currency market</a>
+					<a class="appNav-list-item appNav-list-item-menu" href="crypto_english.html">Cryptocurrencies</a>
+				</div>
+				<p class="appNav-list-item appNav-list-item-menu" id="menu-about-2">Account type</p>
+				<div class="menu-item-N" id="menu-item-2">
+					<a class="appNav-list-item appNav-list-item-menu" href="test_en.html">Test</a>
+					<a class="appNav-list-item appNav-list-item-menu" href="bronze_en.html">Bronze</a>
+					<a class="appNav-list-item appNav-list-item-menu" href="silver_en.html">Silver</a>
+					<a class="appNav-list-item appNav-list-item-menu" href="gold_en.html">Gold</a>
+					<a class="appNav-list-item appNav-list-item-menu" href="pro_en.html">Pro</a>
+					<a class="appNav-list-item appNav-list-item-menu" href="elite_en.html">Elite</a>
+				</div>
+				<a class="appNav-list-item" href="analitics_english.html">Analitics exGlobal</a>
 				<a class="appNav-list-item" href="center_english.html">Training</a>
 				<a class="appNav-list-item" href="about_english.html">About company</a>
 				<a class="appNav-list-item" href="index.html">RU</a>
+				</a>
 			</ul>
 		</nav>
 	</div>
@@ -37,20 +51,8 @@
 		<div class="container-fluid">
 			<div class="sec-1-login">
 				<span class="sec-1-login-login">Online: <span class="sec-1-login-login-online" id="online"></span></span>
-				<a class="appNav-list-item-fot" href="http://tradersroom.exglobal.pro/signin">Personal account</a>
+				<a class="appNav-list-item-fot appNav-list-item-fot-cabinet" href="http://tradersroom.exglobal.pro/signin">Personal account</a>
 			</div>
-			<script>
-				$(document).ready(function () {
-					let count = Math.random();
-					let result = Math.floor(count * (6500 - 5000) + 5000)
-					$("#online").html(result)
-					setInterval(() => {
-						let count = Math.random();
-						let result = Math.floor(count * (6500 - 5000) + 5000)
-						$("#online").html(result)
-					}, 10000);
-				})
-			</script>
     		<div class="row sec-1-cont">
     			<div class="col-lg-12">
 	    			<div class="invest-caption col-lg-12 p-0">
@@ -341,7 +343,7 @@ platform is the largest.
 							<p>Instant execution of orders</p>
 						</div>
 					</div>
-					<a class="btn-invest-white-a" href="#footer"><button class="btn-invest-white">Invest</button></a>
+					<a class="btn-invest-white-a" href="http://tradersroom.exglobal.pro/signup" target="_blank"><button class="btn-invest-white">Invest</button></a>
 				</div>
     		</div>
     	</div>
@@ -593,8 +595,8 @@ and terminal installation.
     			</div>
     			<div class="footer-copyright col-lg-9">
     				<p>&copy 2019 Copyright <span class="footer-copyright-markered">Investis Global Capital Company</span></p>
-    				<p>+7 (911) 543-12-52</p>
-    				<p>+7 (544) 765-39-43</p>
+    				<p>+491(573)599-81-95</p>
+    				<p>+44(741)835-06-42</p>
     				<p>info@exglobal.pro</p>
     			</div>
     		</div>
@@ -1342,6 +1344,12 @@ and terminal installation.
 		padding: 8px 15px;
 		border-radius: 7px;
 		outline: none;
+	}
+	.appNav-list-item-fot-cabinet {
+		padding: 7px 25px;
+		background: #f59520;
+		border-radius: 7px;
+		font-weight: bold;
 	}
 	</style>
 
