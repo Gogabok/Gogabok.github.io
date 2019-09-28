@@ -47,7 +47,7 @@
 		<div @click="clearItems" class="clearItems">
 			Очистить
 		</div>
-		<div class="clearItems">
+		<div @click="modalToggle" class="clearItems">
 			Отправить
 		</div>
 	</div>
@@ -103,6 +103,17 @@
 			</tr>
 		</tbody>
 	</table>
+	<div v-show="modalVissible" @mousedown.self="modalToggle" class="modal-fade">
+		<div class="modal">
+			<p class="modal-title">Отправить заявку</p>
+			<form @submit.prevent="sendMail($event.target)">
+				<input class="modal-input" type="text" name="name" placeholder="Ваше имя" autocomplete="off" required>
+				<input class="modal-input" type="text" name="phone" placeholder="Ваш телефон" autocomplete="off" required>
+				<input type="hidden" name="arr" :value="arr">
+				<button type="submit" class="modal-input btn">Отправить</button>
+			</form>
+		</div>
+	</div>
 </div>
 
 <script>
@@ -115,6 +126,10 @@ let sample = new Vue({
 		isMouseRight: false,
 		layout: null,
 		zoom: 1,
+		ourPlate: [],
+		used: [],
+		arr: '',
+		modalVissible: false,
 	    imageChosen1: [
 			{
 				title: "010B",
@@ -318,14 +333,15 @@ let sample = new Vue({
 		],
 	  imageOurChoice: 
 		{
-			title: "002B",
-			src: "images/casset/002b.jpg",
+			title: "010B",
+			src: "images/casset/010b.jpg",
 			price: 50
 		},
 		price: 0
 	},
 	methods: {
 		layoutOverItem(item, event) {
+			item.title = this.imageOurChoice.title
 			if(this.isMouseLeft || this.isMouseRight) {
 				if(this.isMouseLeft) {
 					if(item.src === this.imageOurChoice.src) {
@@ -346,6 +362,7 @@ let sample = new Vue({
 			}
 		},
 		layoutClickItem(e, item) {
+			e.title = this.imageOurChoice.title
 			if(e.src === this.imageOurChoice.src) {
 				e.rotation += 90
 			} else {
@@ -356,6 +373,7 @@ let sample = new Vue({
 			}
 		},
 		layoutClickItemClear(e, item) {
+			e.title = ''
 			e.src = ""
 			e.rotation = 0
 			e.price = 0
@@ -405,6 +423,7 @@ let sample = new Vue({
 		clearItems() {
 			for(let i = 0; i < this.layout.length; i++) {
 				for(let j = 0; j < this.layout[i].length; j++) {
+					this.layout[i][j].title = ''
 					this.layout[i][j].src = ''
 					this.layout[i][j].price = 0
 					this.priceCalc()
@@ -422,6 +441,36 @@ let sample = new Vue({
 					this.price = priceCalculate
 				}
 			}
+		},
+		modalToggle() {
+			this.modalVissible = !this.modalVissible
+			for (let i = 0; i < this.layout.length; i++) {
+				for (let j = 0; j < this.layout[i].length; j++) {
+					if (this.layout[i][j].price > 0) {
+						this.used.push(this.layout[i][j].title)
+					}
+				}
+			}
+			this.used.push(this.price + " " + "руб.")
+			this.arr = this.used.toString()
+		},
+		sendMail(form) {
+			
+			let data = new FormData(form)
+
+			fetch('send.php', {
+				method: "POST",
+				body: data
+			}).then(res => {
+
+			}).then(response => {
+					this.modalVissible = false
+					alert("Спасибо за вашу заявку!")
+				})
+				.catch(error => {
+					alert("Произошла ошибка, пожалуйста, попробуйте позже")
+				})
+			
 		}
 	},
 	computed: {
@@ -630,6 +679,186 @@ let sample = new Vue({
 }
 h1 {
 	margin: 20px 0px;
+}
+.modal-fade {
+	background:rgba(0, 0, 0, 0.75);
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top:0;
+	left:0;
+	display: flex;
+	overflow: hidden !important;
+  	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.modal {
+	width: 280px;
+	padding: 10px 20px;
+	border:1px solid #ccc;
+	background: #0DB5E6;
+	color:#fff;
+	margin: 0 auto !important;
+	position: absolute;
+	z-index: 9999;
+	text-align: center;
+	border-radius: 3px;
+	cursor: default;
+}
+.modal-title {
+	font-size: 26px;
+	margin: 20px 0px;
+}
+.modal-input {
+	width: 100%;
+	padding: 10px 10px;
+	border:none;
+	border-radius: 3px;
+	margin: 5px 0px;
+	font-size: 18px;
+}
+.btn {
+	cursor: pointer;
+	outline: none;
+	margin: 15px 0px;
+	background: #2D465B;
+	color:#fff;
+}
+@media screen and (max-width: 1200px) {
+	.sample {
+		width: 500px;
+	}
+	.sample-choice-item {
+		height: 83px; 
+	}
+	.sample-layout-head {
+		width: 501.5px;
+	}
+	.sample-layout-item {
+		width: 50px;
+		height: 50px;
+	}
+	.zoom-2 {
+		width: calc(50px / 2);
+		height: calc(50px / 2);
+	}
+	.zoom-3 {
+		width: calc(50px / 3);
+		height: calc(50px / 3);
+	}
+	.zoom-4 {
+		width: calc(50px / 4);
+		height: calc(50px / 4);
+	}
+	.sample-layout-head-2 {
+		width:500.5px;
+	}
+	.sample-layout-head-3 {
+		width:500.5px;
+	}
+	.sample-layout-head-4 {
+		width:500.5px;
+	}
+
+
+
+
+	@media screen and (max-width: 600px) {
+	.sample {
+		width: 250px;
+	}
+	.sample-choice-item {
+		height: 100px; 
+		width: 49%;
+	}
+	.sample-layout-head {
+		width: 251.5px;
+	}
+	.sample-layout-item {
+		width: 25px;
+		height: 25px;
+	}
+	.zoom-2 {
+		width: calc(25px / 2);
+		height: calc(25px / 2);
+	}
+	.zoom-3 {
+		width: calc(25px / 3);
+		height: calc(25px / 3);
+	}
+	.zoom-4 {
+		width: calc(25px / 4);
+		height: calc(25px / 4);
+	}
+	.sample-layout-head-2 {
+		width:250.5px;
+	}
+	.sample-layout-head-3 {
+		width:250.5px;
+	}
+	.sample-layout-head-4 {
+		width:250.5px;
+	}
+	.chosing {
+		display: block;
+	}
+	.chosing-item {
+		margin: 10px 0px;
+	}
+	.controls {
+		display: block;
+		justify-content: center;
+	}
+	.clearItems, .zoomControl {
+		margin: 10px auto;
+	}
+	.sample-layout-head-section-4 {
+		display: none;
+	}
+	.sample-layout-head-section-4:nth-child(1) {
+		display: block;
+		width: 20%;
+	}
+	.sample-layout-head-section-4:last-child {
+			display: block;
+		width: 20%;
+	}
+	.sample-layout-head-4 {
+		justify-content: space-between;
+	}
+	.sample-layout-head-section-3 {
+		display: none;
+	}
+	.sample-layout-head-section-3:nth-child(1) {
+		display: block;
+		width: 20%;
+	}
+	.sample-layout-head-section-3:last-child {
+			display: block;
+		width: 20%;
+	}
+	.sample-layout-head-3 {
+		justify-content: space-between;
+	}
+
+	.sample-layout-head-section-2 {
+		display: none;
+	}
+	.sample-layout-head-section-2:nth-child(1) {
+		display: block;
+		width: 20%;
+	}
+	.sample-layout-head-section-2:last-child {
+			display: block;
+		width: 20%;
+	}
+	.sample-layout-head-section-2:last-child span:nth-child(1) {
+			display: none;
+	}
+	.sample-layout-head-2 {
+		justify-content: space-between;
+	}
 }
 </style>
 </body>
