@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue.js"></script>
+	<script src="schemeGeneration.js"></script>
+</head>
+<body>
+	
+<div class="sample">
+	<div class="chosing">
+		<div @click="activeChosingMehod(1)" 
+		     :class="activeChosing === 1 ? 'chosing-item-active' : false" 
+			 class="chosing-item">Кассеты с рисунком</div>
+
+			 <div @click="activeChosingMehod(2)" 
+		     :class="activeChosing === 2 ? 'chosing-item-active' : false" 
+			 class="chosing-item">Кассеты однотонные</div>
+			 
+		<div @click="activeChosingMehod(3)" 
+		     :class="activeChosing === 3 ? 'chosing-item-active' : false" 
+			 class="chosing-item">Дополнительное оборудование</div>
+
+	</div>
+	<div class="sample-choice">
+		<div v-for="image in imageChosen1" @click.prevent="imageChoose(image, $event.target)"
+			:style="'background: url(' + image.src + ');'" class="sample-choice-item" v-if="activeChosing === 1"
+			:class="image.src === imageOurChoice.src ? 'sample-choice-item-active' : ''">
+		</div>
+		<div v-for="image in imageChosen2" @click.prevent="imageChoose(image, $event.target)"
+			:style="'background: url(' + image.src + ');'" class="sample-choice-item" v-if="activeChosing === 2"
+			:class="image.src === imageOurChoice.src ? 'sample-choice-item-active' : ''">
+		</div>
+		<div v-for="image in imageChosen3" @click.prevent="imageChoose(image, $event.target)"
+			:style="'background: url(' + image.src + ');'" class="sample-choice-item" v-if="activeChosing === 3"
+			:class="image.src === imageOurChoice.src ? 'sample-choice-item-active' : ''">
+		</div>
+	</div>
+	<h1>Кассета: {{ imageOurChoice.title }}</h1>
+	<h2>Ориентировочная стоимость: {{ price }} руб.</h2>
+	<div class="controls">
+		<div class="zoomControl">
+			<p @click="zoomMinus" :style="isZoomBlocked === 'blockMinus' ? 'opacity: .7; cursor: not-allowed' : false" class="zoomControl-item">+</p>
+			<p @click="zoomPlus" :style="isZoomBlocked === 'blockPlus' ? 'opacity: .7; cursor: not-allowed' : false" class="zoomControl-item">--</p>
+		</div>
+		<div @click="clearItems" class="clearItems">
+			Очистить
+		</div>
+		<div @click="modalToggle" class="clearItems">
+			Отправить
+		</div>
+	</div>
+	<table class="sample-layout">
+		<div v-if="zoom === 1" class="sample-layout-head">
+			<div class="sample-layout-head-section">0м.</div>
+			<div class="sample-layout-head-section">1м.</div>
+			<div class="sample-layout-head-section"><span>2м.</span><span>3м.</span></div>
+		</div>
+		<div v-else-if="zoom === 2" class="sample-layout-head sample-layout-head-2">
+			<div class="sample-layout-head-section sample-layout-head-section-2">0м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-2">1м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-2">2м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-2">3м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-2">4м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-2"><span>5м.</span><span>6м.</span></div>
+		</div>
+		<div v-else-if="zoom === 3" class="sample-layout-head sample-layout-head-3">
+			<div class="sample-layout-head-section sample-layout-head-section-3">0м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-3">1м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-3">2м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-3">3м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-3">4м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-3">6м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-3">7м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-3">8м.</div>
+		</div>
+		<div v-else-if="zoom === 4" class="sample-layout-head sample-layout-head-4">
+			<div class="sample-layout-head-section sample-layout-head-section-4">0м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">1м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">2м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">3м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">4м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">6м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">7м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">8м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">9м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">10м.</div>
+			<div class="sample-layout-head-section sample-layout-head-section-4">11м.</div>
+		</div>
+		<tbody>
+			<tr v-for="(row, index) in layout" class="sample-layout-row">
+				<td v-for="(item, index) in row" 
+					:style="item.src ? 'background: url(' + item.src + '); transform: rotate(' + item.rotation + 'deg)' : 'background: rgba(255, 255, 255, 0)'" 
+					class="sample-layout-item"
+					:class="zoomed"
+					@mouseenter="layoutOverItem(item, $event.target)"
+					@mousedown.right="layoutClickItemClear(item, $event.target)"
+					@mousedown.left="layoutClickItem(item, $event.target)"
+					>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div v-show="modalVissible" @mousedown.self="modalToggle" class="modal-fade">
+		<div class="modal">
+			<p class="modal-title">Отправить заявку</p>
+			<form @submit.prevent="sendMail($event.target)">
+				<input class="modal-input" type="text" name="name" placeholder="Ваше имя" autocomplete="off" required>
+				<input class="modal-input" type="text" name="phone" placeholder="Ваш телефон" autocomplete="off" required>
+				<input type="hidden" name="arr" :value="arr">
+				<button type="submit" class="modal-input btn">Отправить</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+
+let sample = new Vue({
+	el: '.sample',
+	data: {
+		activeChosing: 1,
+		isMouseLeft: false,
+		isMouseRight: false,
+		layout: null,
+		zoom: 1,
+		ourPlate: [],
+		used: [],
+		arr: '',
+		modalVissible: false,
+	    imageChosen1: [
+			{
+				title: "010B",
+				src: "images/casset/010b.jpg",
+				price: 50
+			},
+			{
+				title: "802,1",
+				src: "images/casset/802,1.jpg",
+				price: 50
+			},
+			{
+				title: "802,2",
+				src: "images/casset/802,2.jpg",
+				price: 50
+			},
+			{
+				title: "A03",
+				src: "images/casset/a03.jpg",
+				price: 50
+			},
+				{
+					title: "A08",
+					src: "images/casset/a08.jpg",
+					price: 50
+				},
+				{
+					title: "B059",
+					src: "images/casset/b059.jpg",
+					price: 50
+				},
+				{
+					title: "B33",
+					src: "images/casset/B33.jpg",
+					price: 50
+				},
+				{
+					title: "B36",
+					src: "images/casset/B36.jpg",
+					price: 50
+				},
+				{
+					title: "B38",
+					src: "images/casset/B38.jpg",
+					price: 50
+				},
+				{
+					title: "B39",
+					src: "images/casset/B39.jpg",
+					price: 50
+				},
+				{
+					title: "B40",
+					src: "images/casset/B40.jpg",
+					price: 50
+				},
+				{
+					title: "B41",
+					src: "images/casset/b41.jpg",
+					price: 50
+				},
+				{
+					title: "B42",
+					src: "images/casset/b42.jpg",
+					price: 50
+				},
+				{
+					title: "B43",
+					src: "images/casset/b43.jpg",
+					price: 50
+				},
+				{
+					title: "B44",
+					src: "images/casset/b44_.jpg",
+					price: 50
+				},
+				{
+					title: "B45",
+					src: "images/casset/b45.jpg",
+					price: 50
+				},
+				{
+					title: "B46",
+					src: "images/casset/b46.jpg",
+					price: 50
+				},
+				{
+					title: "B48",
+					src: "images/casset/b48.jpg",
+					price: 50
+				},
+				{
+					title: "B49",
+					src: "images/casset/b49.jpg",
+					price: 50
+				},
+				{
+					title: "B51",
+					src: "images/casset/b51.jpg",
+					price: 50
+				},
+				{
+					title: "B52",
+					src: "images/casset/b52.jpg",
+					price: 50
+				},
+				{
+					title: "B53",
+					src: "images/casset/b53.jpg",
+					price: 50
+				},
+				{
+					title: "B54",
+					src: "images/casset/b54.jpg",
+					price: 50
+				},
+				{
+					title: "B55",
+					src: "images/casset/b55.jpg",
+					price: 50
+				},
+				{
+					title: "B56",
+					src: "images/casset/b56.jpg",
+					price: 50
+				},
+				{
+					title: "B57",
+					src: "images/casset/b57.jpg",
+					price: 50
+				},
+				{
+					title: "B58",
+					src: "images/casset/b58.jpg",
+					price: 50
+				},
+				{
+					title: "B60",
+					src: "images/casset/b60.jpg",
+					price: 50
+				},
+				{
+					title: "B62",
+					src: "images/casset/b62.jpg",
+					price: 50
+				},
+				{
+					title: "B63",
+					src: "images/casset/b63.jpg",
+					price: 50
+				},
+				{
+					title: "B64",
+					src: "images/casset/b64.jpg",
+					price: 50
+				},
+				{
+					title: "B65",
+					src: "images/casset/b65.jpg",
+					price: 50
+				},
+		],
+		imageChosen2: [
+			{
+				title: "C01",
+				src: "images/color/c01.jpg",
+				price: 50
+			},
+			{
+				title: "C02",
+				src: "images/color/c02.jpg",
+				price: 50
+			},
+			{
+				title: "C07",
+				src: "images/color/c07.jpg",
+				price: 50
+			},
+			{
+				title: "002B",
+				src: "images/color/002b.jpg",
+				price: 50
+			},
+			{
+				title: "3306",
+				src: "images/color/3306.jpg",
+				price: 50
+			},
+		],
+		imageChosen3: [
+			{
+				title: "Вентиляционная решетка",
+				src: "images/extra/1.jpg",
+				price: 250
+			},
+			{
+				title: "Светильник",
+				src: "images/extra/2.jpg",
+				price: 2000
+			},
+		],
+	  imageOurChoice: 
+		{
+			title: "010B",
+			src: "images/casset/010b.jpg",
+			price: 50
+		},
+		price: 0
+	},
+	methods: {
+		layoutOverItem(item, event) {
+			item.title = this.imageOurChoice.title
+			if(this.isMouseLeft || this.isMouseRight) {
+				if(this.isMouseLeft) {
+					if(item.src === this.imageOurChoice.src) {
+						item.rotation += 90
+					} else {
+						item.rotation = 0
+					}
+					item.price = this.imageOurChoice.price
+					this.priceCalc()
+					item.src = this.imageOurChoice.src
+				} else if (this.isMouseRight) {
+					item.src = ''
+					item.price = 0
+					this.priceCalc()
+				}
+			} else {
+				return false
+			}
+		},
+		layoutClickItem(e, item) {
+			e.title = this.imageOurChoice.title
+			if(e.src === this.imageOurChoice.src) {
+				e.rotation += 90
+			} else {
+				e.rotation = 0
+				e.src = this.imageOurChoice.src
+				e.price = this.imageOurChoice.price
+				this.priceCalc()
+			}
+		},
+		layoutClickItemClear(e, item) {
+			e.title = ''
+			e.src = ""
+			e.rotation = 0
+			e.price = 0
+			this.priceCalc()
+		},
+		onKeyDown(e) {
+			if(e.which === 1) {
+				this.isMouseLeft = true
+			} else if (e.which === 3) {
+				this.isMouseRight = true
+			} else {
+				this.isMouseLeft = false
+				this.isMouseRight = false
+			}
+	    },
+	    onKeyUp(e) {
+			if(e.which === 1) {
+				this.isMouseLeft = false
+			} else if (e.which === 3) {
+				this.isMouseRight = false
+			} else {
+				this.isMouseLeft = false
+				this.isMouseRight = false
+			}
+	    },
+	    imageChoose(image, e) {
+	    	this.imageOurChoice = image
+		},
+		zoomPlus() {
+			if(this.zoom <= 3) {
+				this.zoom = ++this.zoom
+				this.layout = layoutScheme(this.zoom)
+			} else {
+				this.zoom = this.zoom
+			}
+			this.priceCalc()
+		},
+		zoomMinus() {
+			if(this.zoom >= 2) {
+				this.zoom = --this.zoom
+				this.layout = layoutScheme(this.zoom)
+			} else {
+				this.zoom = this.zoom
+			}
+			this.priceCalc()
+		},
+		clearItems() {
+			for(let i = 0; i < this.layout.length; i++) {
+				for(let j = 0; j < this.layout[i].length; j++) {
+					this.layout[i][j].title = ''
+					this.layout[i][j].src = ''
+					this.layout[i][j].price = 0
+					this.priceCalc()
+				}
+			}
+		},
+		activeChosingMehod(payload) {
+			this.activeChosing = payload
+		},
+		priceCalc() {
+			let priceCalculate = 0
+			for (let i = 0; i < this.layout.length; i++) {
+				for (let j = 0; j < this.layout[i].length; j++) {
+					priceCalculate += this.layout[i][j].price
+					this.price = priceCalculate
+				}
+			}
+		},
+		modalToggle() {
+			this.modalVissible = !this.modalVissible
+			for (let i = 0; i < this.layout.length; i++) {
+				for (let j = 0; j < this.layout[i].length; j++) {
+					if (this.layout[i][j].price > 0) {
+						this.used.push(this.layout[i][j].title)
+					}
+				}
+			}
+			this.used.push(this.price + " " + "руб.")
+			this.arr = this.used.toString()
+		},
+		sendMail(form) {
+			
+			let data = new FormData(form)
+
+			fetch('send.php', {
+				method: "POST",
+				body: data
+			}).then(res => {
+
+			}).then(response => {
+					this.modalVissible = false
+					alert("Спасибо за вашу заявку!")
+				})
+				.catch(error => {
+					alert("Произошла ошибка, пожалуйста, попробуйте позже")
+				})
+			
+		}
+	},
+	computed: {
+		zoomed: function () {
+			return "zoom-" + this.zoom
+		},
+		isZoomBlocked: function () {
+			if(this.zoom === 1) {
+				return "blockMinus"
+			} else if(this.zoom === 4) {
+				return "blockPlus"
+			}
+		}
+	},
+	created() {
+		this.layout = layoutScheme(1)
+		document.addEventListener('mousedown', this.onKeyDown);
+	    document.addEventListener('mouseup', this.onKeyUp);
+	    document.oncontextmenu = function (e) {
+    		e.preventDefault();
+		};
+	},
+});
+</script>
+
+
+
+<style>
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+
+
+.sample {
+	width: 1000px;
+	margin: 30px auto;
+	user-select: none;
+}
+.sample-choice {
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	max-height: 400px; 
+	overflow-y: scroll;
+}
+
+.sample-choice-item {
+	height: 166px;
+	width: 16.6%;
+	cursor: pointer;
+	border:3px solid #fff;
+	margin: 0;
+	user-select: none;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+}
+
+.sample-layout {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	border-collapse: collapse;
+	padding: 0;
+}
+
+.sample-layout-head {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	width: 1001.5px;
+}
+
+.sample-layout-head-section {
+	padding: 5px 10px;
+	border-right:2px solid #000;
+	width: 33.3%;
+	display: flex;
+	justify-content: space-between
+}
+
+.sample-layout-head-section:nth-child(1) {
+	border-left:2px solid #000;
+	border-right:2px solid #000;
+}
+
+.sample-choice-item-active {
+	border:3px solid #0DB5E6;
+}
+
+.sample-layout-item {
+	width: 100px;
+	height: 100px;
+	border:2px solid #000;
+	transition-duration: .3s;
+	transition: transform .5s;
+	cursor: pointer;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	user-select: none;
+}
+.zoom-2 {
+	width: calc(100px / 2);
+	height: calc(100px / 2);
+}
+.zoom-3 {
+	width: calc(100px / 3);
+	height: calc(100px / 3);
+}
+.zoom-4 {
+	width: calc(100px / 4);
+	height: calc(100px / 4);
+}
+.zoomControl {
+	display: flex;
+	align-items: flex-start;
+	background:#0DB5E6;
+	width: 120px;
+	justify-content: center;
+	border-radius: 12px;
+	margin: 0px 10px;
+}
+.zoomControl-item {
+	margin: 0px 15px;
+	color:#fff;
+	font-size: 40px;
+	font-weight: bold;
+	cursor: pointer;
+	transition-duration: .2s;
+}
+.zoomControl-item:hover {
+	opacity: .7;
+	transition-duration: .2s;
+}
+.zoomControl-item:nth-child(2) {
+	margin-top: -3px;
+	letter-spacing: -2.5px;
+}
+.controls {
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+	justify-content: flex-end;
+}
+.clearItems {
+	background:#0DB5E6;
+	border-radius: 12px;
+	text-align: center;
+	color:#fff;
+	transition-duration: .2s;
+	width: 140px;
+	padding: 10px 0px;
+	font-size: 22px;
+	margin: 0px 10px;
+	cursor: pointer;
+}
+.clearItems:hover {
+	color:#ccc;
+	transition-duration: .2s;
+}
+.sample-layout-head-section-2 {
+	width: 16,6666666667%;
+}
+.sample-layout-head-2 {
+	width:1000.5px;
+}
+.sample-layout-head-section-3 {
+	width: 12.5%;
+}
+.sample-layout-head-3 {
+	width:1000.5px;
+}
+.sample-layout-head-section-4 {
+	width: 9.09090909091%;
+}
+.sample-layout-head-4 {
+	width:1000.5px;
+}
+.chosing {
+	display:flex;
+	align-content: center;
+	margin: 20px -5px;
+}
+.chosing-item {
+	margin: 0px 5px;
+	background: #0DB5E6;
+	color:#fff;
+	font-size: 18px;
+	padding: 5px 20px;
+	cursor: pointer;
+	transition-duration: .2s;
+}
+.chosing-item-active {
+	background: #2D465B;
+	transition-duration: .2s;
+}
+h1 {
+	margin: 20px 0px;
+}
+.modal-fade {
+	background:rgba(0, 0, 0, 0.75);
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top:0;
+	left:0;
+	display: flex;
+	overflow: hidden !important;
+  	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.modal {
+	width: 280px;
+	padding: 10px 20px;
+	border:1px solid #ccc;
+	background: #0DB5E6;
+	color:#fff;
+	margin: 0 auto !important;
+	position: absolute;
+	z-index: 9999;
+	text-align: center;
+	border-radius: 3px;
+	cursor: default;
+}
+.modal-title {
+	font-size: 26px;
+	margin: 20px 0px;
+}
+.modal-input {
+	width: 100%;
+	padding: 10px 10px;
+	border:none;
+	border-radius: 3px;
+	margin: 5px 0px;
+	font-size: 18px;
+}
+.btn {
+	cursor: pointer;
+	outline: none;
+	margin: 15px 0px;
+	background: #2D465B;
+	color:#fff;
+}
+@media screen and (max-width: 1200px) {
+	.sample {
+		width: 500px;
+	}
+	.sample-choice-item {
+		height: 83px; 
+	}
+	.sample-layout-head {
+		width: 501.5px;
+	}
+	.sample-layout-item {
+		width: 50px;
+		height: 50px;
+	}
+	.zoom-2 {
+		width: calc(50px / 2);
+		height: calc(50px / 2);
+	}
+	.zoom-3 {
+		width: calc(50px / 3);
+		height: calc(50px / 3);
+	}
+	.zoom-4 {
+		width: calc(50px / 4);
+		height: calc(50px / 4);
+	}
+	.sample-layout-head-2 {
+		width:500.5px;
+	}
+	.sample-layout-head-3 {
+		width:500.5px;
+	}
+	.sample-layout-head-4 {
+		width:500.5px;
+	}
+
+
+
+
+	@media screen and (max-width: 600px) {
+	.sample {
+		width: 250px;
+	}
+	.sample-choice-item {
+		height: 100px; 
+		width: 49%;
+	}
+	.sample-layout-head {
+		width: 251.5px;
+	}
+	.sample-layout-item {
+		width: 25px;
+		height: 25px;
+	}
+	.zoom-2 {
+		width: calc(25px / 2);
+		height: calc(25px / 2);
+	}
+	.zoom-3 {
+		width: calc(25px / 3);
+		height: calc(25px / 3);
+	}
+	.zoom-4 {
+		width: calc(25px / 4);
+		height: calc(25px / 4);
+	}
+	.sample-layout-head-2 {
+		width:250.5px;
+	}
+	.sample-layout-head-3 {
+		width:250.5px;
+	}
+	.sample-layout-head-4 {
+		width:250.5px;
+	}
+	.chosing {
+		display: block;
+	}
+	.chosing-item {
+		margin: 10px 0px;
+	}
+	.controls {
+		display: block;
+		justify-content: center;
+	}
+	.clearItems, .zoomControl {
+		margin: 10px auto;
+	}
+	.sample-layout-head-section-4 {
+		display: none;
+	}
+	.sample-layout-head-section-4:nth-child(1) {
+		display: block;
+		width: 20%;
+	}
+	.sample-layout-head-section-4:last-child {
+			display: block;
+		width: 20%;
+	}
+	.sample-layout-head-4 {
+		justify-content: space-between;
+	}
+	.sample-layout-head-section-3 {
+		display: none;
+	}
+	.sample-layout-head-section-3:nth-child(1) {
+		display: block;
+		width: 20%;
+	}
+	.sample-layout-head-section-3:last-child {
+			display: block;
+		width: 20%;
+	}
+	.sample-layout-head-3 {
+		justify-content: space-between;
+	}
+
+	.sample-layout-head-section-2 {
+		display: none;
+	}
+	.sample-layout-head-section-2:nth-child(1) {
+		display: block;
+		width: 20%;
+	}
+	.sample-layout-head-section-2:last-child {
+			display: block;
+		width: 20%;
+	}
+	.sample-layout-head-section-2:last-child span:nth-child(1) {
+			display: none;
+	}
+	.sample-layout-head-2 {
+		justify-content: space-between;
+	}
+}
+</style>
+</body>
+</html>
