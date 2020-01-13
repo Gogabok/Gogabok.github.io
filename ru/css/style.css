@@ -13959,13 +13959,13 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 * Sport table
 */
 .sport-table-header {
-	padding: 12px 23px 8px 23px;
+	padding: 6px 23px 5px 23px;
 	font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-	font-size: 14px;
+	font-size: 11px;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	color: #fff;
-	background-color: #616161;
+	background-color: rgba(97, 97, 97, 0.7);
 }
 
 .heading-component + .sport-table-header {
@@ -13977,7 +13977,7 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 }
 
 .sport-table-tr {
-	padding: 11px 15px;
+	padding: 5px 15px;
 	border-left: 1px solid #e1e1e1;
 	border-right: 1px solid #e1e1e1;
 	border-bottom: 1px solid #e1e1e1;
@@ -14001,6 +14001,7 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 	flex-direction: row;
 	justify-content: space-between;
 	padding-right: 10px;
+	align-items: center;
 }
 
 .sport-table-title-item {
@@ -14017,6 +14018,7 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 	font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.2;
+	font-weight: bold;
 }
 
 .sport-table-title-team {
@@ -14027,7 +14029,7 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 }
 
 .sport-table-title-team + .sport-table-title-team {
-	margin-top: 5px;
+	/* margin-top: 5px; */
 }
 
 .sport-table-title-score {
@@ -14069,6 +14071,7 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 .sport-table-wager-button-count {
 	font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	font-weight: 600;
+	font-size: 15px;
 }
 
 .sport-table-wager-button span {
@@ -14094,20 +14097,25 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 30px;
+	cursor: pointer;
 }
 
 .sport-table-bonus-count {
 	font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 500;
 	letter-spacing: 0.05em;
 	color: #151515;
+	text-align: center;
+	line-height: 14px;
 }
 
 .sport-table-bonus-icon {
 	display: flex;
 	font-size: 20px;
 	color: #9b9b9b;
+	line-height: 12px;
 }
 
 @media (min-width: 576px) {
@@ -23990,13 +23998,14 @@ p [data-toggle='tooltip'] {
 }
 
 .isotope-filters-list {
-	position: absolute;
+	/* position: absolute; */
 	z-index: 1;
-	padding: 15px;
+	padding: 5px;
+	margin-bottom: 20px;
 	background-color: #fff;
 	box-shadow: -3px 0px 50px -2px rgba(0, 0, 0, 0.09);
-	visibility: hidden;
-	opacity: 0;
+	/* visibility: hidden;
+	opacity: 0; */
 	display: flex;
 	flex-wrap: wrap;
 	transition: .3s ease-out opacity;
@@ -24070,10 +24079,10 @@ p [data-toggle='tooltip'] {
 		height: 52%;
 		top: 50%;
 		transform: translateY(-50%);
-		border-left: 1px solid #d8d8d8;
+		/* border-left: 1px solid #d8d8d8; */
 	}
 	.isotope-filters-list-item + .isotope-filters-list-item:nth-child(n + 6) {
-		border-top: 1px solid #d8d8d8;
+		/* border-top: 1px solid #d8d8d8; */
 	}
 	.isotope-filters-list-item + .isotope-filters-list-item:nth-child(6):before {
 		display: none;
@@ -24107,7 +24116,7 @@ p [data-toggle='tooltip'] {
 	.isotope-filters-list-item + .isotope-filters-list-item:nth-child(6):before {
 		display: block;
 	}
-	.isotope-filters-list-link.active:after {
+	/* .isotope-filters-list-link.active:after {
 		content: '';
 		position: absolute;
 		left: 50%;
@@ -24118,7 +24127,7 @@ p [data-toggle='tooltip'] {
 		border-width: 0 6px 6px 6px;
 		border-color: transparent transparent #2a2a2a transparent;
 		transform: translateX(-50%);
-	}
+	} */
 }
 
 .isotope-filters-info {
@@ -26859,4 +26868,269 @@ html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
 
 .matches-wrapper::-webkit-scrollbar-track  {
 	background: rgba(125, 125, 125, .1);
+}
+
+
+
+#sport-wrapper * {
+	user-select: none;
+}
+
+/* .isotope-item, .isotope {
+	height: auto !important;
+	position: static !important;
+	transform: none !important;
+} */
+
+.sport-table-title-team-extraInfo {
+	font-weight: 400;
+	opacity: 0.8;
+	/* letter-spacing: 0.1em; */
+}
+
+.sport-table-results-else {
+	color: #151515;
+	background-color: rgba(234, 236, 238, 0.25);
+	border: 1px solid rgb(234, 236, 238);
+	max-width: 100%;
+	padding: 12px;
+	border-radius: 5px;
+	font-size: 12px;
+	letter-spacing: 0.025em;
+	text-align: center;
+	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.sport-table-results-else:hover {
+	background-color: rgba(234, 236, 238, 0.2);
+}
+
+.sport-wrapper {
+	height: 700px;
+	overflow-y: auto;
+}
+
+.sport-navigation {
+	margin-bottom: 0px;
+}
+
+
+
+
+
+.sport-wrapper::-webkit-scrollbar {
+	width: 8px;
+}
+
+.sport-wrapper::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border: none;
+	border-radius: 0;
+	opacity: .2;
+}
+
+.sport-wrapper::-webkit-scrollbar-track  {
+	background: rgba(125, 125, 125, .1);
+}
+
+.modeToggler {
+	margin: 0px 15px -25px auto;
+	position: relative;
+	z-index: 999;
+}
+
+.loadMore {
+	margin: 0px auto;
+	padding: 3px 15px;
+	background: none;
+	border: 1px solid #000;
+	cursor: pointer;
+	font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	outline: none;
+	color: #000;
+	transition-duration: 0.2s;
+}
+
+.loadMore:hover {
+	background: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	transition-duration: 0.2s;
+}
+
+.sport-wrapper-preloader-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.sport-wrapper-preloader {
+	margin: 0px auto;
+}
+@media screen and (min-width: 600px) {
+	.fade-enter-active, .fade-leave-active {
+		transition-duration: .5s;
+	}
+	.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+		transform: scale(0);
+		opacity: 0;
+		height: 0px;
+		position: absolute;
+	}
+}
+
+.sport-table-icon-div {
+	margin-bottom: 0px;
+}
+
+.transition-isotope {
+	transform: scale(1);
+  transition-duration: .5s;
+	height: auto;
+	opacity: 1;
+}
+
+.modal-fade-sport {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	overflow: hidden;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* user-select: all !important; */
+}
+
+.modal-dialog-sport {
+	max-width: 370px;
+	width: calc(100% - 30px);
+	background: #fff;
+	position: relative;
+	z-index: 1001;
+}
+
+.modal-fade-sport * {
+	/* user-select: auto !important; */
+}
+
+.modal-body-sport {
+	max-height: 70vh;
+	overflow: auto;
+}
+
+.modal-body-sport::-webkit-scrollbar {
+	width: 4px;
+}
+
+.modal-body-sport::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border: none;
+	border-radius: 0;
+	opacity: .2;
+}
+
+.modal-body-sport::-webkit-scrollbar-track  {
+	background: rgba(125, 125, 125, .1);
+}
+
+.modal-header-sport {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px;
+	padding: 20px 29px;
+  color: #fff;
+  background-color: #2a2a2a;
+  border: 0;
+  border-radius: 0;
+}
+
+.modal-header-title-sport {
+	font-size: 18px;
+	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.close {
+	outline: none !important;
+}
+
+.close * {
+	outline: none !important;
+}
+
+.modal-body-sport {
+	margin: 15px 0px;
+	text-align: center;
+}
+
+.modal-sport-wager-title {
+	font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+	font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.modal-sport-confrontation {
+	color: #151515;
+	font-weight: 700;
+	font-size: 12px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.sport-value {
+	padding: 25px 0px;
+}
+
+.sport-value-button * {
+	user-select: none !important;
+}
+
+.modal-footer {
+	display: block;
+}
+
+.modal-sport-place:disabled {
+	opacity: 0.7;
+	cursor: default;
+}
+
+.modal-sport-place:disabled:hover {
+	background: #64b000;
+	border-color: #64b000;
+	color: #fff;
+}
+
+.modal-sport-live-extra {
+	margin-top: 15px;
+}
+
+.modal-sport-live-extra p {
+	text-align: left;
+	padding: 0px 15px;
+	margin-top: 0px;
+	line-height: 1.5;
+}
+
+.modal-sport-live-extra p span {
+	/* font-weight: 700; */
+	font-size: 15px;
+	color: #000;
+}
+
+.modal-sport-confrontation-extra {
+	margin-top: 0px;
+	padding: 0px 15px;
+}
+
+.sport-table-wager-button-extra {
+	width: calc(100% - 30px);
+	max-width:  calc(100% - 30px);
+	margin: 5px auto;
 }
