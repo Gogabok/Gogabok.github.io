@@ -1894,3 +1894,264 @@
 
 
 
+$("#bet-amount1").on('keyup', function () {
+	var current = $(this).val();
+	//console.log(current);
+	var multi = $("#multiplier").val();
+	multi = multi.slice(0, -1);
+	//console.log(multi);
+	$("#payout").val(rounded(multi * current));
+});
+
+$(".ch-coin").on('click', function () {
+	var link = $(this).find('img').attr('src');
+	$(".input-obj").find('img').attr('src', link);
+	$(".frame").find('img').attr('src', link);
+	$(".jackpot").find('img').attr('src', link);
+	$(".wagered").find('img').attr('src', link);
+	$(".profit").find('img').attr('src', link);
+});
+
+var trx = false;
+var lex = true;
+var btt = false;
+
+var dataWinCoin = '.lex-data ';
+// if (trx == true){
+//   dataWinCoin = '.trx-data ';
+// }else if(lex == true){
+//   dataWinCoin = '.lex-data ';
+// }else if(btt == true){
+//   dataWinCoin = '.btt-data ';
+// }
+
+$(".trx-coin").on('click', function () {
+	$('.trx-data').css('display', 'block');
+	$('.lex-data').css('display', 'none');
+	$('.btt-data').css('display', 'none');
+	trx = true;
+	lex = false;
+	btt = false;
+	dataWinCoin = '.trx-data ';
+	$("#bet-amount1").val('10');
+	var persentCurrent = handle2.text() - handle.text() - 1;
+	console.log(persentCurrent);
+	// console.log(handle2.text());
+	// console.log(handle.text());
+	$("#payout").val(rounded(doPayout(persentCurrent)));
+});
+
+$(".lex-coin").on('click', function () {
+	$('.trx-data').css('display', 'none');
+	$('.lex-data').css('display', 'block');
+	$('.btt-data').css('display', 'none');
+	trx = false;
+	lex = true;
+	btt = false;
+	dataWinCoin = '.lex-data ';
+	$("#bet-amount1").val('1');
+	var persentCurrent = handle2.text() - handle.text() - 1;
+	console.log(persentCurrent);
+	// console.log(handle2.text());
+	// console.log(handle.text());
+	$("#payout").val(rounded(doPayout(persentCurrent)));
+});
+
+$(".btt-coin").on('click', function () {
+	$('.trx-data').css('display', 'none');
+	$('.lex-data').css('display', 'none');
+	$('.btt-data').css('display', 'block');
+	trx = false;
+	lex = false;
+	btt = true;
+	dataWinCoin = '.btt-data ';
+	$("#bet-amount1").val('500');
+	var persentCurrent = handle2.text() - handle.text() - 1;
+	console.log(persentCurrent);
+	// console.log(handle2.text());
+	// console.log(handle.text());
+	$("#payout").val(rounded(doPayout(persentCurrent)));
+});
+
+
+
+function randomInteger(min, max) {
+	// получить случайное число от (min-0.5) до (max+0.5)
+	let rand = min - 0.5 + Math.random() * (max - min + 1);
+	return Math.round(rand);
+}
+
+// var subOdometr = document.querySelector(".subs-odometer");
+// var odometr = new Odometer({
+//   el: subOdometr,
+//   minIntegerLen: 2,
+//   format: 'dd',
+//   //animation: 'count'
+
+// });
+//odometr.update(randomInteger(0, 99));
+var wCont = $('.scroll-nums').width();
+wCont /= 2;
+var wDefault = '-' + (146 * 45) + 'px';
+console.log(wDefault);
+$(".scroll-nums-abs").css({ left: wDefault });
+
+// Roll active
+$(".roll").on('click', function () {
+	var rand = randomInteger(0, 99);
+	var wBlock = 146;
+	var wCont = $('.scroll-nums').width();
+	wCont /= 2;
+	console.log(wCont);
+	var posRand = '-' + ((rand - 1) * wBlock - (wCont - 99)) + 'px';
+
+	$(".scroll-nums-abs>div").css({
+		'font-size': '60px',
+		'color': '#f1cd5b'
+	});
+
+	$(".scroll-nums-abs").animate({
+		left: posRand,
+	}, 3000, function () {
+		var prev = rand - 1;
+		var next = rand + 1;
+		$('.roll-' + rand).animate({
+			'font-size': '80px',
+			'color': '#ffffff'
+		}, 1000);
+		$('.roll-' + prev + ', .roll-' + next).animate({
+			'font-size': '65px',
+			'color': '#ffffff'
+		}, 1000);
+	});
+
+	//$(".odometer").html(rand);
+	var myAudioWin = $('#audio2')[0];
+	setTimeout(function () {
+		//var a = $(".odometer").text();
+		//var b = $(".prediction .num").text();
+
+
+
+		var b1 = $("#bet-amount1").val();
+		var b2 = $(dataWinCoin + '.wagered span').text();
+		var wagered = +b1 + +b2;
+		$(dataWinCoin + '.wagered span').text(wagered);
+
+		var range1 = $("#custom-handle").text();
+		var range2 = $("#custom-handle2").text();
+
+		if (rand > range1 && rand < range2) {
+			myAudioWin.play();
+			var a1 = $("#payout").val();
+			var a2 = $(dataWinCoin + '.profit span').text();
+			var res = +a1 + +a2;
+			// console.log('a ' + a1);
+			// console.log('b' + a2);
+			// console.log('res ' + res);
+			$(".frame .plus").text(a1);
+			$(dataWinCoin + '.profit span').text(rounded(res));
+		}
+		// if (rand == range1 || rand == range2) {
+		//   myAudioWin.play();
+		//   var a1 = $("#payout").val();
+		//   var a2 = $(dataWinCoin + '.profit span').text();
+		//   var res = +a1 + +a2;
+		//   // console.log('a ' + a1);
+		//   // console.log('b' + a2);
+		//   // console.log('res ' + res);
+		//   $(".frame .plus").text(a1);
+		//   $(dataWinCoin + '.profit span').text(rounded(res));
+		// }
+
+
+	}, 2500);
+
+});
+
+
+
+
+$("a.bet-2x").on('click', function (e) {
+	if (trx) {
+		if ($("#bet-amount1").val() == 10000 || $("#bet-amount1").val() > 4999) return false;
+	}
+	if (lex) {
+		if ($("#bet-amount1").val() == 1000 || $("#bet-amount1").val() > 500) return false;
+	}
+	if (btt) {
+		if ($("#bet-amount1").val() == 10000 || $("#bet-amount1").val() > 4999) return false;
+	}
+	var current = $("#bet-amount1").val() * 2;
+	$("#bet-amount1").val(current);
+	//console.log(current);
+	var multi = $("#multiplier").val();
+	multi = multi.slice(0, -1);
+	//console.log(multi);
+	$("#payout").val(rounded(multi * current));
+
+});
+
+$("a.bet-half").on('click', function (e) {
+	if (trx) {
+		if ($("#bet-amount1").val() == 10 || $("#bet-amount1").val() < 20) return false;
+	}
+	if (lex) {
+		if ($("#bet-amount1").val() == 1 || $("#bet-amount1").val() < 2) return false;
+	}
+	if (btt) {
+		if ($("#bet-amount1").val() == 500 || $("#bet-amount1").val() < 1000) return false;
+	}
+	var current = $("#bet-amount1").val() / 2;
+	$("#bet-amount1").val(current);
+	var multi = $("#multiplier").val();
+	multi = multi.slice(0, -1);
+	$("#payout").val(rounded(multi * current));
+});
+
+$("a.bet-min").on('click', function (e) {
+	var current = 1;
+	if (trx) {
+		current = 10;
+	}
+	if (lex) {
+		current = 1;
+	}
+	if (btt) {
+		current = 500;
+	}
+	//e.preventDefault();
+	//var current = 1;
+	$("#bet-amount1").val(current);
+	//console.log(current);
+	var multi = $("#multiplier").val();
+	multi = multi.slice(0, -1);
+	//console.log(multi);
+	$("#payout").val(rounded(multi * current));
+});
+
+$("a.bet-max").on('click', function (e) {
+
+	var current = 10000;
+	if (trx) {
+		current = 10000;
+	}
+	if (lex) {
+		current = 1000;
+	}
+	if (btt) {
+		current = 10000;
+	}
+	$("#bet-amount1").val(current);
+	//console.log(current);
+	var multi = $("#multiplier").val();
+	multi = multi.slice(0, -1);
+	//console.log(multi);
+	$("#payout").val(rounded(multi * current));
+});
+
+
+
+$(window).scroll(function () {
+	$('.header-menu').css('top', $(this).scrollTop() + "px");
+});

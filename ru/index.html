@@ -15,9 +15,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <!-- <link rel="stylesheet" href="css/fonts.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/styleBITLEX.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -32,118 +33,275 @@
     <!-- Page-->
     <div class="page">
         <!-- Page Header-->
-        <header class="section page-header rd-navbar-dark">
-            <!-- RD Navbar-->
-            <div class="rd-navbar-wrap">
-                <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="166px" data-xl-stick-up-offset="166px" data-xxl-stick-up-offset="166px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-                    <div class="rd-navbar-panel">
-                        <!-- RD Navbar Toggle-->
-                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-main"><span></span></button>
-                        <!-- RD Navbar Panel-->
-                        <div class="rd-navbar-panel-inner container">
-                            <div class="rd-navbar-panel-item rd-navbar-panel-item-left">
-                                <ul class="list-inline list-inline-sm">
-                                    <li><a class="link link-classic" href="news.html">Новости</a></li>
-                                    <li class="link link-classic"><a class="link link-classic" href="promotions.html">Акции</a>
-                                </ul>
+        <div class="header-menu">
+            <header id="header">
+                <div class="container-nav">
+                    <nav class="navigation">
+                        <div class="navigation-item-container navigation-hrefs">
+                            <a href="https://bitlex.pro/WhitePaper.pdf" class="navigation-item-container-item" target="_blank">
+                                Белая бумага
+                            </a>
+                            <a id="7" href="RU.html#roadmap" class="navigation-item-container-item">
+                                Дорожная карта
+                            </a>
+                            <a class="navigation-item-container-item faq-trigger">
+                                FAQ
+                            </a>
+                            <a href="https://bitlex.pro/token/ru/" class="navigation-item-container-item" target="_blank">
+                                Токен
+                            </a>
+                        </div>
+                        <div class="navigation-item-container-wrapper-socials navigation-item-container-wrapper-socials-2">
+                            <a href="https://twitter.com/BitlexPlatform" class="navigation-scnd-item-container-image"
+                                target="_blank">
+                                <img src="images/social-1.png" alt="">
+                            </a>
+                            <a href="https://t.me/BITLEXru" class="navigation-scnd-item-container-image" target="_blank">
+                                <img src="images/social-2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="navigation-item-container navigation-statistic">
+                            <p href="#" class="navigation-item-container-item">
+                                Ставок <span class="navigation-item-container-item-boldText totalBets"><i
+                                        class="fa fa-spinner fa-spin"></i></span>
+                            </p>
+                            <p href="#" class="navigation-item-container-item">
+                                Игроков <span class="navigation-item-container-item-boldText gamersCount"><i
+                                        class="fa fa-spinner fa-spin"></i></span>
+                            </p>
+                            <p href="#" class="navigation-item-container-item">
+                                Дивиденды <span class="navigation-item-container-item-boldText"><span class="totalDivs"><i
+                                            class="fa fa-spinner fa-spin"></i></span> TRX</span>
+                            </p>
+                        </div>
+                        <div class="navigation-item-container">
+                            <div class="navigation-item-container-item-wrapper">
+                                <a href="RU.html#cabinet">
+                                    <img class="navigation-item-container-item-wrapper-image" src="images/tronlink.png" alt="">
+                                    <span class="navigation-item-container-wrapper-user-name">TronLink <i
+                                            class="fa fa-spinner fa-spin"></i></span>
+                                </a>
                             </div>
-                            <div class="rd-navbar-collapse rd-navbar-panel-item rd-navbar-panel-item-right">
-                                <ul class="list-inline list-inline-bordered">
-                                    <li>
-                                        <ul class="main__menu home__ul">
-                                            <li class="drop"><a class="cart__link cart__link__2">language</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Русский</a></li>
-                                                    <li><a href="../en/index.html">Английский</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="badge badge-primary" href="#">Регистрация</a></li>
-                                    <li><a class="link link-icon link-icon-left link-classic" href="login-page.html"><span class="icon fl-bigmug-line-login12"></span><span class="link-icon-text">Аккаунт</span></a></li>
-                                </ul>
+                            <div class="lang-wrapper">
+                                <div class="navigation-item-container-item-wrapper langToggle">
+                                    <img class="navigation-item-container-item-wrapper-image" src="images/flag.png" alt="">
+                                    <p class="navigation-item-container-item-wrapper-text">Русский</p>
+                                    <img class="navigation-item-container-item-wrapper-image navigation-item-container-item-wrapper-image-disNoneMobile"
+                                        src="images/arrow-btn.png" alt="">
+                                </div>
+                                <div class="langmenu">
+                                    <a href="/DAPPS/_RU.html" class="navigation-item-container-item-wrapper langToggle">
+                                        <img class="navigation-item-container-item-wrapper-image" src="images/flag.png" alt="">
+                                        <p class="navigation-item-container-item-wrapper-text">Русский</p>
+                                    </a>
+                                    <a href="/DAPPS/" class="navigation-item-container-item-wrapper langToggle">
+                                        <img class="navigation-item-container-item-wrapper-image" src="images/flag-en.png" alt="">
+                                        <p class="navigation-item-container-item-wrapper-text">English</p>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+        
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <section class="header-disnone-1" id="header-scnd">
+                <div class="container-nav">
+                    <div class="navigation-scnd">
+                        <div class="navigation-item-container">
+                            <a id="back" href="/index-ru.html" class="navigation-scnd-item-container" style="margin:0;">
+        
+                                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+                                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                    xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="22" height="22"
+                                    viewBox="0 0 5.8208332 5.8208335" version="1.1" id="svg8"
+                                    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)" sodipodi:docname="go-previous.svg">
+                                    <defs id="defs2" />
+                                    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0"
+                                        inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="11.313708"
+                                        inkscape:cx="7.8305055" inkscape:cy="11.593276" inkscape:document-units="mm"
+                                        inkscape:current-layer="layer1" showgrid="true" units="px" inkscape:window-width="1360"
+                                        inkscape:window-height="718" inkscape:window-x="0" inkscape:window-y="24"
+                                        inkscape:window-maximized="1">
+                                        <inkscape:grid type="xygrid" id="grid10" />
+                                    </sodipodi:namedview>
+                                    <metadata id="metadata5">
+                                        <rdf:RDF>
+                                            <cc:Work rdf:about="">
+                                                <dc:format>image/svg+xml</dc:format>
+                                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                                <dc:title></dc:title>
+                                            </cc:Work>
+                                        </rdf:RDF>
+                                    </metadata>
+                                    <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1"
+                                        transform="translate(0,-291.17915)">
+                                        <path
+                                            style="fill:none;stroke:#fff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                                            d="m 2.9104167,292.23748 -2.11666671,1.85209 2.11666661,2.11666" id="path12"
+                                            inkscape:connector-curvature="0" sodipodi:nodetypes="ccc" />
+                                        <path sodipodi:nodetypes="ccc" inkscape:connector-curvature="0" id="path822"
+                                            d="M 5.2916667,292.23748 3.175,294.08957 l 2.1166666,2.11666"
+                                            style="fill:none;stroke:#fff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.52147239" />
+                                    </g>
+                                </svg>
+                            </a>
+                            <a href="/DAPPS/_RU.html" class="navigation-scnd-item-container logo">
+                                <img src="images/logo.png" alt="">
+                            </a>
+                            <div class="navigation-scnd-item-container">
+                                <p class="navigation-scnd-item-container-text"><span class="dividend">Дивиденды</span>
+                                    &nbsp;&nbsp;&nbsp; <a href='https://bitlex.pro/tournament/ru/'><span
+                                            class="tournament_link">Турнир</span></a></p>
+                            </div>
+                        </div>
+                        <div class="navigation-item-container container-block-balance">
+                            <div class="nav-valutes-wrapper">
+                                <div class="navigation-scnd-item-container-2">
+                                    <p class="navigation-scnd-item-container-2-text active-value" id="1">TRX</p>
+                                </div>
+                            </div>
+                            <div class="navigation-scnd-item-container navigation-scnd-item-container-balances ">
+                                <p class="navigation-scnd-item-container-text-boldText pricing pricing-1"><i
+                                        class="fa fa-spinner fa-spin"></i></p>
+                                <p class="navigation-scnd-item-container-text-boldText pricing pricing-2"><i
+                                        class="fa fa-spinner fa-spin"></i></p>
+                            </div>
+                            <div class="nav-valutes-wrapper">
+                                <div class="navigation-scnd-item-container-2">
+                                    <p class="navigation-scnd-item-container-2-text" id="2">LEX</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="navigation-item-container navigation-item-container-menu">
+                            <div class="navigation-item-container-wrapper-socials navigation-item-container-wrapper-socials-1">
+                                <button class="headerJack-btns-item btn-1 take-trigger">Пополнить</button>
+                                <button class="headerJack-btns-item btn-2 get-trigger">Вывести</button>
+        
+                                <a href="https://twitter.com/BitlexPlatform" class="navigation-scnd-item-container-image"
+                                    target="_blank">
+                                    <img src="images/social-1.png" alt="">
+                                </a>
+                                <a href="https://t.me/BITLEXru" class="navigation-scnd-item-container-image" target="_blank">
+                                    <img src="images/social-2.png" alt="">
+                                </a>
+                            </div>
+                            <!--a id="8" class="navigation-item-container-wrapper-user">
+        						<img class="navigation-item-container-wrapper-user-image" src="img/user-logo.png" alt="">
+        						
+        					</a-->
+                        </div>
+                        <div class="navigation-item-container-menu-2">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+        
+                    </div>
+                    <div id="header-scnd-menu-1">
+                        <p class="text-center">
+                            <button class="headerJack-btns-item btn-1 take-trigger" style="display:inline">Пополнить</button>
+                            <button class="headerJack-btns-item btn-2 get-trigger" style="display:inline">Вывести</button>
+                        </p>
+        
+                        <a class="header-scnd-menu-item">Кабинет</a>
+                        <p class="header-scnd-menu-item rules-trigger">Правила</p>
+                        <p class="header-scnd-menu-item honestGame">Честность</p>
+                        <a href="#" class="header-scnd-menu-item">Белая бумага</a>
+                        <a href="RU.html#roadmap" class="header-scnd-menu-item">Дорожная карта</a>
+                        <a target="_blank" class="header-scnd-menu-item faq-trigger">FAQ</a>
+                        <a href="RU.html#jackpots" class="games-jackpot-2">10 ДЖЕКПОТОВ - <span class='allJackPots'><i
+                                    class="fa fa-spinner fa-spin"></i></span></a>
+                    </div>
+                </div>
+            </section>
+        
+            <section id="header-thrd">
+                <div class="container-nav">
+                    <div class="games-wrapper">
+                        <div class="games">
+                            <div class="games-jackpot games-item-active games-jackpot-1">
+                                <a href="RU.html#jackpots">10 ДЖЕКПОТОВ - <span class='allJackPots'><i
+                                            class="fa fa-spinner fa-spin"></i></span></a>
+                            </div>
+                            <div class="games-item games-item-active">
+                                <a href="RU.html#dice">
+                                    <img src="images/game-1.png" alt="">
+                                    <p class="games-item-text" style="line-height:25px">Dice</p>
+                                </a>
+                            </div>
+                            <div class="games-item">
+                                <a href="RU.html#new-dice">
+                                    <img src="images/game-6.svg" alt="">
+                                    <p class="games-item-text" style="line-height:25px">New Dice</p>
+                                </a>
+                            </div>
+                            <div class="games-item">
+                                <a href="RU.html#x50">
+                                    <img src="images/game-2.png" alt="">
+                                    <p class="games-item-text" style="line-height:25px">x50</p>
+                                </a>
+                            </div>
+                            <div class="games-item">
+                                <a href="RU.html#space">
+                                    <img src="images/game-5.png" alt="">
+                                    <p class="games-item-text" style="line-height:25px">Space</p>
+                                </a>
+                            </div>
+                            <div class="games-item">
+                                <a href="RU.html#games">
+                                    <img src="images/game-4.png" alt="">
+                                    <p class="games-item-text" style="line-height:25px">Больше игр</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="rules">
+                            <a href="#" class="rules-title rules-trigger rules-title-header-menu-2">Правила</a>
+                            <a href="#" class="rules-title rules-title-header-menu-2 honestGame">Честность</a>
+                            <p style="margin: 0px;white-space:nowrap" class="header-scnd-menu-item dividendMobile"><span
+                                    class="dividend">Дивиденды</span> &nbsp;&nbsp;&nbsp; <a
+                                    href='https://bitlex.pro/tournament/ru/'><span class="tournament_link">Турнир</span></a></p>
+                            <a href="#" id="gamesRouter" class="rules-title rules-title-game">Игры</a>
                         </div>
                     </div>
-                    <div class="rd-navbar-main">
-                        <div class="rd-navbar-main-top">
-                            <div class="rd-navbar-main-container container">
-                                <!-- RD Navbar Brand-->
-                                <div class="rd-navbar-brand">
-                                    <!-- Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-213x82.png" alt="" width="300" height="141" /><img class="brand-logo-light" src="images/logo-inverse-213x82.png" alt="" width="300" height="241" /></a>
-                                </div>
-                                <!-- RD Navbar Search-->
-                                <div class="rd-navbar-search">
-                                    <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
-                                    <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
-                                        <div class="form-wrap">
-                                            <label class="form-label" for="rd-navbar-search-form-input">Введите ваш запрос</label>
-                                            <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
-                                            <div class="rd-search-results-live" id="rd-search-results-live"></div>
-                                        </div>
-                                        <button class="rd-search-form-submit fl-budicons-launch-search81" type="submit"></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rd-navbar-main-bottom rd-navbar-darker">
-                            <div class="rd-navbar-main-container container">
-                                <!-- RD Navbar Nav-->
-                                <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item active">
-                                        <div class="con-tooltip bottom">
-                                            <a class="nav-link page-scroll nav_item" href="../../index-ru.html">
-                                                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="22" height="22" viewBox="0 0 5.8208332 5.8208335" version="1.1" id="svg8" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)" sodipodi:docname="go-previous.svg">
-                                                    <defs id="defs2" />
-                                                    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="11.313708" inkscape:cx="7.8305055" inkscape:cy="11.593276" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="true" units="px" inkscape:window-width="1360" inkscape:window-height="718" inkscape:window-x="0" inkscape:window-y="24" inkscape:window-maximized="1">
-                                                        <inkscape:grid type="xygrid" id="grid10" />
-                                                    </sodipodi:namedview>
-                                                    <metadata id="metadata5">
-                                                        <rdf:RDF>
-                                                            <cc:Work rdf:about="">
-                                                                <dc:format>image/svg+xml</dc:format>
-                                                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                                                                <dc:title></dc:title>
-                                                            </cc:Work>
-                                                        </rdf:RDF>
-                                                    </metadata>
-                                                    <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-291.17915)">
-                                                        <path style="fill:none;stroke:#fff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="m 2.9104167,292.23748 -2.11666671,1.85209 2.11666661,2.11666" id="path12" inkscape:connector-curvature="0" sodipodi:nodetypes="ccc" />
-                                                        <path sodipodi:nodetypes="ccc" inkscape:connector-curvature="0" id="path822" d="M 5.2916667,292.23748 3.175,294.08957 l 2.1166666,2.11666" style="fill:none;stroke:#fff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.52147239" />
-                                                    </g>
-                                                </svg>
-                                            </a>
-                                            <div class="tooltip ">
-                                                <p>На стартовую страницу</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Line</a>
-                                    </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="in-play.html">Live</a>
-                                    </li>
-                                    </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="statistics.html">Статистика</a>
-                                    </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="results.html">Результаты</a>
-                                    </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Помощь</a>
-                                    </li>
-                                </ul>
-                                <div class="rd-navbar-main-element">
-                                    <ul class="list-inline list-inline-sm">
-                                        <li><a class="icon icon-xs fa fa-youtube" href=" https://www.youtube.com/channel/UCV30t1xw5r98zG5gVDB_GtQ"></a></li>
-                                        <li><a class="icon icon-xs fa fa-telegram" href="https://t.me/BITLEXru"></a></li>
-                                        <li><a class="icon icon-xs fa fa-twitter" href="https://twitter.com/BitlexPlatform"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div id="header-scnd-menu-2">
+                    <div class="games-item-menu-2 games-item-active">
+                        <a href="RU.html#dice">
+                            <img src="images/game-1.png" alt="">
+                            <p class="games-item-text-menu-2">Dice</p>
+                        </a>
                     </div>
-                </nav>
-            </div>
-        </header>
+                    <div class="games-item-menu-2">
+                        <a href="RU.html#new-dice">
+                            <img src="images/game-6.svg" alt="">
+                            <p class="games-item-text-menu-2">New Dice</p>
+                        </a>
+                    </div>
+                    <div class="games-item-menu-2">
+                        <a href="RU.html#x50">
+                            <img src="images/game-2.png" alt="">
+                            <p class="games-item-text-menu-2">x50</p>
+                        </a>
+                    </div>
+                    <div class="games-item-menu-2">
+                        <a href="RU.html#space">
+                            <img src="images/game-5.png" alt="">
+                            <p class="games-item-text-menu-2">SPACE</p>
+                        </a>
+                    </div>
+                    <div class="games-item-menu-2">
+                        <a href="RU.html#games">
+                            <img src="images/game-4.png" alt="">
+                            <p class="games-item-text-menu-2">БОЛЬШЕ ИГР</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
         <!-- Swiper-->
         <section class="section swiper-container swiper-slider swiper-classic bg-gray-2" data-loop="true" data-autoplay="4000" data-simulate-touch="false" data-slide-effect="fade">
             <div class="swiper-wrapper">
@@ -1244,13 +1402,568 @@
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
+
+
+
+
+
+
+
+<div class="modals text-left">
+    <div class="blur" id="faqModal" style="display: none;">
+        <div class="modalfaq">
+            <div class="faq-pages">
+                <div class="faq-page">
+                    <div class="game-rule">
+                        <div class="game-rule-head-2">
+                            <div class="game-title">
+                                <p class="games-item-text games-item-title">Faq</p>
+                            </div>
+                            <img class="close" id="faqModalClose" src="images/close.svg" alt="">
+                        </div>
+                        <div class="game-rule-content modal-cont">
+                            <div class="faq-item">
+                                <div class="game-rule-content-item">
+                                    <p class="game-rule-content-text">Что такое Crypto Games?</p>
+                                    <img src="images/faq-arrow.svg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <p class="item-content-text">Ключевое слово «Крипто» привносит два аспекта в систему
+                                        онлайн-игр.
+                                        Криптографические
+                                        хеш-функции, используемые в
+                                        технологии Blockchain, гарантируют доказанную справедливость в системе игр. В
+                                        ставках используются
+                                        известные
+                                        криптовалюты (TRON и BTT) вместо реальных или виртуальных денег, которые
+                                        принесут огромную пользу игрокам.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="game-rule-content-item">
+                                    <p class="game-rule-content-text">Как мне залогинится чтоб играть на сайте?</p>
+                                    <img src="images/faq-arrow.svg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <p class="item-content-text">Установите приложение Tronlink
+                                        <a target="_blank"
+                                            href="https://chrome.google.com/webstore/detail/tronlink%EF%BC%88%E6%B3%A2%E5%AE%9D%E9%92%B1%E5%8C%85%EF%BC%89/ibnejdfjmmkpcnlpebklmnkoeoihofec">(https://chrome.google.com/webstore/detail/tronlink%EF%BC%88%E6%B3%A2%E5%AE%9D%E9%92%B1%E5%8C%85%EF%BC%89/ibnejdfjmmkpcnlpebklmnkoeoihofec)</a>.
+                                        Наш сайт использует Tronlink. Происходит автоматическая авторизация, без имейлов
+                                        и паролей.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="game-rule-content-item">
+                                    <p class="game-rule-content-text">Что такое токен LEX и для чего он используется?
+                                    </p>
+                                    <img src="images/faq-arrow.svg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <p class="item-content-text">Token LEX - это токен TRC20 в блокчейне TRON (Вы можете
+                                        добавить свои LEX токены
+                                        в Tron
+                                        Link. Выберите раздел токенов и нажмите добавить адрес
+                                        («TDdrgts4Lh2YCmVKY4yK5wr14rJ3qqkaRS»). Как только
+                                        ваши
+                                        токены LEX будут добавлены, вы можете использовать их на свое усмотрение.</p>
+                                    <p class="item-content-text">Всего может быть добыто 100 000 000 токенов. Владельцам
+                                        токенов LEX будут
+                                        выплачиваться
+                                        дивиденды в TRX в зависимости от количества принадлежащих им токенов LEX.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="game-rule-content-item">
+                                    <p class="game-rule-content-text">Как получить LEX?</p>
+                                    <img src="images/faq-arrow.svg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <p class="item-content-text">LEX можно получить, просто играя на платформе BITLEX.
+                                        Используя TRX для игр на
+                                        платформе BITLEX, вы сможете получить LEX
+                                        независимо от того, выиграете вы или проиграете. Играй на 900 TRX и получай 1
+                                        LEX. 5% от общей эмисси
+                                        токенов LEX
+                                        продаются на ICO для получения инвесторами дивидендов с биржи и ставок на спорт.
+                                        Токены с ICO будут
+                                        разморожены ровно
+                                        через 100 дней после старта ICO.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="game-rule-content-item">
+                                    <p class="game-rule-content-text">Почему токены LEX в перспективе будут стоить
+                                        дороже?</p>
+                                    <img src="images/faq-arrow.svg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <p class="item-content-text">Мы молодая и сильная команда по разработке TRON DAPPS
+                                        приложений. У нас есть
+                                        видение как наша компания будет развиваться
+                                        и где мы будем через год.Мы будем внедрять в нашу платформу много новый
+                                        интересных и популярных игр в сфере
+                                        гемблинга,
+                                        ставки на спорт и мощную биржу, что будет толкать цену наших токенов LEX вверх.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="game-rule-content-item">
+                                    <p class="game-rule-content-text">Дивиденды</p>
+                                    <img src="images/faq-arrow.svg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <p class="item-content-text">Дивиденды начисляются в размере 0.6% от каждой ставки,
+                                        накапливаются в течении 10 минут и распределяются между держателями намайненых
+                                        токенов LEX<br>
+                                        <br>В верхней части сайта указана цифра дивидендов, которая ранее была начислена
+                                        держателям токенов. Новые игроки будут получать дивиденды, поступающие после их
+                                        вступления в игру.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="game-rule-content-item">
+                                    <p class="game-rule-content-text">Правила и условия майнинга</p>
+                                    <img src="images/faq-arrow.svg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <p class="item-content-text">Сложность добычи(майнинга) LEX плавно растёт в
+                                        соотношении с ростом кол-ва добытых монет по формуле:
+                                        <br><br>
+                                        LEX NUM =<br>[TRX bet] X ([MAX LEX] - [ALL LEX]) / 765 / [MAX LEX]
+
+                                        <br><br>MAX LEX = 100 000 000 LEX
+                                        <br>1-15,000,000 LEX сложность 900 TRX
+                                        <br>15,000,000 to 25,000,000 LEX сложность 900-1200 TRX
+                                        <br>25,000,000 to 50,000,000 LEX сложность 1200-2000 TRX
+                                        <br>50,000,000 to 75,000,000 LEX сложность 2000-3060 TRX
+
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="game-rule-content-item">
+                                    <p class="game-rule-content-text">Реферальная программа</p>
+                                    <img src="images/faq-arrow.svg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <p class="item-content-text">Получайте вознаграждение просто пригласив своих друзей!
+                                        Получайте 10% всех добытых ими токенов LEX. Для получения вознаграждения вам
+                                        необходимо быть зарегистрированным и сыграть хотя бы один раз.
+                                    </p>
+                                    <p id="ref-copy" class="item-content-text ref-copy">
+                                        https://bitlex.pro/DAPPS/RU.html?ref=<span class='your_wallet'></span>
+                                    </p>
+                                    <button id="ref-copy-btn"
+                                        onclick="copyToClipboard('#ref-copy')">Скопировать</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blur" id="rulesModal" style="display: none;">
+        <div class="modalrules">
+            <div class="rules-page">
+                <div class="game-rule">
+                    <div class="game-rule-head-2">
+                        <div class="game-title">
+                            <p class="games-item-text">Правила игры</p>
+                        </div>
+                        <img class="close" id="rulesModalClose" src="images/close.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="modal-cont">
+                    <div class="game-rule">
+                        <div class="game-rule-head">
+                            <div class="game-title">
+                                <img src="images/game-1.png" alt="">
+                                <p class="games-item-text">Dice</p>
+                            </div>
+                        </div>
+                        <div class="game-rule-content">
+                            <div style="padding: 10px 0px;">
+                                <p class="game-rule-content-text">Установите СТАВКУ. Это сумма TRX, на которую вы будете
+                                    делать ставки.</p>
+                                <ul class="game-rule-content-list">
+                                    <li class="game-rule-content-list-item">
+                                        <div class="game-rule-content-list-item-counter">1</div>
+                                        <p class="game-rule-content-text">Вы можете отрегулировать ползунок или ввести
+                                            прогнозируемое число.</p>
+                                    </li>
+                                    <li class="game-rule-content-list-item">
+                                        <div class="game-rule-content-list-item-counter">2</div>
+                                        <p class="game-rule-content-text">Когда вы перемещаете ползунок, ваши выплаты и
+                                            шансы на выигрыш будут
+                                            корректироваться автоматически</p>
+                                    </li>
+                                    <li class="game-rule-content-list-item">
+                                        <div class="game-rule-content-list-item-counter">3</div>
+                                        <p class="game-rule-content-text">Нажмите ROLL, чтобы сделать ставку. Smart
+                                            contract случайным образом будет
+                                            генерировать число LUCKY от 0 до 99.</p>
+                                    </li>
+                                    <li class="game-rule-content-list-item">
+                                        <div class="game-rule-content-list-item-counter">4</div>
+                                        <p class="game-rule-content-text" style="display: block">Если счастливое число
+                                            окажется выше вашего прогноза, вы <span
+                                                class="game-rule-content-text-bold">Выигрываете!</span></p>
+                                    </li>
+                                </ul>
+                                <p class="game-rule-content-text">Вы можете выставить автоматические ставки использовав
+                                    кнопку AUTO.</p>
+                                <p class="game-rule-content-text">Каждая сделанная ставка дает вам токены LEX, для
+                                    получения дополнительной
+                                    информации ознакомьтесь с нашим разделом
+                                    Dividends.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="game-rule">
+                        <div class="game-rule-head">
+                            <div class="game-title">
+                                <img src="images/game-2.png" alt="">
+                                <p class="games-item-text">x50</p>
+                            </div>
+                        </div>
+                        <div class="game-rule-content">
+                            <div style="padding: 10px 0px;">
+                                <p class="game-rule-content-text">В каждом раунде, игрок может сделать до 5 ставок на
+                                    один цвет или сделать ставку
+                                    на несколько цветов. Каждый цвет
+                                    представляет собой множитель и имеет ограничение максимальной ставки.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-rule">
+                        <div class="game-rule-head">
+                            <div class="game-title">
+                                <img src="images/game-5.png" alt="">
+                                <p class="games-item-text">Space</p>
+                            </div>
+                        </div>
+                        <div class="game-rule-content">
+                            <div style="padding: 10px 0px;">
+                                <p class="game-rule-content-text">Каждый раз, когда вы играете в игру Космос, вы должны
+                                    ввести значение в авто-множителе (Mин 1.01,
+                                    Maкс =
+                                    100,000/ставка < 9999x). Значение космического множителя независимо и случайно между
+                                        1.00 x и 9999x. Количество и/или # игроки не влияют на результат.</p> <p
+                                        class="game-rule-content-text">Пользователи также имеют возможность нажать на
+                                        кнопку
+                                        стоп. Если пользователь не нажмет вручную, включится функция
+                                        автостопа.</p>
+                                <p class="game-rule-content-text">Если вы сыграли успешно, выплата будет в соответствии
+                                    со значением зафиксированного вами космического множителя. Потери
+                                    будут вычтены соответственно.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-rule">
+                        <div class="game-rule-head">
+                            <div class="game-title">
+                                <img src="images/game-4.png" alt="">
+                                <p class="games-item-text">Games</p>
+                            </div>
+                        </div>
+                        <div class="game-rule-content">
+                            <div style="padding: 10px 0px;">
+                                <!-- <p class="game-rule-content-text">Ставки в слотах делаются из слотового кошелька, расположенного на
+								смарт-контракте. Вы можете пополнять и снимать
+								средства со своего кошелька в любое время.</p>
+							<p class="game-rule-content-text">Чтобы начать игру, мы делаем ставку (размер ставки) и выбираем количество
+								выигрышных линий - «линия». В игре
+								используются игровые линии от 1 до 20, которые увеличивают шансы на выигрыш.</p>
+							<p class="game-rule-content-text">При нажатии кнопки «Вращение» барабан начинает вращаться и выпадает в случайном
+								порядке.</p>
+							<p class="game-rule-content-text">Ваши выигрыши по каждой линии будут суммироваться и отображаться на игровом поле
+								в строке «Всего выигрышей»</p> -->
+                                <p class="game-rule-content-text">Пример: Soccer Slot</p>
+                                <p class="game-rule-content-text">Чтобы начать игру, мы делаем ставку (размер ставки) и
+                                    выбираем количество
+                                    выигрышных линий - «линия». В игре
+                                    используются игровые линии от 1 до 20, которые увеличивают шансы на выигрыш.</p>
+                                <p class="game-rule-content-text">При нажатии кнопки «Вращение» барабан начинает
+                                    вращаться и выпадает в случайном
+                                    порядке.</p>
+                                <p class="game-rule-content-text">Ваши выигрыши по каждой линии будут суммироваться и
+                                    отображаться на игровом поле
+                                    в строке «Всего выигрышей»</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blur" id="honestGameModal">
+        <div class="blur-wrapper">
+            <div class="modal1">
+                <div class="game-rule-head">
+                    <div class="game-title">
+                        <p class="games-item-text games-item-title">Честная игра</p>
+                    </div>
+                    <img class="close" id="honestModalClose" src="images/close.svg" alt="">
+                </div>
+                <div class="honestGame-content modal-cont">
+                    <p class="item-content-text">Это гарантирует, что LEX games доказуемо-справедливы. Вот как это
+                        работает:
+                        <br><br>
+                        Вы можете ввести свой собственный SEED в сеть TRON.network. Если вы не вводите свой собственный
+                        SEED, тогда будет использоваться публичный случайный SEED.
+                        <br><br>
+                        Когда игрок ставит ставку и вводит свой собственный SEED, смарт-контракт будет генерировать
+                        случайный SHA-256 HASH, временную метку текущей ставки, а предыдущий блокхэш из coinbase будет
+                        смешан для генерации случайного хэша. SEED, созданный из смарт-контракта, и SEED,
+                        предоставленный игроком, затем будет смешано для создания случайного Счастливого числа.</p>
+                    <div class="honestGame-inputs">
+                        <p class="item-content-text" style="margin-bottom:0px">Используемый Seed (SHA256):</p>
+                        <input type="text" class="honestGame-input" placeholder="" id="curSeed">
+                        <p class="item-content-text" style="margin-bottom:0px">Введите Ваш Seed:</p>
+                        <input type="text" class="honestGame-input" placeholder="" id="newSeed" onkeyup="encryptSEED()">
+                        <p class="item-content-text" style="margin-bottom:0px"><br>Новый Seed (SHA256):</p>
+                        <input type="text" class="honestGame-input" placeholder="" id="newSeedSHA256">
+                        <br>
+                        <button class="honestGame-btn" onclick="setSEED()">Отправить</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blur" id="dividendModal">
+        <div class="blur-wrapper">
+            <div class="modal1">
+                <div class="game-rule-head">
+                    <div class="game-title">
+                        <p class="games-item-text games-item-title">Дивиденды (добыто:&nbsp;<span
+                                class="pricing-3">??</span>&nbsp;LEX)</p>
+                    </div>
+                    <img class="close" id="dividendModalClose" src="images/close.svg" alt="">
+                </div>
+                <div class="dividend-content modal-cont">
+                    <div class="progress-bar" style="float:none; width:auto;">
+                        <div class="progress-line">
+                            <div class="progress-level-left">&nbsp;</div>
+                            <div class="progress-line-item">
+                                <div class="progress-line-fill"></div>
+                            </div>
+                            <div class="progress-level-right">&nbsp;</div>
+                        </div>
+                        <div class="progress-numbers">
+                            <div class="progress-numbers-item">
+                                <p class="progress-numbers-item-counter" id="totalLEX">??</p>
+                                <img src="images/lex.png" alt="">
+                            </div>
+                            <div class="progress-numbers-slash">
+                                /
+                            </div>
+                            <div class="progress-numbers-item">
+                                <p class="progress-numbers-item-counter">100,000,000</p>
+                                <img src="images/lex.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dividend-table">
+                        <div class="dividend-table-item dividend-table-item-1">
+                            <p class="dividend-table-item-name" style="width:100%">Сейчас: Сыграв на 900 TRX будет
+                                добыто: 1 LEX</p>
+                        </div>
+
+                        <div class="dividend-table-item dividend-table-item-1">
+
+                            <p class="dividend-table-item-name" style="font-size:11px; width:100%">Пожалуйста,
+                                ознакомьтесь с правилами и условиями майнинга в разделе FAQ</p>
+                        </div>
+                        <!-- <div class="table-more">
+							<p class="table-more-text">Полный список уровней</p>
+							<img src="img/arrow-btn.png" alt="">
+						</div> -->
+                    </div>
+                    <div class="dividend-pool">
+                        <div class="dividend-pool-head">
+                            <p class="dividend-pool-head-caption">Дивидендный пул за 24ч</p>
+                            <p class="dividend-pool-head-coof">Коэффициент дивидендов: 60%</p>
+                        </div>
+                        <div class="dividend-pool-btns">
+                            <div class="dividend-pool-btns-item" id="divs24_4"><i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="dividend-pool-btns-item" id="divs24_3"><i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="dividend-pool-btns-item" id="divs24_2"><i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="dividend-pool-btns-item" id="divs24_1"><i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="dividend-pool-btns-item">
+                                <img src="images/trx.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dividend-pool-desc">
+                            <p class="dividend-pool-desc-name">Дивиденды начисляются каждые 10 минут</p>
+                            <img src="images/time.png" alt="">
+                            &nbsp; <span class="dividend-pool-desc-name" id="divsCountDown">10:00</span>
+                        </div>
+                    </div>
+                    <div class="dividend-footer">
+                        <div class="dividend-footer-leftSide">
+                            <div class="dividend-footer-leftSide-title">
+                                <p class="dividend-footer-leftSide-title-item">Мои дивиденды</p>
+                            </div>
+                            <div class="dividend-balance">
+                                <p class="dividend-balance-item" id="dividendValue">??</p>
+                                <p class="dividend-balance-item-valute">TRX</p>
+                            </div>
+                        </div>
+                        <div class="dividend-footer-rightSide">
+                            <button class="honestGame-btn getDividends">Получить</button>
+                        </div>
+                    </div>
+                    <div class="dividend-footer">
+                        <div class="dividend-footer-leftSide">
+                            <div class="dividend-footer-leftSide-title">
+                                <p class="dividend-footer-leftSide-title-item">Вы намайнили</p>
+                            </div>
+                            <div class="dividend-balance">
+                                <p class="dividend-balance-item" id='LEXtoMINE'>??</p>
+                                <p class="dividend-balance-item-valute">LEX</p>
+                            </div>
+                        </div>
+                        <div class="dividend-footer-rightSide">
+                            <button class="honestGame-btn getLEX">Получить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blur" id="getModal" style="display: none;">
+        <div class="modalrules">
+            <div class="rules-page">
+                <div class="game-rule">
+                    <div class="game-rule-head-2">
+                        <div class="game-title">
+                            <p class="games-item-text">Вывести</p>
+                        </div>
+                        <img class="close" id="getModalClose" src="images/close.svg" alt="">
+                    </div>
+                </div>
+                <div class="getContent modal-cont">
+                    <p class="getContent-text">
+                        Ставки в этой игре делаются из игрового кошелька, расположенного на смарт-контракте. Вы можете
+                        пополнять и
+                        снимать
+                        средства со своего кошелька в любое время.<br><br>
+                    </p>
+                    <p class="getContent-text" style="display: inline">
+                        Ваш игровой баланс:
+                        <span class="pricing-1">??</span> TRX
+                    </p>
+                    <div class="getContent-input">
+                        <p class="getContent-input-title">Сумма снятия</p>
+                        <div class="getContent-input-wrapper">
+                            <input style="margin:0px" type="text" class="honestGame-input" id="credits-withdraw"
+                                value="0" placeholder="0">
+                            <div class="getContent-input-wrapper-valute">TRX</div>
+                        </div>
+                        <button class="honestGame-btn" style="margin: 20px 0px 0px auto"
+                            onclick="withdraw()">Вывести</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blur" id="takeModal" style="display: none;">
+        <div class="modalrules">
+            <div class="rules-page">
+                <div class="game-rule">
+                    <div class="game-rule-head-2">
+                        <div class="game-title">
+                            <p class="games-item-text">Пополнить</p>
+                        </div>
+                        <img class="close" id="takeModalClose" src="images/close.svg" alt="">
+                    </div>
+                </div>
+                <div class="getContent modal-cont">
+                    <p class="getContent-text">
+                        Ставки в этой игре делаются из игрового кошелька, расположенного на смарт-контракте. Вы можете
+                        пополнять и
+                        снимать
+                        средства со своего кошелька в любое время
+                    </p>
+
+                    <p class="getContent-text" style="display: inline"> Ваш кошелек:
+                        <span class="navigation-item-container-wrapper-user-name"
+                            style="margin: 0; font-size: 14px;">??</span>
+                        <br>
+                        Баланс кошелька:
+                        <span id="trxBalance">??</span> TRX
+                        <br>
+                        Ваш игровой баланс:
+                        <span class="pricing-1">??</span> TRX
+                    </p>
+                    <div class="getContent-input">
+                        <p class="getContent-input-title">Сумма пополнения</p>
+                        <div class="getContent-input-wrapper">
+                            <input style="margin:0px" type="text" class="honestGame-input" id="credits-money"
+                                value="100" placeholder="0">
+                            <div class="getContent-input-wrapper-valute">TRX</div>
+                        </div>
+                        <button class="honestGame-btn" style="margin: 20px 0px 0px auto"
+                            onclick="recharge()">Пополнить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="infobox"> </div>
+<div id="infobox2"> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Javascript-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="js/scripts.min.js"></script>
+        <script src="js/countUp.js"></script>
     <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/c871b5907e.js" crossorigin="anonymous"></script>
     <!--LIVEDEMO_00 -->
+    <!-- ПОДКЛЮЧИТЬ НАПРЯМУЮ ЧЕРЕЗ BITLEX GAMES -->
+    <!-- <script src="js/scripts.min.js"></script>
+    <script src="js/countUp.js"></script> -->
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-7078796-5']);

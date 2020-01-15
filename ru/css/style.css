@@ -26936,7 +26936,7 @@ html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
 .modeToggler {
 	margin: 0px 15px -25px auto;
 	position: relative;
-	z-index: 999;
+	z-index: 990;
 }
 
 .loadMore {
@@ -27134,3 +27134,66 @@ html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
 	max-width:  calc(100% - 30px);
 	margin: 5px auto;
 }
+
+body {
+  /* margin: 0px;
+  padding: 0px;
+  display: block;
+  height: 100vh !important;
+  overflow: hidden; */
+}
+.faq-page {
+  /* background: url("../img/fon.jpg") 50% 50% no-repeat; */
+  background-size: cover;
+  width: 100%;
+  max-width: 520px;
+  margin: 0px auto;
+  /* padding: 20px 0px; */
+  height: 100%;
+}
+
+.faq-pages, .modalfaq {
+  width: 90%;
+  max-width: 520px;
+  margin: 0px auto;
+}
+.modalrules {
+  width: 90%;
+  max-width: 520px;
+  margin: 0px auto;
+}
+.game-rule-content-item img {
+  pointer-events: none;
+  transform: rotateX(180deg);
+  margin-left: 10px;
+}
+.game-rule-content {
+  padding: 0px !important;
+}
+.item-content {
+  background: #132234;
+}
+
+.item-content-text {
+  margin: 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #FFFFFF;
+  padding: 14px 25px;
+  word-wrap: break-word;
+}
+
+.item-content-text a {
+  word-wrap: break-word;
+  width: 100%;
+}
+
+@media screen and (max-height: 850px) {
+  body {
+    overflow: auto;
+  }
+}
+
