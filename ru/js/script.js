@@ -2152,6 +2152,355 @@ $("a.bet-max").on('click', function (e) {
 
 
 
-$(window).scroll(function () {
-	$('.header-menu').css('top', $(this).scrollTop() + "px");
-});
+$(document).on("ready", function () {
+	let pad = $('.header-menu').height()
+	$(".swiper-container").css("margin-top", pad)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var filter = function (text, length, clamp) {
+	clamp = clamp || '...';
+	var node = document.createElement('div');
+	node.innerHTML = text;
+	var content = node.textContent;
+	return content.length > length ? content.slice(0, length) + clamp : content;
+};
+
+Vue.filter('truncate', filter);
+const games = [
+	{
+		sportName: 'Все категории',
+		icon: '01',
+		sorting: 'all',
+		sportID: null,
+		games: [],
+		total: null,
+		isActive: true
+	},
+	{
+		sportName: 'Футбол',
+		icon: '07',
+		sorting: 'football',
+		sportID: null,
+		games: [],
+		total: null,
+		isActive: false
+	},
+	{
+		sportName: 'Теннис',
+		icon: '06',
+		sorting: 'tennis',
+		sportID: null,
+		games: [],
+		total: null,
+		isActive: false
+	},
+	{
+		sportName: 'Баскетбол',
+		icon: '04',
+		sorting: 'basketball',
+		sportID: null,
+		games: [],
+		total: null,
+		isActive: false
+	},
+	{
+		sportName: 'Хоккей',
+		icon: '08',
+		sorting: 'ice-hockey',
+		sportID: null,
+		games: [],
+		total: null,
+		isActive: false
+	},
+	{
+		sportName: 'Волейбол',
+		icon: '09',
+		sorting: 'volleyball',
+		sportID: null,
+		games: [],
+		total: null,
+		isActive: false
+	},
+	{
+		sportName: 'Бадминтон',
+		icon: '03',
+		sorting: 'badminton',
+		sportID: null,
+		games: [],
+		total: null,
+		isActive: false
+	},
+	{
+		sportName: 'Бейсбол',
+		icon: '05',
+		sorting: 'baseball',
+		sportID: null,
+		games: [],
+		total: null,
+		isActive: false
+	},
+]
+let sportWrapper = new Vue({
+	el: '#sport-wrapper',
+	data: {
+		gamesData: games,
+		ApiKey: 'be381439933d5c2fa3f9a71dbf1fd2cf',
+		mode: 'live', // 'live' or 'line'
+		lang: 'ru',
+		hoster: 'https://odds.incub.space', // 'https://data.incub.space'
+		isLoadMoreBtn: true,
+		lastNumb: null,
+		isShow: false,
+		totalGames: null,
+		currentFilter: 'all',
+		showToolTip: true,
+		modal: {
+			isOpenMain: false,
+			isOpenExtra: false,
+			data: null,
+			game: null,
+			betData: {
+				currentCounter: 0
+			}
+		},
+		sportWrapperPreloaderHeight: null,
+		searchString: ''
+	},
+	async created() {
+		await this.getApiSports()
+		await this.getApiGames(5)
+		this.sportWrapperPreloaderHeight = this.$refs.sportWrapper.clientHeight + 'px' || '700px'
+	},
+	methods: {
+		searchingMatch() {
+			let str = this.searchString.toLowerCase().replace(/[^\wа-яё,./+-]/gi, '')
+			this.gamesData.forEach(sport => {
+				let total = 0
+					sport.games.forEach((tournament, indexTournament) => {
+						tournament.events_list.forEach((game, indexGame) => {
+							let teams = [game.opp_1_name.toLowerCase().replace(/[^\wа-яё,./+-]/gi, ''), game.opp_2_name.toLowerCase().replace(/[^\wа-яё,./+-]/gi, ''),]
+							if (teams[0].indexOf(str) !== -1 || teams[1].indexOf(str) !== -1) {
+								game.isShow = true
+								tournament.isShow = true
+								total++
+							} else {
+								game.isShow = false
+							}
+							sport.total = total
+
+						})
+						let result = tournament.events_list.filter(gameItem => gameItem.isShow === true)
+						result.length > 0 ? tournament.isShow = true : tournament.isShow = false
+					})
+ 			})
+			this.totalGamesCounter()
+		},
+		makeBet() {
+			if (this.modal.betData.currentCounter <= 100 && this.modal.betData.currentCounter > 0) {
+				this.modal = {
+					isOpenMain: false,
+					isOpenExtra: false,
+					data: null,
+					game: null,
+					betData: {
+						currentCounter: 0
+					}
+				}
+				alert('Вы сделали ставку!')
+			} else {
+				this.modal = {
+					isOpenMain: false,
+					isOpenExtra: false,
+					data: null,
+					game: null,
+					betData: {
+						currentCounter: 0
+					}
+				}
+				alert('Произошла ошибка')
+			}
+		},
+		makeExtraBet(game, bet) {
+			this.modal = {
+				isOpenMain: true,
+				isOpenExtra: false,
+				data: bet,
+				game: game,
+				betData: {
+					currentCounter: 0
+				}
+			}
+		},
+		modelCounter() {
+			if (this.modal.betData.currentCounter >= 100) {
+				this.modal.betData.currentCounter = 100
+			} else if (this.modal.betData.currentCounter <= 0) {
+				this.modal.betData.currentCounter = 0
+			}
+		},
+		modelCounterPlus() {
+			this.modal.betData.currentCounter++
+			if (this.modal.betData.currentCounter >= 100) {
+				this.modal.betData.currentCounter = 100
+			} else if (this.modal.betData.currentCounter <= 0) {
+				this.modal.betData.currentCounter = 0
+			}
+		},
+		modelCounterMinus() {
+			this.modal.betData.currentCounter--
+			if (this.modal.betData.currentCounter >= 100) {
+				this.modal.betData.currentCounter = 100
+			} else if (this.modal.betData.currentCounter <= 0) {
+				this.modal.betData.currentCounter = 0
+			}
+		},
+		modalBets(data, game) {
+			this.modal.data = data
+			this.modal.game = game
+			this.modal.betData.currentCounter = 0
+			this.modal.isOpenMain = true
+		},
+		modalBetsExtra(game) {
+			this.modal.game = game
+			this.modal.betData.currentCounter = 0
+			this.modal.isOpenExtra = true
+		},
+		filtetingMethod(item) {
+			this.isShow = false
+			this.gamesData.forEach(sport => {
+				sport.isActive = false
+			});
+			item.isActive = true
+			this.currentFilter = item.sorting
+			item.total > 0 || item.sportName === 'Все категории' ? this.showToolTip = true : this.showToolTip = false
+			this.isShow = true
+			this.searchingMatch()
+		},
+		async modeToggler(mode) {
+			this.mode = mode
+			this.isShow = false
+			await this.getApiSports()
+			await this.getApiGames(this.lastNumb)
+			this.isShow = true
+		},
+		async loadMore(numb) {
+			this.isShow = false
+			await this.getApiSports()
+			await this.getApiGames(numb)
+			this.isShow = true
+		},
+		getApiSports() {
+			this.isShow = false
+			return new Promise(resolve => {
+				axios
+					.get(`${this.hoster}/v1/sports/${this.mode}/${this.lang}`)
+					.then(sports => {
+						sports.data.body.forEach(sport => {
+							games.map(game => {
+								if (game.sportName === sport.name) {
+									game.sportID = sport.id
+								}
+							})
+						})
+						resolve()
+					})
+					.catch(error => {
+						alert(error)
+						resolve()
+					})
+			})
+		},
+		getApiGames(numb) {
+			return new Promise(resolve => {
+				this.lastNumb = numb
+				numb >= 50 ? this.isLoadMoreBtn = false : false
+				let axiosPromises = []
+				games.forEach(game => {
+					game.total = 0
+					if (!!game.sportID) {
+						axiosPromises.push(
+							axios
+								.get(`${this.hoster}/v1/events/${game.sportID}/0/sub/${numb}/${this.mode}/${this.lang}`)
+								.then(gamesList => {
+									let games = gamesList.data.body
+									games.forEach(tournament => {
+										let filtredGames = tournament.events_list.filter(game => {
+											game.coefs = [0, 0, 0]
+											tournament.isShow = true
+											game.isShow = true
+											game.filteredTime = this.prettyTime(game.game_start)
+											game.game_oc_list.forEach(bet => {
+												if (bet.oc_group_name === '1x2') {
+													if (bet.oc_name === game.opp_1_name) {
+														game.coefs[0] = bet
+													}
+													if (bet.oc_name === 'Ничья') {
+														game.coefs[1] = bet
+													}
+													if (bet.oc_name === game.opp_2_name) {
+														game.coefs[2] = bet
+													}
+												}
+											})
+											return game.opp_1_name && game.opp_2_name
+										})
+										tournament.events_list = filtredGames
+										game.total += tournament.events_list.length
+									})
+									game.games = games
+								})
+						)
+					}
+				})
+				axios.all(axiosPromises).then(() => {
+					this.totalGamesCounter()
+					this.isShow = true
+					this.searchingMatch()
+					resolve()
+				})
+			})
+		},
+		totalGamesCounter() {
+			this.totalGames = this.gamesData.reduce(function (sum, current) {
+				return sum + current.total
+			}, 0)
+		},
+		prettyTime(time) {
+			let newTime = time * 1000
+			let year = new Date(newTime).getFullYear()
+			let month = new Date(newTime).getMonth() + 1
+			let date = new Date(newTime).getDate()
+			let hours = new Date(newTime).getHours()
+			let minutes = new Date(newTime).getMinutes()
+
+			let newMonth = month < 10 ? '0' + month : month
+			let newDate = date < 10 ? '0' + date : date
+			let newHours = hours < 10 ? '0' + hours : hours
+			let newMinutes = 0
+			if(minutes === '0') {
+				newMinutes = '00'
+			} else if (minutes < 10) {
+				newMinutes = '0' + minutes
+			} else {
+				newMinutes = minutes
+			}
+			return `${newHours}:${newMinutes}, ${newDate}.${newMonth}.${year}`
+		}
+	}
+})

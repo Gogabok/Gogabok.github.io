@@ -14000,7 +14000,7 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-right: 10px;
+	padding: 0px 15px;
 	align-items: center;
 }
 
@@ -26849,29 +26849,6 @@ html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
 
 
 
-.matches-wrapper {
-	max-height: 400px;
-	overflow-y: auto;
-	overflow-x: hidden;
-}
-
-.matches-wrapper::-webkit-scrollbar {
-	width: 4px;
-}
-
-.matches-wrapper::-webkit-scrollbar-thumb {
-	background: #ccc;
-	border: none;
-	border-radius: 0;
-	opacity: .2;
-}
-
-.matches-wrapper::-webkit-scrollbar-track  {
-	background: rgba(125, 125, 125, .1);
-}
-
-
-
 #sport-wrapper * {
 	user-select: none;
 }
@@ -26907,7 +26884,7 @@ html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
 
 .sport-wrapper {
 	height: 700px;
-	overflow-y: auto;
+	overflow-y: scroll;
 }
 
 .sport-navigation {
@@ -27197,3 +27174,35 @@ body {
   }
 }
 
+.header-menu {
+	position: fixed;
+}
+
+@media screen and (max-width: 550px) {
+	#sport-wrapper {
+		padding-right: 30px;
+	}
+}
+
+.search-wrapper {
+	width: 100%;
+	padding: 0px 60px;
+}
+
+.search-item {
+	font-size: 14px;
+  line-height: 1.2;
+	width: 100%;
+	padding: 3px 15px;
+	font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+	color: #151515;
+	font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media screen and (max-width: 550px) {
+	.search-wrapper {
+		padding: 0px 15px;
+	}
+}

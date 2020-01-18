@@ -2530,7 +2530,7 @@ body {
 	width: 100%;
 }
 .header-menu {
-	position: relative;
+	position: fixed;
 	width: 100%;
 	z-index: 999;
 }
@@ -2863,9 +2863,9 @@ html {
 	.game {
 		padding-top: 0px;
 	}
-	.header-menu {
+	/* .header-menu {
 		position: relative;
-	}
+	} */
 }	
 }
 @media screen and (max-width: 425px) {
