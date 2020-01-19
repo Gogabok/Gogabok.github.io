@@ -337,6 +337,7 @@
             <div class="swiper-pagination"></div>
         </section>
         <!-- All Sports-->
+    <div class="vueJs-container">
         <section id="sport-wrapper" class="section section-sm bg-gray-100">
             <div class="container" ref="sportWrapper">
                 <div class="row isotope-wrap row-30" v-if="isShow" key="container">
@@ -413,7 +414,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- v-if="game.coefs[0] ? game.coefs[0].oc_name === game.opp_1_name : false"> -->
                                                     <div class="col-sm-10 col-md-6 col-lg-7">
                                                         <div class="sport-table-wager" v-if="game.coefs[0].oc_name && game.coefs[0].oc_name">
                                                             <a class="sport-table-wager-button" href="#" @click.prevent="modalBets(game.coefs[0], game)"
@@ -581,135 +581,25 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
          <!-- Latest News-->
         <section class="section section-md bg-gray-100">
             <div class="container">
                 <div class="row row-50">
                     <div class="col-lg-12">
                         <div class="row row-30">
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-md-6 col-lg-4" v-for="game in hotGames" :key="game.tournament_id">
                                 <article class="post-badly">
-                                    <div class="post-badly-image"><a href="#"><img src="images/betting-news-01-370x180.jpg" alt="" width="370" height="180" /></a></div>
+                                    <div class="post-badly-image"><img :src=`images/betting-news-${game.image}.jpg` alt="" width="370" height="180" /></div>
                                     <div class="post-badly-body">
                                         <div class="post-badly-body-top">
-                                            <div class="post-badly-team"><span>Manchester United</span><span>Leicester City</span></div>
-                                            <div class="post-badly-time"><span class="icon mdi mdi-clock"></span><a href="#">01.01.2020</a></div>
+                                            <div class="post-badly-team"><span>{{ game.opp_1_name| truncate(10)}}</span><span>{{ game.opp_2_name | truncate(10) }}</span></div>
+                                            <div class="post-badly-time"><span class="icon mdi mdi-clock"></span><a href="#">{{ game.filteredTime }}</a></div>
                                         </div>
                                         <div class="post-badly-body-bottom">
                                             <ul class="post-badly-wager">
-                                                <li class="post-badly-wager-item"><a class="post-badly-wager-link" data-toggle="modal" data-target="#sportModal" href="#"><span class="post-badly-wager-score">X</span><span class="post-badly-wager-count">3.25</span></a></li>
-                                                <li class="post-badly-wager-item"><a class="post-badly-wager-link" data-toggle="modal" data-target="#sportModal" href="#"><span class="post-badly-wager-score">X</span><span class="post-badly-wager-count">3.25</span></a></li>
-                                                <li class="post-badly-wager-item"><a class="post-badly-wager-link" data-toggle="modal" data-target="#sportModal" href="#"><span class="post-badly-wager-score">2</span><span class="post-badly-wager-count">2.25</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <article class="post-badly">
-                                    <div class="post-badly-image"><a href="#"><img src="images/betting-news-02-370x180.jpg" alt="" width="370" height="180" /></a></div>
-                                    <div class="post-badly-body">
-                                        <div class="post-badly-body-top">
-                                            <div class="post-badly-team"><span>Esther Burns</span><span>Jessica Norris</span></div>
-                                            <div class="post-badly-time"><span class="icon mdi mdi-clock"></span><a href="#">01.01.2020</a></div>
-                                        </div>
-                                        <div class="post-badly-body-bottom">
-                                            <ul class="post-badly-wager post-badly-wager-duo">
-                                                <li class="post-badly-wager-item"><a class="post-badly-wager-link" data-toggle="modal" data-target="#sportModal" href="#"><span class="post-badly-wager-score">1</span><span class="post-badly-wager-count">1.28</span></a></li>
-                                                <li class="post-badly-wager-item"><a class="post-badly-wager-link" data-toggle="modal" data-target="#sportModal" href="#"><span class="post-badly-wager-score">2</span><span class="post-badly-wager-count">3.60</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <article class="post-badly">
-                                    <div class="post-badly-image"><a href="#"><img src="images/betting-news-03-370x180.jpg" alt="" width="370" height="180" /></a></div>
-                                    <div class="post-badly-body">
-                                        <div class="post-badly-body-top">
-                                            <div class="post-badly-team"><span>Lesley Moody</span><span>Christopher Benson</span></div>
-                                            <div class="post-badly-time"><span class="icon mdi mdi-clock"></span><a href="#">01.01.2020</a></div>
-                                        </div>
-                                        <div class="post-badly-body-bottom">
-                                            <ul class="post-badly-wager post-badly-wager-duo">
-                                                <li class="post-badly-wager-item"><a class="post-badly-wager-link" data-toggle="modal" data-target="#sportModal" href="#"><span class="post-badly-wager-score">1</span><span class="post-badly-wager-count">1.28</span></a></li>
-                                                <li class="post-badly-wager-item"><a class="post-badly-wager-link" data-toggle="modal" data-target="#sportModal" href="#"><span class="post-badly-wager-score">2</span><span class="post-badly-wager-count">3.60</span></a></li>
+                                                <li class="post-badly-wager-item" @click.prevent="game.coefs[0] ? modalBets(game.coefs[0], game) : false"><a class="post-badly-wager-link" href="#"><span class="post-badly-wager-score">П1</span><span class="post-badly-wager-count" v-if="game.coefs[0].oc_rate">{{ game.coefs[0].oc_rate }}</span><span v-else class="post-badly-wager-count">-</span></a></li>
+                                                <li class="post-badly-wager-item" @click.prevent="game.coefs[1] ? modalBets(game.coefs[1], game) : false"><a class="post-badly-wager-link" href="#"><span class="post-badly-wager-score">X</span><span class="post-badly-wager-count" v-if="game.coefs[1].oc_rate">{{ game.coefs[1].oc_rate }}</span><span v-else class="post-badly-wager-count">-</span></a></li>
+                                                <li class="post-badly-wager-item" @click.prevent="game.coefs[2] ? modalBets(game.coefs[2], game) : false"><a class="post-badly-wager-link" href="#"><span class="post-badly-wager-score">П2</span><span class="post-badly-wager-count" v-if="game.coefs[2].oc_rate">{{ game.coefs[2].oc_rate }}</span><span v-else class="post-badly-wager-count">-</span></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -723,25 +613,23 @@
                             <article class="heading-component">
                                 <div class="heading-component-inner">
                                     <h5 class="heading-component-title">Предстоящий матч
-                                    </h5><a class="button button-xs button-gray-outline" href="#">Календарь</a>
+                                    </h5>
                                 </div>
                             </article>
                             <!-- Game Result Bug-->
                             <article class="game-result">
-                                <div class="game-info game-info-creative">
-                                    <p class="game-info-subtitle">Футбол -
-                                        <time datetime="08:30"> 08:30 PM</time>
+                                <div v-if="randomComingGame !== null" class="game-info game-info-creative">
+                                    <p class="game-info-subtitle">{{ randomComingGame.sport_name }} -
+                                        <time datetime="08:30">{{ new Date(randomComingGame.game_start * 1000).getHours() < 10 ? `0${new Date(randomComingGame.game_start * 1000).getHours()}` : new Date(randomComingGame.game_start * 1000).getHours() }}:{{ new Date(randomComingGame.game_start * 1000).getMinutes() < 10 ? `0${new Date(randomComingGame.game_start * 1000).getMinutes()}` : new Date(randomComingGame.game_start * 1000).getMinutes() }}</time>
                                     </p>
-                                    <h3 class="game-info-title">Квалификация Лиги Европы</h3>
+                                    <h3 class="game-info-title">{{ randomComingGame.tournament_name }}</h3>
                                     <div class="game-info-main">
                                         <div class="game-info-team game-info-team-first">
-                                            <figure><img src="images/team-atletico-100x100.png" alt="" width="100" height="100" />
-                                            </figure>
-                                            <div class="game-result-team-name">Atletico</div>
-                                            <div class="game-result-team-country">USA</div>
+                                            <div class="game-result-team-name">{{ randomComingGame.opp_1_name }}</div>
+                                            <div class="game-result-team-country">{{ randomComingGame.opp_1_name_en }}</div>
                                         </div>
                                         <div class="game-info-middle game-info-middle-vertical">
-                                            <time class="time-big" datetime="2019-04-17"><span class="heading-3">Ср 01</span> Январь 2020
+                                            <time class="time-big" datetime="2019-04-17"><span class="heading-3">{{ days[new Date(randomComingGame.game_start * 1000).getDay()] }} {{ new Date(randomComingGame.game_start * 1000).getDate() < 10 ? `0${new Date(randomComingGame.game_start * 1000).getDate()}` : new Date(randomComingGame.game_start * 1000).getDate() }}</span> {{ months[new Date(randomComingGame.game_start * 1000).getMonth()] }} {{ new Date(randomComingGame.game_start * 1000).getFullYear() }}
                                             </time>
                                             <div class="game-result-divider-wrap"><span class="game-info-team-divider">VS</span></div>
                                             <div class="group-sm">
@@ -752,19 +640,15 @@
                                                         <li class="game-info-share-item"><a class="icon fa fa-google-plus" href="#"></a></li>
                                                         <li class="game-info-share-item"><a class="icon fa fa-instagram" href="#"></a></li>
                                                     </ul>
-                                                </div><a class="button button-sm button-primary" href="#">Купить билеты</a>
+                                                </div>
+                                                <a class="button button-sm button-primary" href="#" @click.prevent="modalBetsExtra(randomComingGame)">Сделать ставку</a>
                                             </div>
                                         </div>
                                         <div class="game-info-team game-info-team-second">
-                                            <figure><img src="images/team-bavaria-fc-113x106.png" alt="" width="113" height="106" />
-                                            </figure>
-                                            <div class="game-result-team-name">Celta Vigo</div>
-                                            <div class="game-result-team-country">Spain</div>
+                                            <div class="game-result-team-name">{{ randomComingGame.opp_2_name }}</div>
+                                            <div class="game-result-team-country">{{ randomComingGame.opp_2_name_en }}</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="game-info-countdown">
-                                    <div class="countdown countdown-bordered" data-type="until" data-time="31 Dec 2019 16:00" data-format="dhms" data-style="short"></div>
                                 </div>
                             </article>
                         </div>
@@ -1077,7 +961,7 @@
                 </div>
             </div>
         </footer>
-        
+    </div>
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>

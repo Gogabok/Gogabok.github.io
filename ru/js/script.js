@@ -2257,7 +2257,7 @@ const games = [
 	},
 ]
 let sportWrapper = new Vue({
-	el: '#sport-wrapper',
+	el: '.vueJs-container',
 	data: {
 		gamesData: games,
 		ApiKey: 'be381439933d5c2fa3f9a71dbf1fd2cf',
@@ -2280,7 +2280,11 @@ let sportWrapper = new Vue({
 			}
 		},
 		sportWrapperPreloaderHeight: null,
-		searchString: ''
+		searchString: '',
+		hotGames: [],
+		randomComingGame: null,
+		days: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Суб"],
+		months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
 	},
 	async created() {
 		await this.getApiSports()
@@ -2472,7 +2476,44 @@ let sportWrapper = new Vue({
 					this.totalGamesCounter()
 					this.isShow = true
 					this.searchingMatch()
+					this.getRandomGames()
+					this.getRandomComingMatch()
 					resolve()
+				})
+			})
+		},
+		getRandomComingMatch() {
+			axios
+				.get(`${this.hoster}/v1/events/1/0/list/1/line/${this.lang}`)
+				.then(randomGame => {
+					this.randomComingGame = randomGame.data.body[Math.floor(Math.random() * randomGame.data.body.length)]
+					this.randomComingGame.coefs = [0, 0, 0]
+					this.randomComingGame.game_oc_list.forEach(bet => {
+						if (bet.oc_group_name === '1x2') {
+							if (bet.oc_name === this.randomComingGame.opp_1_name) {
+								this.randomComingGame.coefs[0] = bet
+							}
+							if (bet.oc_name === 'Ничья') {
+								this.randomComingGame.coefs[1] = bet
+							}
+							if (bet.oc_name === this.randomComingGame.opp_2_name) {
+								this.randomComingGame.coefs[2] = bet
+							}
+						}
+					})
+				})
+		},
+		getRandomGames() {
+			let hotGames = ['football', 'tennis', 'basketball']
+			this.hotGames.splice(0, this.hotGames.length)
+			this.gamesData.filter(sport => {
+				hotGames.forEach(filter => {
+					if (sport.sorting === filter) {
+						let randTour = sport.games[Math.floor(Math.random() * sport.games.length)]
+						let randGame = randTour.events_list[Math.floor(Math.random() * randTour.events_list.length)]
+						randGame.image = sport.sorting
+						this.hotGames.push(randGame)
+					}
 				})
 			})
 		},
