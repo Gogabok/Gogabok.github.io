@@ -591,7 +591,7 @@
                         <div class="row row-30">
                             <div class="col-md-6 col-lg-4" v-for="game in hotGames" :key="game.tournament_id">
                                 <article class="post-badly">
-                                    <div class="post-badly-image"><img :src=`images/betting-news-${game.image ? game.image : 'unknown'}.jpg` alt="" width="370" height="180" /></div>
+                                    <div class="post-badly-image"><img :src=`game.image` alt="" width="370" height="180" /></div>
                                     <div class="post-badly-body">
                                         <div class="post-badly-body-top">
                                             <div class="post-badly-team"><span>{{ game.opp_1_name| truncate(10)}}</span><span>{{ game.opp_2_name | truncate(10) }}</span></div>
@@ -1428,7 +1428,7 @@
                                 let randTour = sport.games[Math.floor(Math.random() * sport.games.length)]
                                 let randGame = randTour.events_list[Math.floor(Math.random() * randTour.events_list.length)]
                                 if(randGame) {
-                                    randGame.image = sport.sorting
+                                    randGame.image = `images/betting-news-${sport.sorting ? sport.sorting : 'unknown'}.jpg`
                                 }
                                 this.hotGames.push(randGame)
                             }
