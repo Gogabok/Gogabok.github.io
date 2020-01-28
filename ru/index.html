@@ -1428,7 +1428,7 @@
                                 let randTour = sport.games[Math.floor(Math.random() * sport.games.length)]
                                 let randGame = randTour.events_list[Math.floor(Math.random() * randTour.events_list.length)]
                                 if(randGame) {
-                                    randGame.image = `images/betting-news-${sport.sorting ? sport.sorting : 'unknown'}.jpg`
+                                    randGame.image = `./images/betting-news-${sport.sorting ? sport.sorting : 'unknown'}.jpg`
                                 }
                                 this.hotGames.push(randGame)
                             }
