@@ -2047,6 +2047,69 @@ $(document).on("ready", function () {
 // Запрос к базе ставок юзера
 
 $(document).on("ready", function () {
+
+
+
+
+	$.ajax({
+		cache: false, // Для теста
+		url: `./today-bets.json`,
+		dataType: "json",
+		success: function (data) {
+			$(".statistic-table-sport-wrapper").empty()
+			data.forEach(game => {
+				$(".statistic-table-sport-wrapper").append(`
+				
+								<div class="statistic-table-item-line-sport">
+        				  <div class="statistic-table-item-line-item-sport">
+        				      <div>
+        				          ${ game.game_info.opp_1_name}
+        				      </div>
+        				      <div>
+        				          ${ game.game_info.opp_2_name}
+        				      </div>
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+        				      ${ game.game_info.sport_name}
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+        				      ${ prettyTime(game.game_info.game_start)}
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+        				      Разыгран
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+											${ game.bet_info.count}
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+        				      ${ game.bet_info.value}
+        				  </div>
+        				</div>
+					`)
+			})
+		},
+		error: function (error) {
+			$(".statistic-table-sport-wrapper").empty()
+			$(".statistic-table-sport-wrapper").append(`
+								<div class="statistic-table-item-line-sport">
+									<div class="statistic-table-item-line-item-sport">
+									Не найдено
+									</div>
+								</div>
+				`)
+		}
+	})
+
+
+
+
+
+
+
+
+
+
+
 	$(".statistic-table-nav-item-sport").on("click", function (e) {
 		$(".statistic-table-nav-item-sport").removeClass("statistic-table-nav-item-active-sport")
 		$(e.target).addClass("statistic-table-nav-item-active-sport")
