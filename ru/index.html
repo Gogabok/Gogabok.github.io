@@ -1422,7 +1422,7 @@
                 getRandomGames() {
                     let hotGames = ['football', 'tennis', 'basketball']
                     this.hotGames.splice(0, this.hotGames.length)
-                    this.gamesData.filter(sport => {
+                    this.gamesData.forEach(sport => {
                         hotGames.forEach(filter => {
                             if (sport.sorting === filter) {
                                 let randTour = sport.games[Math.floor(Math.random() * sport.games.length)]
