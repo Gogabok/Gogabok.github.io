@@ -6740,7 +6740,7 @@ textarea.form-input {
 	transition: all .3s;
 }
 .list-inline-custom .icon::before {
-	margin-top: 10px;
+	/* margin-top: 10px; */
 }
 
 
@@ -14103,12 +14103,17 @@ span.page-link:hover, span.page-link:focus, span.page-link:active {
 
 .sport-table-bonus-count {
 	font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-	font-size: 15px;
-	font-weight: 500;
+	font-size: 13px;
+	font-weight: 400;
 	letter-spacing: 0.05em;
 	color: #151515;
 	text-align: center;
 	line-height: 14px;
+}
+
+.sport-table-bonus-count div {
+	font-weight: 500;
+	font-size: 18px;
 }
 
 .sport-table-bonus-icon {
@@ -26867,7 +26872,7 @@ html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
 
 .sport-table-results-else {
 	color: #151515;
-	background-color: rgba(234, 236, 238, 0.25);
+	background-color: rgba(234, 236, 238, 1);
 	border: 1px solid rgb(234, 236, 238);
 	max-width: 100%;
 	padding: 12px;
@@ -26879,12 +26884,13 @@ html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
 }
 
 .sport-table-results-else:hover {
-	background-color: rgba(234, 236, 238, 0.2);
+	background-color: rgba(234, 236, 238, 1);
 }
 
 .sport-wrapper {
 	height: 700px;
 	overflow-y: scroll;
+	padding: 15px 15px;
 }
 
 .sport-navigation {
@@ -27040,7 +27046,7 @@ html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
 }
 
 .modal-body-sport {
-	margin: 15px 0px;
+	padding: 15px 0px;
 	text-align: center;
 }
 
@@ -27205,4 +27211,8 @@ body {
 	.search-wrapper {
 		padding: 0px 15px;
 	}
+}
+
+.modal-footer-error {
+	text-align: center;
 }

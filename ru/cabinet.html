@@ -31,7 +31,6 @@
     <!-- Page-->
     <div class="page">
         <!-- Page Header-->
-        
         <div class="header-menu">
             <header id="header">
                 <div class="container-nav">
@@ -300,80 +299,154 @@
         </div>
         <div class="divider"></div>
         <!-- Section Breadcrumbs-->
-        <section class="section parallax-container breadcrumbs-wrap" data-parallax-img="images/bg-breadcrumbs-1-1920x726.jpg">
-            <div class="parallax-content breadcrumbs-custom context-dark">
-                <div class="container">
-                    <h3 class="breadcrumbs-custom-title">Поддержка</h3>
-                    <ul class="breadcrumbs-custom-path">
-                        <li><a href="index.html">Главная</a></li>
-                        <li class="active">Поддержка</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- Section Contact-->
-        <section class="section section-variant-1 bg-gray-100">
-            <div class="container">
-                <div class="row row-50">
-                    <div class="col-lg-7 col-xl-8">
-                        <!-- Heading Component-->
-                        <article class="heading-component">
-                            <div class="heading-component-inner">
-                                <h5 class="heading-component-title">Получить поддержку
-                                </h5>
-                            </div>
-                        </article>
-                        <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                            <div class="row row-10 row-narrow">
-                                <div class="col-md-6">
-                                    <div class="form-wrap">
-                                        <label class="form-label" for="form-user-name-1">Ваше имя</label>
-                                        <input class="form-input" id="form-user-name-1" type="text" name="name" data-constraints="@Required">
-                                    </div>
+        <div class="profile">
+            <div class="profile-wrapper">
+                <p class="profile-title">Профиль</p>
+                <div class="profile-wrapper-main">
+                    <div class="profile-wrapper-main-item">
+                        <div class="user-avatar">
+                            <img src="images/user-avatar.png" alt="" class="profile-avatar">
+                        </div>
+                        <div class="main-wrapper-inputs">
+                            <div class="main-wrapper-inputs-line">
+                                <div class="main-wrapper-inputs-line-item login">
+                                    <p class="main-wrapper-inputs-line-item-title">Логин</p>
+                                    <input type="text" class="main-wrapper-inputs-line-item-input" value="Bogdan Zenger"
+                                        placeholder="Логин">
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-wrap">
-                                        <label class="form-label" for="form-user-phone">Телефон</label>
-                                        <input class="form-input" id="form-user-phone" type="text" name="phone" data-constraints="@Numeric @Required">
-                                    </div>
+                                <div class="main-wrapper-inputs-line-item">
+                                    <p class="main-wrapper-inputs-line-item-title">ID</p>
+                                    <input type="text" disabled class="main-wrapper-inputs-line-item-input"
+                                        value="14684354684313" placeholder="Fast ID">
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="form-wrap">
-                                        <label class="form-label" for="form-message">Сообщение</label>
-                                        <textarea class="form-input" id="form-message" name="message" data-constraints="@Required"></textarea>
-                                    </div>
+                                <div class="main-wrapper-inputs-line-item referal">
+                                    <p class="main-wrapper-inputs-line-item-title">Реферал</p>
+                                    <input type="text" disabled class="main-wrapper-inputs-line-item-input"
+                                        value="FDHUFDHEASfuhsegufh" placeholder="Реферал">
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-wrap">
-                                        <label class="form-label" for="form-email">E-mail</label>
-                                        <input class="form-input" id="form-email" type="email" name="email" data-constraints="@Email @Required">
-                                    </div>
+                                <div class="main-wrapper-inputs-line-item">
+                                    <p class="main-wrapper-inputs-line-item-title">Кошелек</p>
+                                    <input type="text" disabled class="main-wrapper-inputs-line-item-input"
+                                        value="TMtvWDsassa...dJvhvg" placeholder="Кошелек">
                                 </div>
-                                <div class="col-md-6">
-                                    <button class="button button-lg button-primary button-block" type="submit">Отправить сообщение</button>
+                                <div class="main-wrapper-inputs-line-item">
+                                    <p class="main-wrapper-inputs-line-item-title">Дата регистрации</p>
+                                    <input type="text" disabled class="main-wrapper-inputs-line-item-input" value="10.10.19"
+                                        placeholder="Fast ID">
+                                </div>
+                                <div class="main-wrapper-inputs-line-item">
+                                    <p class="main-wrapper-inputs-line-item-title">Последняя игра</p>
+                                    <input type="text" disabled class="main-wrapper-inputs-line-item-input" value="10.10.19"
+                                        placeholder="Реферал">
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <div class="col-lg-5 col-xl-4">
-                        <!-- Heading Component-->
-                        <article class="heading-component">
-                            <div class="heading-component-inner">
-                                <h5 class="heading-component-title">Контактная информация
-                                </h5>
+                    <div class="profile-wrapper-main-item">
+                        <div class="statistic">
+                            <div class="statistic-item">
+                                <div class="statistic-item-main">
+                                    <p class="statistic-item-main-title">
+                                        Максимальная ставка
+                                    </p>
+                                    <p class="statistic-item-main-value">10000 TRX</p>
+                                </div>
+                                <div class="statistic-item-icon">
+        
+                                </div>
                             </div>
-                        </article>
-                        <div class="contact-list">
-                            <dl>
-                                <dt>E-mail</dt>
-                                <dd><span class="icon icon-primary mdi mdi-email-outline"></span><a class="link" href="/cdn-cgi/l/email-protection#2b08"><span class="__cf_email__" data-cfemail="93fafdf5fcd3f7f6fefcfffafdf8bdfce1f4">bitlex@gmail.com</span></a></dd>
-                            </dl>
+                            <div class="statistic-item">
+                                <div class="statistic-item-main">
+                                    <p class="statistic-item-main-title">
+                                        Максимальный выигрыш
+                                    </p>
+                                    <p class="statistic-item-main-value">10000 TRX</p>
+                                </div>
+                                <div class="statistic-item-icon">
+        
+                                </div>
+                            </div>
+                            <div class="statistic-item">
+                                <div class="statistic-item-main">
+                                    <p class="statistic-item-main-title">
+                                        Всего сыграно
+                                    </p>
+                                    <p class="statistic-item-main-value">400 раз</p>
+                                </div>
+                                <div class="statistic-item-icon">
+        
+                                </div>
+                            </div>
+                            <div class="statistic-item">
+                                <div class="statistic-item-main">
+                                    <p class="statistic-item-main-title">
+                                        Времени в игре
+                                    </p>
+                                    <p class="statistic-item-main-value">10 часов</p>
+                                </div>
+                                <div class="statistic-item-icon">
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="statistic-table-sport">
+                        <div class="statistic-table-nav-sport">
+                            <p class="statistic-table-nav-item-sport statistic-table-nav-item-active-sport" data-timezone="today-bets">Сегодня</p>
+                            <p class="statistic-table-nav-item-sport" data-timezone="yesterday-bets">Вчера</p>
+                            <p class="statistic-table-nav-item-sport" data-timezone="all-bets">Всё время</p>
+                        </div>
+                        <div class="statistic-table-item-head-sport">
+                            <p class="statistic-table-item-head-item-sport">
+                                Событие
+                            </p>
+                            <p class="statistic-table-item-head-item-sport">
+                                Спорт
+                            </p>
+                            <p class="statistic-table-item-head-item-sport">
+                                Дата
+                            </p>
+                            <p class="statistic-table-item-head-item-sport">
+                                Статус
+                            </p>
+                            <p class="statistic-table-item-head-item-sport">
+                                Со счёта
+                            </p>
+                            <p class="statistic-table-item-head-item-sport">
+                                На счёт
+                            </p>
+                        </div>
+                        <div class="statistic-table-sport-wrapper">
+                            <div class="statistic-table-item-line-sport">
+                                <div class="statistic-table-item-line-item-sport">
+                                    <div>
+                                        Абр
+                                    </div>
+                                    <div>
+                                        Браун
+                                    </div>
+                                </div>
+                                <div class="statistic-table-item-line-item-sport">
+                                    Футбол
+                                </div>
+                                <div class="statistic-table-item-line-item-sport">
+                                    12.12.2020
+                                </div>
+                                <div class="statistic-table-item-line-item-sport">
+                                    Победа
+                                </div>
+                                <div class="statistic-table-item-line-item-sport">
+                                    3
+                                </div>
+                                <div class="statistic-table-item-line-item-sport">
+                                    12.2
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Page Footer-->
+        </div>
         <footer class="section footer-classic footer-classic-dark">
             <div class="footer-classic-main">
                 <div class="container">

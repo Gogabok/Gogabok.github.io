@@ -1129,7 +1129,7 @@ table th {
 body {
 	padding: 0;
 	margin: 0;
-	background: url(../img/fon.jpg) 50% 50% no-repeat !important;
+	/* background: url(../img/fon.jpg) 50% 50% no-repeat !important; */
 		background-size: cover !important;
 }
 body .bg {
@@ -2368,20 +2368,20 @@ body {
 .table-players {
 	margin-bottom: 0px;
 }
-.game {
-	background: url("../img/fon.jpg") 50% 50%;
+.profile {
+	background: url("../images/fon.jpg") 50% 50%;
 	background-attachment: fixed;
 	overflow: hidden;
 	min-height: 100vh;
 	height: 100%;
 	padding-bottom: 20px;
-	padding-top: 130px;
+	padding-top: 20px;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 body {
 	background-attachment: fixed;
-}
-.profile {
-	display: block;
 }
 
 .rules-page {
@@ -3902,20 +3902,17 @@ html {
 
 	/* PROFILE */
 
-	.profile {
-		display: none;
-	}
 
-	.statistic-table {
+	.statistic-table-sport {
 		width: 100%;
 	}
-	.statistic-table-nav {
+	.statistic-table-nav-sport {
 		display: flex;
 		align-items: center;
 		padding: 0px;
 		border-bottom: 2px solid #152335;
 	}
-	.statistic-table-nav-item {
+	.statistic-table-nav-item-sport {
 		font-family: Roboto;
 		font-style: normal;
 		font-weight: 500;
@@ -3928,20 +3925,32 @@ html {
 		margin-bottom: -2px;
 		cursor: pointer;
 	}
-	.statistic-table-nav-item-active {
+	.statistic-table-nav-item-active-sport {
 		color: #F1CD5B;
 		border-bottom: 2px solid #F1CD5B;
 	}
-	.statistic-table-item {
+	.statistic-table-item-sport {
 		margin-top: 40px;
 	}
-	.statistic-table-item-head {
+	.statistic-table-item-head-sport {
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-		padding: 15px 0px;
+		padding: 15px 8px 15px 0px;
 	}
-	.statistic-table-item-head-item {
+	.statistic-table-sport-wrapper::-webkit-scrollbar{
+		background: rgba(30, 44, 61, 0.7);
+		border-radius: 5px;
+		width: 8px;
+	}
+	.statistic-table-item-line-item-sport div {
+		margin: 5px 0px;
+	}
+	.statistic-table-sport-wrapper::-webkit-scrollbar-thumb{
+		background: rgb(42, 59, 80);
+		border-radius: 5px;
+	}
+	.statistic-table-item-head-item-sport {
 		font-family: Roboto;
 		font-style: normal;
 		font-weight: normal;
@@ -3952,16 +3961,20 @@ html {
 		margin: 0px auto;
 		flex: 1;
 	}
-	.statistic-table-item-line {
+	.statistic-table-sport-wrapper {
+		width: 100%;
+		max-height: 400px;
+		overflow-y: scroll;
+	}
+	.statistic-table-item-line-sport {
 		background: #132234;
 		margin: 2px 0px;
-		padding: 15px;
+		padding: 5px 0px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 15px 0px;
 	}
-	.statistic-table-item-line-item {
+	.statistic-table-item-line-item-sport{
 		font-family: Roboto;
 		font-style: normal;
 		font-weight: normal;
@@ -3971,6 +3984,11 @@ html {
 		color: #FFFFFF;
 		margin: 0px auto;
 		flex: 1;
+	}
+	@media screen and (max-width: 500px) {
+		.statistic-table-item-line-item-sport {
+			font-size: 10px;
+		}
 	}
 		.profile-wrapper {
 		max-width: 70%;

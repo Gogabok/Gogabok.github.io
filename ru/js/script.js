@@ -1768,129 +1768,6 @@
 	});
 }());
 
-// window.ISO = ISO
-
-// const gameFolder = $("#sport-wrapper")
-
-// $(document).ready(function () {
-// 	$.get("https://data.incub.space/api/pkg:be381439933d5c2fa3f9a71dbf1fd2cf/live/ru/sports", (data) => console.log(data))
-// 	$.get(
-// 		"https://data.incub.space/api/pkg:be381439933d5c2fa3f9a71dbf1fd2cf/line/ru/tournaments/sport1/country53",
-// 		function (data) {
-// 			let gamesCount = null;
-// 			let cups = [];
-// 			data.map(cup => {
-// 				$.get("https://data.incub.space/api/pkg:be381439933d5c2fa3f9a71dbf1fd2cf/line/ru/events/sport1/country53/tourney" + cup.ID, function (gamesInCup) {
-// 					gamesCount += gamesInCup.length
-// 					cups.push({
-// 						tourney: cup.tourneyName,
-// 						tourneyID: cup.ID,
-// 						games: gamesInCup
-// 					})
-// 					gamesInit(cups, gamesCount)
-// 				})
-// 			}
-// 			)
-
-// 		})
-// })
-
-
-// function gamesInit(cups, gamesCount) {
-// 	console.log(cups, gamesCount)
-// 	$("#games-folder").empty()
-// 	let $gameFolder = $(
-// 		`
-// 			<div class="col-lg-12 isotope-item" data-filter="football">
-//           <article class="heading-component">
-//               <div class="heading-component-inner">
-//                   <h5 class="heading-component-title">Футбол (${ gamesCount })
-//                   </h5>
-//                   <div>
-//                       <ul class="list-inline list-inline-xs">
-//                           <li><a class="button button-xs button-red-outline active" href="#">Live</a></li>
-//                       </ul>
-//                   </div>
-//               </div>
-//           </article>
-					
-// 					<div class="tournaments-folder"> 
-					
-// 					</div>
-//       </div>
-// 		`
-// 	)
-// 	$("#games-folder").append($gameFolder).isotope('insert', $gameFolder)
-
-
-// 	cups.forEach(cup => {
-// 		let $currentCup = $(
-// 			`
-// 			<div id ="football-cups-header" class="sport-table-header">
-// 				<p>${ cup.tourney} (${cup.games.length})</p>
-// 			</div>
-// 			<div class="matches-wrapper" id="${ cup.tourneyID}">
-			
-// 			</div>
-// 			`
-// 		)
-// 		$(".tournaments-folder").append($currentCup).isotope('insert', $currentCup)
-// 		cup.games.forEach(game => {
-// 			let $currentGame = $(
-// 				`
-// 				<div class="sport-table">
-// 					<div class="sport-table-tr">
-// 						<div class="row sport-row align-items-center row-15">
-// 							<div class="col-sm-1 col-md-1 col-lg-1">
-// 								<div class="sport-table-icon">
-// 									<div class="sprite sprite-sport-icon-07"></div>
-// 								</div>
-// 							</div>
-// 							<div class="col-sm-9 col-md-4 col-lg-3">
-// 								<div class="sport-table-title">
-// 									<div class="sport-table-title-item sport-table-title-item-left"><span class="sport-table-title-team">${ game.teams[0]}</span><span class="sport-table-title-team">${game.teams[1]}</span></div>
-// 									<div class="sport-table-title-item sport-table-title-item-right"><span class="sport-table-title-score"><span>4</span></span>
-// 											<!--span.sport-table-title-team= obj.team[1][0]--><span class="sport-table-title-score"><span>2</span></span>
-// 									</div>
-// 								</div>
-// 							</div>
-// 							<div class="col-sm-10 col-md-6 col-lg-7">
-// 								<div class="sport-table-wager"><a class="sport-table-wager-button" href="#" data-toggle="modal" data-target="#sportModal" data-team-name="${ game.teams[0]}" data-confrontation="${game.teams[0]} vs ${game.teams[1]}" data-wager-count="1.23" data-score="4:2"><span>${game.teams[0]}</span><span class="sport-table-wager-button-count">1.23</span></a><a class="sport-table-wager-button" href="#" data-toggle="modal" data-target="#sportModal" data-team-name="Draw" data-confrontation="${game.teams[0]} vs. ${game.teams[1]}" data-wager-count="13.00" data-score="4:2"><span>Draw</span><span class="sport-table-wager-button-count">13.00</span></a><a class="sport-table-wager-button" href="#" data-toggle="modal" data-target="#sportModal" data-team-name="${game.teams[1]}" data-confrontation="${game.teams[0]} vs ${game.teams[1]}" data-wager-count="34.25" data-score="4:2"><span>${game.teams[1]}</span><span class="sport-table-wager-button-count">34.25</span></a>
-// 								</div>
-// 							</div>
-// 							<div class="col-sm-2 col-md-1 col-lg-1">
-// 								<div class="sport-table-bonus"><span class="sport-table-bonus-count">+58</span><span class="sport-table-bonus-icon material-icons-chevron_right"></span></div>
-// 							</div>
-// 						</div>
-// 					</div>
-// 				</div>
-// 				`)
-// 			$("#" + cup.tourneyID).append($currentGame).isotope('insert', $currentGame);
-// 		})
-// 	})
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2151,397 +2028,100 @@ $("a.bet-max").on('click', function (e) {
 });
 
 
+$(document).on("ready", function () {
+	let pad = $('.header-menu').height() - 10
+	$(".divider").css("margin-top", pad)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+// Запрос к базе ставок юзера
 
 $(document).on("ready", function () {
-	let pad = $('.header-menu').height()
-	$(".swiper-container").css("margin-top", pad)
+	$(".statistic-table-nav-item-sport").on("click", function (e) {
+		$(".statistic-table-nav-item-sport").removeClass("statistic-table-nav-item-active-sport")
+		$(e.target).addClass("statistic-table-nav-item-active-sport")
+		$.ajax({
+			cache: false, // Для теста
+			url: `./${$(e.target).attr("data-timezone")}.json`,
+			dataType: "json",
+			success: function (data) {
+			$(".statistic-table-sport-wrapper").empty()
+			data.forEach(game => {
+					$(".statistic-table-sport-wrapper").append(`
+				
+								<div class="statistic-table-item-line-sport">
+        				  <div class="statistic-table-item-line-item-sport">
+        				      <div>
+        				          ${ game.game_info.opp_1_name }
+        				      </div>
+        				      <div>
+        				          ${ game.game_info.opp_2_name }
+        				      </div>
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+        				      ${ game.game_info.sport_name }
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+        				      ${ prettyTime(game.game_info.game_start) }
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+        				      Разыгран
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+											${ game.bet_info.count }
+        				  </div>
+        				  <div class="statistic-table-item-line-item-sport">
+        				      ${ game.bet_info.value }
+        				  </div>
+        				</div>
+					`)
+				})
+			},
+			error: function (error) {
+				$(".statistic-table-sport-wrapper").empty()
+				$(".statistic-table-sport-wrapper").append(`
+								<div class="statistic-table-item-line-sport">
+									<div class="statistic-table-item-line-item-sport">
+									Не найдено
+									</div>
+								</div>
+				`)
+			}
+		})
+	})
 })
 
 
 
+let prettyTime = function(time) {
+	let newTime = time * 1000
+	let year = new Date(newTime).getFullYear()
+	let month = new Date(newTime).getMonth() + 1
+	let date = new Date(newTime).getDate()
+	let hours = new Date(newTime).getHours()
+	let minutes = new Date(newTime).getMinutes()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-var filter = function (text, length, clamp) {
-	clamp = clamp || '...';
-	var node = document.createElement('div');
-	node.innerHTML = text;
-	var content = node.textContent;
-	return content.length > length ? content.slice(0, length) + clamp : content;
-};
-
-Vue.filter('truncate', filter);
-const games = [
-	{
-		sportName: 'Все категории',
-		icon: '01',
-		sorting: 'all',
-		sportID: null,
-		games: [],
-		total: null,
-		isActive: true
-	},
-	{
-		sportName: 'Футбол',
-		icon: '07',
-		sorting: 'football',
-		sportID: null,
-		games: [],
-		total: null,
-		isActive: false
-	},
-	{
-		sportName: 'Теннис',
-		icon: '06',
-		sorting: 'tennis',
-		sportID: null,
-		games: [],
-		total: null,
-		isActive: false
-	},
-	{
-		sportName: 'Баскетбол',
-		icon: '04',
-		sorting: 'basketball',
-		sportID: null,
-		games: [],
-		total: null,
-		isActive: false
-	},
-	{
-		sportName: 'Хоккей',
-		icon: '08',
-		sorting: 'ice-hockey',
-		sportID: null,
-		games: [],
-		total: null,
-		isActive: false
-	},
-	{
-		sportName: 'Волейбол',
-		icon: '09',
-		sorting: 'volleyball',
-		sportID: null,
-		games: [],
-		total: null,
-		isActive: false
-	},
-	{
-		sportName: 'Бадминтон',
-		icon: '03',
-		sorting: 'badminton',
-		sportID: null,
-		games: [],
-		total: null,
-		isActive: false
-	},
-	{
-		sportName: 'Бейсбол',
-		icon: '05',
-		sorting: 'baseball',
-		sportID: null,
-		games: [],
-		total: null,
-		isActive: false
-	},
-]
-let sportWrapper = new Vue({
-	el: '.vueJs-container',
-	data: {
-		gamesData: games,
-		ApiKey: 'be381439933d5c2fa3f9a71dbf1fd2cf',
-		mode: 'live', // 'live' or 'line'
-		lang: 'ru',
-		hoster: 'https://odds.incub.space', // 'https://data.incub.space'
-		isLoadMoreBtn: true,
-		lastNumb: null,
-		isShow: false,
-		totalGames: null,
-		currentFilter: 'all',
-		showToolTip: true,
-		modal: {
-			isOpenMain: false,
-			isOpenExtra: false,
-			data: null,
-			game: null,
-			betData: {
-				currentCounter: 0
-			}
-		},
-		sportWrapperPreloaderHeight: null,
-		searchString: '',
-		hotGames: [],
-		randomComingGame: null,
-		days: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Суб"],
-		months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
-	},
-	async created() {
-		await this.getApiSports()
-		await this.getApiGames(5)
-		this.sportWrapperPreloaderHeight = this.$refs.sportWrapper.clientHeight + 'px' || '700px'
-	},
-	methods: {
-		searchingMatch() {
-			let str = this.searchString.toLowerCase().replace(/[^\wа-яё,./+-]/gi, '')
-			this.gamesData.forEach(sport => {
-				let total = 0
-					sport.games.forEach((tournament, indexTournament) => {
-						tournament.events_list.forEach((game, indexGame) => {
-							let teams = [game.opp_1_name.toLowerCase().replace(/[^\wа-яё,./+-]/gi, ''), game.opp_2_name.toLowerCase().replace(/[^\wа-яё,./+-]/gi, ''),]
-							if (teams[0].indexOf(str) !== -1 || teams[1].indexOf(str) !== -1) {
-								game.isShow = true
-								tournament.isShow = true
-								total++
-							} else {
-								game.isShow = false
-							}
-							sport.total = total
-
-						})
-						let result = tournament.events_list.filter(gameItem => gameItem.isShow === true)
-						result.length > 0 ? tournament.isShow = true : tournament.isShow = false
-					})
- 			})
-			this.totalGamesCounter()
-		},
-		makeBet() {
-			if (this.modal.betData.currentCounter <= 100 && this.modal.betData.currentCounter > 0) {
-				this.modal = {
-					isOpenMain: false,
-					isOpenExtra: false,
-					data: null,
-					game: null,
-					betData: {
-						currentCounter: 0
-					}
-				}
-				alert('Вы сделали ставку!')
-			} else {
-				this.modal = {
-					isOpenMain: false,
-					isOpenExtra: false,
-					data: null,
-					game: null,
-					betData: {
-						currentCounter: 0
-					}
-				}
-				alert('Произошла ошибка')
-			}
-		},
-		makeExtraBet(game, bet) {
-			this.modal = {
-				isOpenMain: true,
-				isOpenExtra: false,
-				data: bet,
-				game: game,
-				betData: {
-					currentCounter: 0
-				}
-			}
-		},
-		modelCounter() {
-			if (this.modal.betData.currentCounter >= 100) {
-				this.modal.betData.currentCounter = 100
-			} else if (this.modal.betData.currentCounter <= 0) {
-				this.modal.betData.currentCounter = 0
-			}
-		},
-		modelCounterPlus() {
-			this.modal.betData.currentCounter++
-			if (this.modal.betData.currentCounter >= 100) {
-				this.modal.betData.currentCounter = 100
-			} else if (this.modal.betData.currentCounter <= 0) {
-				this.modal.betData.currentCounter = 0
-			}
-		},
-		modelCounterMinus() {
-			this.modal.betData.currentCounter--
-			if (this.modal.betData.currentCounter >= 100) {
-				this.modal.betData.currentCounter = 100
-			} else if (this.modal.betData.currentCounter <= 0) {
-				this.modal.betData.currentCounter = 0
-			}
-		},
-		modalBets(data, game) {
-			this.modal.data = data
-			this.modal.game = game
-			this.modal.betData.currentCounter = 0
-			this.modal.isOpenMain = true
-		},
-		modalBetsExtra(game) {
-			this.modal.game = game
-			this.modal.betData.currentCounter = 0
-			this.modal.isOpenExtra = true
-		},
-		filtetingMethod(item) {
-			this.isShow = false
-			this.gamesData.forEach(sport => {
-				sport.isActive = false
-			});
-			item.isActive = true
-			this.currentFilter = item.sorting
-			item.total > 0 || item.sportName === 'Все категории' ? this.showToolTip = true : this.showToolTip = false
-			this.isShow = true
-			this.searchingMatch()
-		},
-		async modeToggler(mode) {
-			this.mode = mode
-			this.isShow = false
-			await this.getApiSports()
-			await this.getApiGames(this.lastNumb)
-			this.isShow = true
-		},
-		async loadMore(numb) {
-			this.isShow = false
-			await this.getApiSports()
-			await this.getApiGames(numb)
-			this.isShow = true
-		},
-		getApiSports() {
-			this.isShow = false
-			return new Promise(resolve => {
-				axios
-					.get(`${this.hoster}/v1/sports/${this.mode}/${this.lang}`)
-					.then(sports => {
-						sports.data.body.forEach(sport => {
-							games.map(game => {
-								if (game.sportName === sport.name) {
-									game.sportID = sport.id
-								}
-							})
-						})
-						resolve()
-					})
-					.catch(error => {
-						alert(error)
-						resolve()
-					})
-			})
-		},
-		getApiGames(numb) {
-			return new Promise(resolve => {
-				this.lastNumb = numb
-				numb >= 50 ? this.isLoadMoreBtn = false : false
-				let axiosPromises = []
-				games.forEach(game => {
-					game.total = 0
-					if (!!game.sportID) {
-						axiosPromises.push(
-							axios
-								.get(`${this.hoster}/v1/events/${game.sportID}/0/sub/${numb}/${this.mode}/${this.lang}`)
-								.then(gamesList => {
-									let games = gamesList.data.body
-									games.forEach(tournament => {
-										let filtredGames = tournament.events_list.filter(game => {
-											game.coefs = [0, 0, 0]
-											tournament.isShow = true
-											game.isShow = true
-											game.filteredTime = this.prettyTime(game.game_start)
-											game.game_oc_list.forEach(bet => {
-												if (bet.oc_group_name === '1x2') {
-													if (bet.oc_name === game.opp_1_name) {
-														game.coefs[0] = bet
-													}
-													if (bet.oc_name === 'Ничья') {
-														game.coefs[1] = bet
-													}
-													if (bet.oc_name === game.opp_2_name) {
-														game.coefs[2] = bet
-													}
-												}
-											})
-											return game.opp_1_name && game.opp_2_name
-										})
-										tournament.events_list = filtredGames
-										game.total += tournament.events_list.length
-									})
-									game.games = games
-								})
-						)
-					}
-				})
-				axios.all(axiosPromises).then(() => {
-					this.totalGamesCounter()
-					this.isShow = true
-					this.searchingMatch()
-					this.getRandomGames()
-					this.getRandomComingMatch()
-					resolve()
-				})
-			})
-		},
-		getRandomComingMatch() {
-			axios
-				.get(`${this.hoster}/v1/events/1/0/list/1/line/${this.lang}`)
-				.then(randomGame => {
-					this.randomComingGame = randomGame.data.body[Math.floor(Math.random() * randomGame.data.body.length)]
-					this.randomComingGame.coefs = [0, 0, 0]
-					this.randomComingGame.game_oc_list.forEach(bet => {
-						if (bet.oc_group_name === '1x2') {
-							if (bet.oc_name === this.randomComingGame.opp_1_name) {
-								this.randomComingGame.coefs[0] = bet
-							}
-							if (bet.oc_name === 'Ничья') {
-								this.randomComingGame.coefs[1] = bet
-							}
-							if (bet.oc_name === this.randomComingGame.opp_2_name) {
-								this.randomComingGame.coefs[2] = bet
-							}
-						}
-					})
-				})
-		},
-		getRandomGames() {
-			let hotGames = ['football', 'tennis', 'basketball']
-			this.hotGames.splice(0, this.hotGames.length)
-			this.gamesData.filter(sport => {
-				hotGames.forEach(filter => {
-					if (sport.sorting === filter) {
-						let randTour = sport.games[Math.floor(Math.random() * sport.games.length)]
-						let randGame = randTour.events_list[Math.floor(Math.random() * randTour.events_list.length)]
-						randGame.image = sport.sorting
-						this.hotGames.push(randGame)
-					}
-				})
-			})
-		},
-		totalGamesCounter() {
-			this.totalGames = this.gamesData.reduce(function (sum, current) {
-				return sum + current.total
-			}, 0)
-		},
-		prettyTime(time) {
-			let newTime = time * 1000
-			let year = new Date(newTime).getFullYear()
-			let month = new Date(newTime).getMonth() + 1
-			let date = new Date(newTime).getDate()
-			let hours = new Date(newTime).getHours()
-			let minutes = new Date(newTime).getMinutes()
-
-			let newMonth = month < 10 ? '0' + month : month
-			let newDate = date < 10 ? '0' + date : date
-			let newHours = hours < 10 ? '0' + hours : hours
-			let newMinutes = 0
-			if(minutes === '0') {
-				newMinutes = '00'
-			} else if (minutes < 10) {
-				newMinutes = '0' + minutes
-			} else {
-				newMinutes = minutes
-			}
-			return `${newHours}:${newMinutes}, ${newDate}.${newMonth}.${year}`
-		}
+	let newMonth = month < 10 ? '0' + month : month
+	let newDate = date < 10 ? '0' + date : date
+	let newHours = hours < 10 ? '0' + hours : hours
+	let newMinutes = 0
+	if (minutes === '0') {
+		newMinutes = '00'
+	} else if (minutes < 10) {
+		newMinutes = '0' + minutes
+	} else {
+		newMinutes = minutes
 	}
-})
+	return `${newHours}:${newMinutes}, ${newDate}.${newMonth}.${year}`
+}
+
