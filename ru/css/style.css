@@ -6740,7 +6740,7 @@ textarea.form-input {
 	transition: all .3s;
 }
 .list-inline-custom .icon::before {
-	/* margin-top: 10px; */
+	margin-top: 10px;
 }
 
 
