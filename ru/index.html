@@ -1488,6 +1488,10 @@
                             this.modal.game.mode = mode
                             this.modal.game.filteredTime = this.prettyTime(payload.data.body.game_start)
                         })
+                        .catch(error => {
+                            alert("Не могу обновить ставку")
+                            this.closeModal()
+                        })
                 },
                 async modeToggler(mode) {
                     this.mode = mode
@@ -1701,34 +1705,33 @@
 
                 makeBet() {
                     if (this.modal.betData.currentCounter <= 100 && this.modal.betData.currentCounter > 0) {
-                        let bet = { // Ставка пользователя
-                            count: this.modal.betData.currentCounter, // Число поставленной валюты
-                            rate: this.modal.data.oc_rate,            // Коэффициент
-                            value: (this.modal.betData.currentCounter * this.modal.data.oc_rate).toFixed(2) // Потенциальный выигрыш
-                        }
-                        console.log(this.modal.game, bet) // ---> Сама игра + ставка юзера
-
-                        this.modal = {
-                            isOpenMain: false,
-                            isOpenExtra: false,
-                            data: null,
-                            game: null,
-                            betData: {
-                                currentCounter: 0
-                            }
+                        let game = {
+                            bet_info: {
+                                count: this.modal.betData.currentCounter, // Число поставленной валюты
+                                rate: this.modal.data.oc_rate,            // Коэффициент
+                                value: (this.modal.betData.currentCounter * this.modal.data.oc_rate).toFixed(2) // Потенциальный выигрыш
+                            },
+                            game_info: this.modal.game
                         }
 
+
+                        // POST запрос по URL, второй параметр - "payload" - объект, который необходимо отправить: JSON или ещё что-то
+                        // Если отправлено успешно, то выполняет функцию в then (при необходимости)
+                        // Вывод ошибки в catch(erorr => {})
+
+                        let payload = JSON.stringify(game) // Преобразовал необходимый объект в JSON формат
+                        // axios   
+                            // .post("URL", payload) 
+                            // .then(response => {
+                            //     console.log(response)
+                            // })
+                            // .catch(error => {
+                            //     console.log(error)
+                            // })
+                        this.closeModal()
                         alert('Вы сделали ставку!')
                     } else {
-                        this.modal = {
-                            isOpenMain: false,
-                            isOpenExtra: false,
-                            data: null,
-                            game: null,
-                            betData: {
-                                currentCounter: 0
-                            }
-                        }
+                        this.closeModal()
                         alert('Произошла ошибка')
                     }
                 },
