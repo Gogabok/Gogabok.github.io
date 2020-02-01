@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <!-- <link rel="stylesheet" href="css/fonts.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/styleBITLEX.css">
@@ -337,7 +337,7 @@
     <div class="vueJs-container">
         <section id="sport-wrapper" class="section section-sm bg-gray-100">
             <div class="container" ref="sportWrapper">
-                <div class="row isotope-wrap row-30" v-if="isShow" key="container">
+                <div class="row isotope-wrap row-30" v-if="isShow" key="container + Math.random()">
                     <!-- FILTERS -->
                     <div class="col-lg-12 sport-navigation">
                             <div class="isotope-filters isotope-filters-horizontal">
@@ -346,7 +346,7 @@
                                         @click.prevent="filteringMethod(item)" 
                                         v-for="item in gamesData" 
                                         class="isotope-filters-list-item"
-                                        :key="item.sportName"
+                                        :key="item.sportName + Math.random()"
                                         v-show="item.total >= 0 || item.sportName === 'Все категории'">
                                         <a class="isotope-filters-list-link" :class="item.isActive ? 'active' : ''" data-filter="*" href="#">
                                             <span class="isotope-filters-list-img">
@@ -367,13 +367,13 @@
                     <div class="col-lg-12 sport-wrapper">
                         <div class="row isotope row-30" data-isotope-group="gallery">
                             <!-- Football-->
-                            <div class="modeToggler" key="modeToggler" v-show="showToolTip">
+                            <div class="modeToggler" key="modeToggler + Math.random()" v-show="showToolTip">
                                 <ul class="list-inline list-inline-xs">
                                     <li @click="modeToggler('live')"><a class="button button-xs button-red-outline" :class="mode === 'live' ? 'active' : ''">Live</a></li>
                                     <li @click="modeToggler('line')"><a class="button button-xs button-red-outline" :class="mode === 'line' ? 'active' : ''">Line</a></li>
                                 </ul>
                             </div>
-                            <transition class="transition-isotope" name="fade" v-for="(sport, index) in gamesData" :key="sport.sportName" mode="out-in">
+                            <transition class="transition-isotope" name="fade" v-for="(sport, index) in gamesData" :key="sport.sportName + Math.random()" mode="out-in">
                                 <div v-if="sport.total > 0"
                                      v-show="currentFilter === 'all' ? true : currentFilter === sport.sorting"
                                      class="col-lg-12 isotope-item" 
@@ -465,11 +465,11 @@
                                     </div>
                                 </div>
                             </transition>
-                            <button key="loadMore" class="loadMore" v-show="isLoadMoreBtn && showToolTip" @click="loadMore(100)">Ещё события</button >
+                            <button :key="'loadMore' + Math.random()" class="loadMore" v-show="isLoadMoreBtn && showToolTip" @click="loadMore(100)">Ещё события</button >
                         </div>
                     </div>
                 </div>
-                <div class="sport-wrapper-preloader-wrap" key="preloader" :style="`height: ${sportWrapperPreloaderHeight}`" v-else>
+                <div class="sport-wrapper-preloader-wrap" :key="'preloader' + Math.random()" :style="`height: ${sportWrapperPreloaderHeight}`" v-else>
                         <img class="sport-wrapper-preloader" src="images/loader/sport-wrapper-preloader.svg" alt="">
                 </div>
             </div >
@@ -566,7 +566,7 @@
                         <p class="modal-sport-live-count" v-show="modal.game.score_full">Счёт: <span>{{ modal.game.score_full }}</span></p>
                         <p class="modal-sport-live-count" v-show="modal.game.score_period">Предыдущий счёт: <span>{{ modal.game.score_period }}</span></p>
                     </div>
-                    <a @click.prevent="makeExtraBet(bet, modal.game, modal.game.hasOwnProperty('mode') ? modal.game.mode : mode)" v-for="bet in modal.game.game_oc_list" :key="bet.oc_name + bet.oc_rate" class="sport-table-wager-button sport-table-wager-button-extra" href="#">
+                    <a @click.prevent="makeExtraBet(bet, modal.game, modal.game.hasOwnProperty('mode') ? modal.game.mode : mode)" v-for="bet in modal.game.game_oc_list" :key="bet.oc_name + bet.oc_rate + Math.random()" class="sport-table-wager-button sport-table-wager-button-extra" href="#">
                         <div>
                             <div>
                                 <span>{{ bet.oc_group_name }}. {{ bet.oc_name }}</span>
@@ -589,7 +589,7 @@
                 <div class="row row-50">
                     <div class="col-lg-12">
                         <div class="row row-30">
-                            <div class="col-md-6 col-lg-4" v-for="game in hotGames" :key="game.tournament_id">
+                            <div class="col-md-6 col-lg-4" v-for="game in hotGames" :key="game.tournament_id + Math.random()">
                                 <article class="post-badly">
                                     <div class="post-badly-image"><img :src="`./images/betting-news-${game.image ? game.image : 'unknown'}.jpg`" alt="" width="370" height="180" /></div>
                                     <div class="post-badly-body">
@@ -1414,10 +1414,18 @@
                 await this.getApiSports()
                 await this.getApiGames(5)
                 this.sportWrapperPreloaderHeight = this.$refs.sportWrapper.clientHeight + 'px' || '700px'
+                setInterval(() => {
+                    this.updatingData()
+                }, 30000);
             },
             methods: {
                 // BASIC LOGIC ------------------------------------------------------------------------
 
+
+                async updatingData() {
+                    await this.getApiSports()
+                    await this.getApiGames(this.lastNumb || 5)
+                },
 
                 getRandomGames() {
                     let hotGames = ['football', 'tennis', 'basketball']
@@ -1728,6 +1736,27 @@
                             // .catch(error => {
                             //     console.log(error)
                             // })
+
+
+
+                        axios
+                            .get("https://rez.incub.space/v1/rez/getgame/ru/1580479200/223477380")
+                            .then(resolve => {
+                                console.log(resolve)
+                            })
+
+
+
+
+
+
+
+
+
+
+
+
+
                         this.closeModal()
                         alert('Вы сделали ставку!')
                     } else {
