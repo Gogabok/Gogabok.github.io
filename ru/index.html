@@ -589,7 +589,7 @@
                 <div class="row row-50">
                     <div class="col-lg-12">
                         <div class="row row-30">
-                            <div class="col-md-6 col-lg-4" v-for="game in hotGames" :key="game.tournament_id + Math.random()">
+                            <div class="col-md-6 col-lg-4" v-for="game in hotGames" :key="game.tournament_id ? game.tournament_id + Math.random() : Math.random()">
                                 <article class="post-badly">
                                     <div class="post-badly-image"><img :src="`./images/betting-news-${game.image ? game.image : 'unknown'}.jpg`" alt="" width="370" height="180" /></div>
                                     <div class="post-badly-body">
@@ -1585,8 +1585,8 @@
                                 resolve()
                             })
                             .catch(error => {
-                                alert(error)
-                                resolve()
+                                this.updatingData()
+                                // resolve()
                             })
                     })
                 },
@@ -1639,6 +1639,9 @@
                             this.getRandomGames()
                             this.getRandomComingMatch()
                             resolve()
+                        })
+                        .catch(error => {
+                            console.log(error);
                         })
                     })
                 },
