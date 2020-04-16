@@ -12,7 +12,7 @@
     <div class="tabs">
     
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '1'" class="tab step-1">
+        <div :class="currentStep === '1' ? 'active-tab' : ''" v-if="currentStep === '1'" class="tab step-1">
           <h2 class="tab-title">Ваш пол?</h2>
           <div class="choosing">
             <div @click="CHOOSING_sex('sex-1')" :class="info.sex === 'sex-1' ? 'active' : ''" class="item">
@@ -27,7 +27,7 @@
       </transition>
 
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '2'" class="tab step-2">
+        <div :class="currentStep === '2' ? 'active-tab' : ''" v-if="currentStep === '2'" class="tab step-2">
           <h2 class="tab-title">Возраст пациента?</h2>
           <div class="tab-slider">
             <input class="tab-slider-input" v-model="info.age" type="range" min="6" :max="info.sex === 'sex-1' ? 17 : 16">
@@ -40,7 +40,7 @@
       </transition>
 
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '3'" class="tab step-3">
+        <div :class="currentStep === '3' ? 'active-tab' : ''" v-if="currentStep === '3'" class="tab step-3">
           <h2 class="tab-title">Факторы риска?</h2>
           <div class="choosing choosing-risks">
             <div @click="CHOOSING_riskFactors('1')" :class="info.risksFactors.find(i => i === '1') ? 'active-risks' : ''" class="main-item">
@@ -97,7 +97,7 @@
       </transition>
 
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '4'" class="tab step-4">
+        <div :class="currentStep === '4' ? 'active-tab' : ''" v-if="currentStep === '4'" class="tab step-4">
           <h2 class="tab-title">Какой из указанных способов коррекции близорукости и\или контроля используется?</h2>
           <div class="choosing choosing-risks">
             <div @click="CHOOSING_controlMethods('1')" :class="info.controlMethods === '1' ? 'active-risks' : ''" class="main-item">
@@ -124,7 +124,7 @@
       </transition>
 
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '5'" class="tab step-5">
+        <div :class="currentStep === '5' ? 'active-tab' : ''" v-if="currentStep === '5'" class="tab step-5">
           <h2 class="tab-title">На каком глазу близорукость у ребенка?</h2>
           <div class="choosing choosing-eyes">
             <div @click="CHOOSING_eye('left')" :class="info.eye.left.isTrue ? 'active-risks' : ''" class="main-item">
@@ -147,7 +147,7 @@
       </transition>
 
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '6'" class="tab step-6">
+        <div :class="currentStep === '6' ? 'active-tab' : ''" v-if="currentStep === '6'" class="tab step-6">
           <h2 class="tab-title">Какова степень близорукости(дптр)?</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
@@ -166,7 +166,7 @@
       </transition>
 
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '7'" class="tab step-7">
+        <div :class="currentStep === '7' ? 'active-tab' : ''" v-if="currentStep === '7'" class="tab step-7">
           <h2 class="tab-title">Укажите значение аксиального размера глаза(мм)?</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
@@ -185,7 +185,7 @@
       </transition>
 
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '8'" class="tab step-8">
+        <div :class="currentStep === '8' ? 'active-tab' : ''" v-if="currentStep === '8'" class="tab step-8">
           <h2 class="tab-title">Укажите показатели кератометрии (Км)?</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
@@ -204,7 +204,7 @@
       </transition>
 
       <transition name="scale" mode="out-in">
-        <div v-if="currentStep === '9'" class="tab step-9">
+        <div :class="currentStep === '9' ? 'active-tab' : ''" v-if="currentStep === '9'" class="tab step-9">
           <h2 class="tab-title">Известен ли вам годовой прирост аксиального размера глаза?</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
@@ -260,7 +260,7 @@
         </div>
       </transition>
 
-      <div v-if="currentEye === 'graph' && currentStep === 'graph'" class="charts">
+      <div :class="currentEye === 'graph' && currentStep === 'graph' ? 'active-tab' : ''" v-if="currentEye === 'graph' && currentStep === 'graph'" class="charts">
         <h3>Данные ПЗО</h3>
         <line-chart @refractio-method="refractioMethod" :info="info"></line-chart>
         <h3>Данные рефракции</h3>

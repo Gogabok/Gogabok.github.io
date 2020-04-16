@@ -23,9 +23,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
+  display: none;
   /* height: 400px; */
+}
+
+.active-tab {
+  display: block;
+}
+
+.step-1 {
+  display: block;
 }
 
 .tab-title {
@@ -339,6 +346,7 @@ body {
 .charts {
   max-width: 600px;
   margin: 0px auto;
+  display: none;
 }
 
 .charts h3 {
@@ -348,4 +356,8 @@ body {
   line-height: 2rem;
   font-size: 2rem;
   margin: 40px 0px 10px 0px;
+}
+
+.active-tab {
+  display: block;
 }
