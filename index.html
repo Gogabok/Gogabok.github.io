@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="calc-app">
+    <div class="tabs">
+    
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '1'" class="tab step-1">
+          <h2 class="tab-title">Ваш пол?</h2>
+          <div class="choosing">
+            <div @click="CHOOSING_sex('sex-1')" :class="info.sex === 'sex-1' ? 'active' : ''" class="item">
+              <img ondragstart="return false" src="./images/man.svg" alt="">
+            </div>
+            <div @click="CHOOSING_sex('sex-2')" :class="info.sex === 'sex-2' ? 'active' : ''" class="item">
+              <img ondragstart="return false" src="./images/woman.svg" alt="">
+            </div>
+          </div>
+          <button :disabled="!info.sex" @click="nextStep('2')" class="btn-next">Дальше</button>
+        </div>
+      </transition>
+
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '2'" class="tab step-2">
+          <h2 class="tab-title">Возраст пациента?</h2>
+          <div class="tab-slider">
+            <input class="tab-slider-input" v-model="info.age" type="range" min="6" :max="info.sex === 'sex-1' ? 17 : 16">
+          </div>
+          <p class="slider-value">
+            {{ info.age }} лет
+          </p>
+          <button @click="nextStep('3')" class="btn-next">Дальше</button>
+        </div>
+      </transition>
+
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '3'" class="tab step-3">
+          <h2 class="tab-title">Факторы риска?</h2>
+          <div class="choosing choosing-risks">
+            <div @click="CHOOSING_riskFactors('1')" :class="info.risksFactors.find(i => i === '1') ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/risk-factors/1.svg" alt="">
+              </div>
+              <p class="item-desc">Время, ежедневно проводимое на открытом воздухе менее 1,5 часов в день</p>
+            </div>
+
+            <div @click="CHOOSING_riskFactors('2')" :class="info.risksFactors.find(i => i === '2') ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/risk-factors/2.svg" alt="">
+              </div>
+              <p class="item-desc">Ребенок затрачивает на работу вблизи более 3х часов в день, ежедневно</p>
+            </div>
+
+            <div @click="CHOOSING_riskFactors('3')" :class="info.risksFactors.find(i => i === '3') ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/risk-factors/3.svg" alt="">
+              </div>
+              <p class="item-desc">Длительное использование мобильных девайсов(гаджетов,ПК)</p>
+            </div>
+
+            <div @click="CHOOSING_riskFactors('4')" :class="info.risksFactors.find(i => i === '4') ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/risk-factors/4.svg" alt="">
+              </div>
+              <p class="item-desc">У ребенка выявлены аккомодационные нарушения(задержка, слабость аккомодации, низкие показатели ЗОА)</p>
+            </div>
+
+            <div @click="CHOOSING_riskFactors('5')" :class="info.risksFactors.find(i => i === '5') ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/risk-factors/5.svg" alt="">
+              </div>
+              <p class="item-desc">У ребенка выявлены бинокулярные нарушения(экзофория, аккомодационная экзотропия, высокое соотношение АК\А)</p>
+            </div>
+
+            <div @click="CHOOSING_riskFactors('6')" :class="info.risksFactors.find(i => i === '6') ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/risk-factors/6.svg" alt="">
+              </div>
+              <p class="item-desc">Наследственность</p>
+            </div>
+
+            <div @click="CHOOSING_riskFactors('7')" :class="info.risksFactors.find(i => i === '7') ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/risk-factors/7.svg" alt="">
+              </div>
+              <p class="item-desc">Возраст выявления близорукости менее(или равен) 7 годам</p>
+            </div>
+          </div>
+          <button @click="nextStep('4')" class="btn-next">Дальше</button>
+        </div>
+      </transition>
+
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '4'" class="tab step-4">
+          <h2 class="tab-title">Какой из указанных способов коррекции близорукости и\или контроля используется?</h2>
+          <div class="choosing choosing-risks">
+            <div @click="CHOOSING_controlMethods('1')" :class="info.controlMethods === '1' ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/control-methods/1.svg" alt="">
+              </div>
+              <p class="item-desc">Ортокератологические линзы(ночные линзы)</p>
+            </div>
+            <div @click="CHOOSING_controlMethods('2')" :class="info.controlMethods === '2' ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/control-methods/2.svg" alt="">
+              </div>
+              <p class="item-desc">Бифокальные контактные линзы</p>
+            </div>
+            <div @click="CHOOSING_controlMethods('3')" :class="info.controlMethods === '3' ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/control-methods/3.svg" alt="">
+              </div>
+              <p class="item-desc">Очковая коррекция или коррекция не используется</p>
+            </div>
+          </div>
+          <button :disabled="!info.controlMethods" @click="nextStep('5')" class="btn-next">Дальше</button>
+        </div>
+      </transition>
+
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '5'" class="tab step-5">
+          <h2 class="tab-title">На каком глазу близорукость у ребенка?</h2>
+          <div class="choosing choosing-eyes">
+            <div @click="CHOOSING_eye('left')" :class="info.eye.left.isTrue ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/eye.svg" alt="">
+              </div>
+              <p class="item-desc">Левый глаз</p>
+            </div>
+        
+            <div @click="CHOOSING_eye('right')" :class="info.eye.right.isTrue ? 'active-risks' : ''" class="main-item">
+              <div class="item">
+                <img ondragstart="return false" src="./images/eye.svg" alt="">
+              </div>
+              <p class="item-desc">Правый глаз</p>
+            </div>
+          </div>
+
+          <button :disabled="!info.eye.left.isTrue && !info.eye.right.isTrue" @click="nextStepChoosingEye" class="btn-next">Дальше</button>
+        </div>
+      </transition>
+
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '6'" class="tab step-6">
+          <h2 class="tab-title">Какова степень близорукости(дптр)?</h2>
+          <div v-if="currentEye === 'left'">
+            <p class="subtitle">Для левого глаза</p>
+            <input class="input-numb" min="0" max="10" @change="formatting($event.target, 'left', 'myopia')" :value="info.eye.left.myopia"
+              type="number" name="">
+          </div>
+        
+          <div v-if="currentEye === 'right'">
+            <p class="subtitle">Для правого глаза</p>
+            <input class="input-numb" min="0" max="10" @change="formatting($event.target, 'right', 'myopia')"
+              :value="info.eye.right.myopia" type="number" name="">
+          </div>
+
+          <button @click="nextStep('7')" class="btn-next">Дальше</button>
+        </div>
+      </transition>
+
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '7'" class="tab step-7">
+          <h2 class="tab-title">Укажите значение аксиального размера глаза(мм)?</h2>
+          <div v-if="currentEye === 'left'">
+            <p class="subtitle">Для левого глаза</p>
+            <input class="input-numb" min="23" max="40" @change="formatting($event.target, 'left', 'eyeSize')"
+              :value="info.eye.left.eyeSize" type="number" name="">
+          </div>
+        
+          <div v-if="currentEye === 'right'">
+            <p class="subtitle">Для правого глаза</p>
+            <input class="input-numb" min="23" max="40" @change="formatting($event.target, 'right', 'eyeSize')"
+              :value="info.eye.right.eyeSize" type="number" name="">
+          </div>
+
+          <button @click="nextStep('8')" class="btn-next">Дальше</button>
+        </div>
+      </transition>
+
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '8'" class="tab step-8">
+          <h2 class="tab-title">Укажите показатели кератометрии (Км)?</h2>
+          <div v-if="currentEye === 'left'">
+            <p class="subtitle">Для левого глаза</p>
+            <input class="input-numb" min="43" max="60" @change="formatting($event.target, 'left', 'keratometries')"
+              :value="info.eye.left.keratometries" type="number" name="">
+          </div>
+        
+          <div v-if="currentEye === 'right'">
+            <p class="subtitle">Для правого глаза</p>
+            <input class="input-numb" min="43" max="60" @change="formatting($event.target, 'right', 'keratometries')"
+              :value="info.eye.right.keratometries" type="number" name="">
+          </div>
+
+          <button @click="nextStep('9')" class="btn-next">Дальше</button>
+        </div>
+      </transition>
+
+      <transition name="scale" mode="out-in">
+        <div v-if="currentStep === '9'" class="tab step-9">
+          <h2 class="tab-title">Известен ли вам годовой прирост аксиального размера глаза?</h2>
+          <div v-if="currentEye === 'left'">
+            <p class="subtitle">Для левого глаза</p>
+            <div class="btns-wrapper">
+              <button @click="info.eye.left.annualIncr = true" :class="info.eye.left.annualIncr ? 'btn-quest-active' : ''"
+                class="btn-quest">
+                Да
+              </button>
+              <button @click="info.eye.left.annualIncr = false" :class="!info.eye.left.annualIncr ? 'btn-quest-active' : ''"
+                class="btn-quest">
+                Нет
+              </button>
+            </div>
+            <input v-if="info.eye.left.annualIncr" class="input-numb" min="0" max="10"
+              @input="formatting($event.target, 'left', 'annualIncrNumb')" :value="info.eye.left.annualIncrNumb" type="number"
+              name="">
+            <div @click="chooseEyeAndStep('right', '6')" v-if="!info.eye.right.isTrue" class="eye">
+              <div class="item">
+                <img ondragstart="return false" src="./images/eye.svg" alt="">
+              </div>
+              <p class="item-desc">Заполнить данные правого глаза</p>
+            </div>
+            
+            <button v-if="info.eye.right.isTrue && isBoth" @click="continueMethod" class="btn-quest btn-last">Далее</button>
+            <button v-else @click="calculate" class="btn-quest btn-last">Рассчитать</button>
+          </div>
+
+
+          <div v-if="currentEye === 'right'">
+            <p class="subtitle">Для правого глаза</p>
+            <div class="btns-wrapper">
+              <button @click="info.eye.right.annualIncr = true" :class="info.eye.right.annualIncr ? 'btn-quest-active' : ''"
+                class="btn-quest">
+                Да
+              </button>
+              <button @click="info.eye.right.annualIncr = false" :class="!info.eye.right.annualIncr ? 'btn-quest-active' : ''"
+                class="btn-quest">
+                Нет
+              </button>
+          
+            </div>
+            <input v-if="info.eye.right.annualIncr" class="input-numb" min="0" max="10"
+              @input="formatting($event.target, 'right', 'annualIncrNumb')" :value="info.eye.right.annualIncrNumb" type="number"
+              name="">
+            <div @click="chooseEyeAndStep('left', '6')" v-if="!info.eye.left.isTrue" class="eye">
+              <div class="item">
+                <img ondragstart="return false" src="./images/eye.svg" alt="">
+              </div>
+              <p class="item-desc">Заполнить данные левого глаза</p>
+            </div>
+            <button @click="calculate" class="btn-quest btn-last">Рассчитать</button>
+          </div>
+        </div>
+      </transition>
+
+      <div v-if="currentEye === 'graph' && currentStep === 'graph'" class="charts">
+        <h3>Данные ПЗО</h3>
+        <line-chart @refractio-method="refractioMethod" :info="info"></line-chart>
+        <h3>Данные рефракции</h3>
+        <line-chart-refractio :info="info"></line-chart-refractio>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
