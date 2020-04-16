@@ -283,6 +283,31 @@ body {
   margin-bottom: 20px;
 }
 
+.input-numb::-webkit-input-placeholder {
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.35;
+}
+
+.input-numb::-moz-placeholder {
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.35;
+}
+
+
+.input-numb:-moz-placeholder {
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.35;
+}
+
+.input-numb:-ms-input-placeholder {
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.35;
+}
+
 .btns-wrapper {
   display: flex;
   align-items: center;

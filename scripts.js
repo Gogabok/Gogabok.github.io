@@ -327,19 +327,19 @@ var vm = new Vue({
         eye: {
           left: {
             isTrue: false,
-            myopia: parseInt(2).toFixed(2),
-            eyeSize: parseInt(23).toFixed(2),
-            keratometries: parseInt(43).toFixed(2),
+            myopia: '',
+            eyeSize: '',
+            keratometries: '',
             annualIncr: false,
-            annualIncrNumb: 0.1.toFixed(2)
+            annualIncrNumb: ''
           },
           right: {
             isTrue: false,
-            myopia: parseInt(2).toFixed(2),
-            eyeSize: parseInt(23).toFixed(2),
-            keratometries: parseInt(43).toFixed(2),
+            myopia: '',
+            eyeSize: '',
+            keratometries: '',
             annualIncr: false,
-            annualIncrNumb: 0.1.toFixed(2)
+            annualIncrNumb: ''
           },
         }
       }
@@ -393,15 +393,15 @@ var vm = new Vue({
       this.currentStep = '6'
     },
     formatting(e, eye, input) {
-      if(+e.value >= 100) {
-        e.value = 99
-      } else if (+e.value <= 0) {
-        e.value = 0
-      }
+      // if(+e.value >= 100) {
+      //   e.value = 99
+      // } else if (+e.value <= 0) {
+      //   e.value = 0
+      // }
       // let val = (+e.value).toFixed(2)
-      let val = (Math.round(+e.value * 100) / 100).toFixed(2)
-      e.value = val
-      this.info.eye[eye][input] = val
+      // let val = (Math.round(+e.value * 100) / 100).toFixed(2)
+      // e.value = val
+      this.info.eye[eye][input] = e.value
     },
     nextStep(nextStep) {
       this.currentStep = nextStep

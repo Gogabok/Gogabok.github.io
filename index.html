@@ -151,13 +151,13 @@
           <h2 class="tab-title">Какова степень близорукости(дптр)?</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
-            <input class="input-numb" min="0" max="10" @change="formatting($event.target, 'left', 'myopia')" :value="info.eye.left.myopia"
+            <input class="input-numb" min="0" max="10" placeholder="3.00" @input="formatting($event.target, 'left', 'myopia')" :value="info.eye.left.myopia"
               type="number" name="">
           </div>
         
           <div v-if="currentEye === 'right'">
             <p class="subtitle">Для правого глаза</p>
-            <input class="input-numb" min="0" max="10" @change="formatting($event.target, 'right', 'myopia')"
+            <input class="input-numb" min="0" max="10" placeholder="3.00" @input="formatting($event.target, 'right', 'myopia')"
               :value="info.eye.right.myopia" type="number" name="">
           </div>
 
@@ -170,13 +170,13 @@
           <h2 class="tab-title">Укажите значение аксиального размера глаза(мм)?</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
-            <input class="input-numb" min="23" max="40" @change="formatting($event.target, 'left', 'eyeSize')"
+            <input class="input-numb" min="23" max="40" placeholder="23.00" @input="formatting($event.target, 'left', 'eyeSize')"
               :value="info.eye.left.eyeSize" type="number" name="">
           </div>
         
           <div v-if="currentEye === 'right'">
             <p class="subtitle">Для правого глаза</p>
-            <input class="input-numb" min="23" max="40" @change="formatting($event.target, 'right', 'eyeSize')"
+            <input class="input-numb" min="23" max="40" placeholder="23.00" @input="formatting($event.target, 'right', 'eyeSize')"
               :value="info.eye.right.eyeSize" type="number" name="">
           </div>
 
@@ -189,13 +189,13 @@
           <h2 class="tab-title">Укажите показатели кератометрии (Км)?</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
-            <input class="input-numb" min="43" max="60" @change="formatting($event.target, 'left', 'keratometries')"
+            <input class="input-numb" min="43" max="60" placeholder="43.00" @input="formatting($event.target, 'left', 'keratometries')"
               :value="info.eye.left.keratometries" type="number" name="">
           </div>
         
           <div v-if="currentEye === 'right'">
             <p class="subtitle">Для правого глаза</p>
-            <input class="input-numb" min="43" max="60" @change="formatting($event.target, 'right', 'keratometries')"
+            <input class="input-numb" min="43" max="60" placeholder="43.00" @input="formatting($event.target, 'right', 'keratometries')"
               :value="info.eye.right.keratometries" type="number" name="">
           </div>
 
@@ -218,7 +218,7 @@
                 Нет
               </button>
             </div>
-            <input v-if="info.eye.left.annualIncr" class="input-numb" min="0" max="10"
+            <input v-if="info.eye.left.annualIncr" class="input-numb" min="0" max="10" placeholder="00.40"
               @input="formatting($event.target, 'left', 'annualIncrNumb')" :value="info.eye.left.annualIncrNumb" type="number"
               name="">
             <div @click="chooseEyeAndStep('right', '6')" v-if="!info.eye.right.isTrue" class="eye">
@@ -246,7 +246,7 @@
               </button>
           
             </div>
-            <input v-if="info.eye.right.annualIncr" class="input-numb" min="0" max="10"
+            <input v-if="info.eye.right.annualIncr" class="input-numb" min="0" max="10" placeholder="00.40"
               @input="formatting($event.target, 'right', 'annualIncrNumb')" :value="info.eye.right.annualIncrNumb" type="number"
               name="">
             <div @click="chooseEyeAndStep('left', '6')" v-if="!info.eye.left.isTrue" class="eye">
