@@ -30,7 +30,7 @@
         <div :class="currentStep === '2' ? 'active-tab' : ''" v-if="currentStep === '2'" class="tab step-2">
           <h2 class="tab-title">Возраст пациента?</h2>
           <div class="tab-slider">
-            <input class="tab-slider-input" v-model="info.age" type="range" min="6" :max="info.sex === 'sex-1' ? 17 : 16">
+            <input class="tab-slider-input" v-model="info.age" type="range" min="3" :max="info.sex === 'sex-1' ? 17 : 16">
           </div>
           <p class="slider-value">
             {{ info.age }} лет
@@ -52,7 +52,7 @@
 
             <div @click="CHOOSING_riskFactors('2')" :class="info.risksFactors.find(i => i === '2') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/2.svg" alt="">
+                <img ondragstart="return false" src="./images/risk-factors/2.png" alt="">
               </div>
               <p class="item-desc">Ребенок затрачивает на работу вблизи более 3х часов в день, ежедневно</p>
             </div>
@@ -66,14 +66,14 @@
 
             <div @click="CHOOSING_riskFactors('4')" :class="info.risksFactors.find(i => i === '4') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/4.svg" alt="">
+                <img ondragstart="return false" src="./images/risk-factors/4.png" alt="">
               </div>
               <p class="item-desc">У ребенка выявлены аккомодационные нарушения(задержка, слабость аккомодации, низкие показатели ЗОА)</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('5')" :class="info.risksFactors.find(i => i === '5') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/5.svg" alt="">
+                <img ondragstart="return false" src="./images/risk-factors/5.png" alt="">
               </div>
               <p class="item-desc">У ребенка выявлены бинокулярные нарушения(экзофория, аккомодационная экзотропия, высокое соотношение АК\А)</p>
             </div>
@@ -87,7 +87,7 @@
 
             <div @click="CHOOSING_riskFactors('7')" :class="info.risksFactors.find(i => i === '7') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/7.svg" alt="">
+                <img ondragstart="return false" src="./images/risk-factors/7.png" alt="">
               </div>
               <p class="item-desc">Возраст выявления близорукости менее(или равен) 7 годам</p>
             </div>
@@ -102,19 +102,19 @@
           <div class="choosing choosing-risks">
             <div @click="CHOOSING_controlMethods('1')" :class="info.controlMethods === '1' ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/control-methods/1.svg" alt="">
+                <img ondragstart="return false" src="./images/control-methods/1.png" alt="">
               </div>
               <p class="item-desc">Ортокератологические линзы(ночные линзы)</p>
             </div>
             <div @click="CHOOSING_controlMethods('2')" :class="info.controlMethods === '2' ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/control-methods/2.svg" alt="">
+                <img ondragstart="return false" src="./images/control-methods/2.png" alt="">
               </div>
               <p class="item-desc">Бифокальные контактные линзы</p>
             </div>
             <div @click="CHOOSING_controlMethods('3')" :class="info.controlMethods === '3' ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/control-methods/3.svg" alt="">
+                <img ondragstart="return false" src="./images/control-methods/3.png" alt="">
               </div>
               <p class="item-desc">Очковая коррекция или коррекция не используется</p>
             </div>

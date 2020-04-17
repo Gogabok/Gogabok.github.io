@@ -157,7 +157,11 @@ Vue.component('line-chart', {
       let arrOfSizes = [y0]
 
       for (let i = 1; i < this.renderData.labels.length; i++) {
-        y0 += +this.info.eye[eyeSide].annualIncrNumb
+        let nonControlMethodCorrection = 0
+        if (this.NUMB_controlMethods(eyeSide) === 0 && this.renderData.labels[i] < 13) {
+          nonControlMethodCorrection = 0.07
+        }
+        y0 += (+this.info.eye[eyeSide].annualIncrNumb - nonControlMethodCorrection) 
         arrOfSizes.push(y0)
       }
       this.renderData.datasets.find(item => item.dataId === eyeSide).data = arrOfSizes
@@ -321,7 +325,7 @@ var vm = new Vue({
       isBoth: false,
       info: {
         sex: '',
-        age: 11,
+        age: 10,
         risksFactors: [],
         controlMethods: '',
         eye: {
