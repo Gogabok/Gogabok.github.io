@@ -20,7 +20,7 @@ Vue.component('line-chart', {
               ticks: {
                 fontColor: "#fff",
                 fontSize: 16,
-                padding: 8,
+                padding: 5,
                 fontFamily: "Rubik",
               }
             }
@@ -36,7 +36,7 @@ Vue.component('line-chart', {
               ticks: {
                 fontColor: "#fff",
                 fontSize: 16,
-                padding: 8,
+                padding: 5,
                 fontFamily: "Rubik",
               }
             }
@@ -59,7 +59,8 @@ Vue.component('line-chart', {
             backgroundColor: 'rgba(43, 81, 167, 0.3)',
             pointHoverRadius: 3.5,
             pointHoverBorderWidth: 3,
-            dataId: 'left'
+            dataId: 'left',
+            lineTension: 0
           },
           {
             label: 'Правый глаз',
@@ -74,7 +75,8 @@ Vue.component('line-chart', {
             backgroundColor: 'rgba(249, 180, 0, 0.3)',
             pointHoverRadius: 3.5,
             pointHoverBorderWidth: 3,
-            dataId: 'right'
+            dataId: 'right',
+            lineTension: 0
           },
         ]
       }
@@ -95,16 +97,16 @@ Vue.component('line-chart', {
       if (this.info.eye[eyeSide].myopia <= 3) {
         myopiaDegree = 0.1
       } else if (this.info.eye[eyeSide].myopia > 3) {
-        myopiaDegree = 0.2
+        myopiaDegree = 0.15
       }
       return myopiaDegree
     },
     NUMB_riskFactors() {
       let NUMB_riskFactors = null;
       if (this.info.risksFactors.length === 1) {
-        NUMB_riskFactors = 0.1
+        NUMB_riskFactors = 0.25
       } else if (this.info.risksFactors.length >= 2) {
-        NUMB_riskFactors = 0.22
+        NUMB_riskFactors = 0.5
       } else {
         NUMB_riskFactors = 0;
       }
@@ -123,19 +125,41 @@ Vue.component('line-chart', {
       }
 
       if (cMethod == 1 && myopiaDegree == 1) {
-        numb_control = 0.2
+        numb_control = {
+          type: 'percent',
+          numb: 34
+        }
       } else if (cMethod == 1 && myopiaDegree == 2) {
-        numb_control = 0.3
+        numb_control = {
+          type: 'percent',
+          numb: 65
+        }
       } else if (cMethod == 1 && myopiaDegree == 3) {
-        numb_control = 0.3
+        numb_control = {
+          type: 'percent',
+          numb: 65
+        }
       } else if (cMethod == 2 && myopiaDegree == 1) {
-        numb_control = 0.15
+        numb_control = {
+          type: 'numb',
+          numb: 0.088
+        }
       } else if (cMethod == 2 && myopiaDegree == 2) {
-        numb_control = 0.11
+        numb_control = {
+          type: 'numb',
+          numb: 0.088
+        }
       } else if (cMethod == 2 && myopiaDegree == 3) {
-        numb_control = 0.111
+        numb_control = {
+          type: 'numb',
+          numb: 0.044
+        }
       } else if (cMethod == 3) {
-        numb_control = 0
+        numb_control = {
+          type: 'zero',
+          numb1: 0.03,
+          numb2: 0.1
+        }
       }
 
       return numb_control
@@ -145,12 +169,22 @@ Vue.component('line-chart', {
         let NUMB_myopiaDegree = this.getNUMB_myopiaDegree(eyeSide)
         let NUMB_riskFactors = this.NUMB_riskFactors()
         let NUMB_controlMethods = this.NUMB_controlMethods(eyeSide)
-        this.info.eye[eyeSide].annualIncrNumb = (NUMB_myopiaDegree + NUMB_riskFactors - NUMB_controlMethods).toFixed(2)
+        
+        let numb2 = NUMB_myopiaDegree * NUMB_riskFactors
+        let numb3 = null
+        if (NUMB_controlMethods.type === 'percent') {
+          numb3 = ((NUMB_myopiaDegree + numb2) * NUMB_controlMethods.numb) / 100
+        } else if (NUMB_controlMethods.type === 'numb') {
+          numb3 = NUMB_controlMethods.numb
+        }
+
+
+
+        this.info.eye[eyeSide].annualIncrNumb = (NUMB_myopiaDegree + numb2 - numb3).toFixed(2)
         this.yAxesGenerateAnnualData(eyeSide)
       } else {
         this.yAxesGenerateAnnualData(eyeSide)
       }
-      this.$emit('refractio-method', { eyeSide: eyeSide, annualIncrNumb: this.info.eye[eyeSide].annualIncrNumb})
     },
     yAxesGenerateAnnualData(eyeSide) {
       let y0 = +this.info.eye[eyeSide].eyeSize
@@ -158,28 +192,30 @@ Vue.component('line-chart', {
 
       for (let i = 1; i < this.renderData.labels.length; i++) {
         let nonControlMethodCorrection = 0
-        if (this.NUMB_controlMethods(eyeSide) === 0 && this.renderData.labels[i] < 13) {
-          nonControlMethodCorrection = 0.07
+        if (this.NUMB_controlMethods(eyeSide).type === 'zero' && this.renderData.labels[i] < 13) {
+          nonControlMethodCorrection = 0.03
+        } else if (this.NUMB_controlMethods(eyeSide).type === 'zero' && this.renderData.labels[i] >= 13) {
+          nonControlMethodCorrection = 0.1
         }
         y0 += (+this.info.eye[eyeSide].annualIncrNumb - nonControlMethodCorrection) 
         arrOfSizes.push(y0)
       }
+      this.$emit('refractio-method', { eyeSide: eyeSide, annualIncrNumb: arrOfSizes })
       this.renderData.datasets.find(item => item.dataId === eyeSide).data = arrOfSizes
     }
   },
   watch: {
-    info: {
-      handler: function () {
-        this.xAxesGenerate()
-        this.info.eye.right.isTrue ? this.getAnnualIncrNumb('right') : false;
-        this.info.eye.left.isTrue ? this.getAnnualIncrNumb('left') : false;
-        this.renderChart(this.renderData, this.opitions)
-      },
-      deep: true
-    },
+    // info: {
+    //   handler: function () {
+    //     this.xAxesGenerate()
+    //     this.info.eye.right.isTrue ? this.getAnnualIncrNumb('right') : false;
+    //     this.info.eye.left.isTrue ? this.getAnnualIncrNumb('left') : false;
+    //     this.renderChart(this.renderData, this.opitions)
+    //   },
+    //   deep: true
+    // },
   },
   mounted() {
-    console.log(this.info)
     this.xAxesGenerate()
     this.info.eye.right.isTrue ? this.getAnnualIncrNumb('right') : false;
     this.info.eye.left.isTrue ? this.getAnnualIncrNumb('left') : false;
@@ -212,7 +248,7 @@ Vue.component('line-chart-refractio', {
               ticks: {
                 fontColor: "#fff",
                 fontSize: 16,
-                padding: 8,
+                padding: 5,
                 fontFamily: "Rubik",
               }
             }
@@ -228,7 +264,7 @@ Vue.component('line-chart-refractio', {
               ticks: {
                 fontColor: "#fff",
                 fontSize: 16,
-                padding: 8,
+                padding: 5,
                 fontFamily: "Rubik",
               }
             }
@@ -283,11 +319,12 @@ Vue.component('line-chart-refractio', {
       this.renderData.labels = agesArr
     },
     yAxesGenerateAnnualData(eyeSide) {
-      let currentRefractio = +this.info.eye[eyeSide].annualIncrNumb * 0.33 / 0.1
       let z0 = +this.info.eye[eyeSide].myopia
       let zArr = [z0]
       for (let i = 1; i < this.renderData.labels.length; i++) {
-        z0 += +currentRefractio
+        let refractio = (((+this.info.eye[eyeSide].annualIncrNumb[i] - +this.info.eye[eyeSide].annualIncrNumb[i - 1]) * 0.33) / 0.1).toFixed(2)
+        console.log(refractio)
+        z0 += +refractio 
         zArr.push(z0)
       }
       this.renderData.datasets.find(item => item.dataId === eyeSide).data = zArr
@@ -320,6 +357,7 @@ var vm = new Vue({
   el: '#calc-app',
   data () {
     return {
+      isModal: false,
       currentStep: '1',
       currentEye: null,
       isBoth: false,
@@ -416,8 +454,12 @@ var vm = new Vue({
       this.currentStep = step
     },
     calculate() {
+      this.isModal = false
       this.currentEye = 'graph'
       this.currentStep = 'graph'
+    },
+    areYouSure() {
+      this.isModal = true
     }
   },
   computed: {

@@ -229,7 +229,7 @@
             </div>
             
             <button v-if="info.eye.right.isTrue && isBoth" @click="continueMethod" class="btn-quest btn-last">Далее</button>
-            <button v-else @click="calculate" class="btn-quest btn-last">Рассчитать</button>
+            <button v-else @click="areYouSure" class="btn-quest btn-last">Рассчитать</button>
           </div>
 
 
@@ -255,7 +255,7 @@
               </div>
               <p class="item-desc">Заполнить данные левого глаза</p>
             </div>
-            <button @click="calculate" class="btn-quest btn-last">Рассчитать</button>
+            <button @click="areYouSure" class="btn-quest btn-last">Рассчитать</button>
           </div>
         </div>
       </transition>
@@ -267,15 +267,17 @@
         <line-chart-refractio :info="info"></line-chart-refractio>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
+    <div :class="isModal ? 'activeModal' : ''" @click.self="isModal = false" class="modal-bg" v-show="isModal">
+      <transition name="scale" mode="out-in">
+        <div class="modal" v-show="isModal">
+          <p class="modal-title">Просим обратить внимание!</p>
+          <p class="text">Полученные значения носят ознакомительный характер, основываются на результатах клинических
+          исследований, но могут отличаться от скорости прогрессирования близорукости в действительности, с учётом множества
+          внешних и внутренних факторов.</p>
+          <button @click="calculate" class="btn-quest btn-modal">Готово</button>
+        </div>
+      </transition>
+    </div>
   </div>
 
 
