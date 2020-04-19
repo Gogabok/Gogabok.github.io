@@ -20,7 +20,7 @@ Vue.component('line-chart', {
               ticks: {
                 fontColor: "#fff",
                 fontSize: 16,
-                padding: 5,
+                padding: 15,
                 fontFamily: "Rubik",
               }
             }
@@ -36,7 +36,7 @@ Vue.component('line-chart', {
               ticks: {
                 fontColor: "#fff",
                 fontSize: 16,
-                padding: 5,
+                padding: 15,
                 fontFamily: "Rubik",
               }
             }
@@ -197,8 +197,8 @@ Vue.component('line-chart', {
         } else if (this.NUMB_controlMethods(eyeSide).type === 'zero' && this.renderData.labels[i] >= 13) {
           nonControlMethodCorrection = 0.1
         }
-        y0 += (+this.info.eye[eyeSide].annualIncrNumb - nonControlMethodCorrection) 
-        arrOfSizes.push(y0)
+        y0 += (+this.info.eye[eyeSide].annualIncrNumb - nonControlMethodCorrection)
+        arrOfSizes.push(y0.toFixed(2))
       }
       this.$emit('refractio-method', { eyeSide: eyeSide, annualIncrNumb: arrOfSizes })
       this.renderData.datasets.find(item => item.dataId === eyeSide).data = arrOfSizes
@@ -248,7 +248,7 @@ Vue.component('line-chart-refractio', {
               ticks: {
                 fontColor: "#fff",
                 fontSize: 16,
-                padding: 5,
+                padding: 15,
                 fontFamily: "Rubik",
               }
             }
@@ -264,7 +264,7 @@ Vue.component('line-chart-refractio', {
               ticks: {
                 fontColor: "#fff",
                 fontSize: 16,
-                padding: 5,
+                padding: 15,
                 fontFamily: "Rubik",
               }
             }
@@ -287,7 +287,8 @@ Vue.component('line-chart-refractio', {
             backgroundColor: 'rgba(43, 81, 167, 0.3)',
             pointHoverRadius: 3.5,
             pointHoverBorderWidth: 3,
-            dataId: 'left'
+            dataId: 'left',
+            lineTension: 0
           },
           {
             label: 'Правый глаз',
@@ -302,7 +303,8 @@ Vue.component('line-chart-refractio', {
             backgroundColor: 'rgba(249, 180, 0, 0.3)',
             pointHoverRadius: 3.5,
             pointHoverBorderWidth: 3,
-            dataId: 'right'
+            dataId: 'right',
+            lineTension: 0
           },
         ]
       }
@@ -325,7 +327,7 @@ Vue.component('line-chart-refractio', {
         let refractio = (((+this.info.eye[eyeSide].annualIncrNumb[i] - +this.info.eye[eyeSide].annualIncrNumb[i - 1]) * 0.33) / 0.1).toFixed(2)
         console.log(refractio)
         z0 += +refractio 
-        zArr.push(z0)
+        zArr.push(z0.toFixed(2))
       }
       this.renderData.datasets.find(item => item.dataId === eyeSide).data = zArr
     }
@@ -363,7 +365,7 @@ var vm = new Vue({
       isBoth: false,
       info: {
         sex: '',
-        age: 10,
+        age: 11,
         risksFactors: [],
         controlMethods: '',
         eye: {
