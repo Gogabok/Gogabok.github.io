@@ -13,7 +13,7 @@
     
       <transition name="scale" mode="out-in">
         <div :class="currentStep === '1' ? 'active-tab' : ''" v-if="currentStep === '1'" class="tab step-1">
-          <h2 class="tab-title">Ваш пол?</h2>
+          <h2 class="tab-title">Укажите пол вашего ребенка</h2>
           <div class="choosing">
             <div @click="CHOOSING_sex('sex-1')" :class="info.sex === 'sex-1' ? 'active' : ''" class="item">
               <img ondragstart="return false" src="./images/man.svg" alt="">
@@ -265,15 +265,15 @@
         <line-chart @refractio-method="refractioMethod" :info="info"></line-chart>
         <h3>Данные рефракции</h3>
         <line-chart-refractio :info="info"></line-chart-refractio>
+        <button @click="toStart" class="btn-quest btn-last-2 btn-last">Вернуться</button>
       </div>
     </div>
     <div :class="isModal ? 'activeModal' : ''" @click.self="isModal = false" class="modal-bg" v-show="isModal">
       <transition name="scale" mode="out-in">
         <div class="modal" v-show="isModal">
           <p class="modal-title">Просим обратить внимание!</p>
-          <p class="text">Полученные значения носят ознакомительный характер, основываются на результатах клинических
-          исследований, но могут отличаться от скорости прогрессирования близорукости в действительности, с учётом множества
-          внешних и внутренних факторов.</p>
+          <p class="text">Расчетные значения калькулятора могут отличаться от реальной скорости прогрессирования близорукости у вашего ребенка под
+          влиянием различных факторов.</p>
           <button @click="calculate" class="btn-quest btn-modal">Готово</button>
         </div>
       </transition>

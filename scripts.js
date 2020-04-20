@@ -19,8 +19,10 @@ Vue.component('line-chart', {
               },
               ticks: {
                 fontColor: "#fff",
-                fontSize: 16,
-                padding: 15,
+                fontSize: 14,
+                padding: 10,
+                stepSize: 1,
+                position: 'right',
                 fontFamily: "Rubik",
               }
             }
@@ -35,8 +37,8 @@ Vue.component('line-chart', {
               },
               ticks: {
                 fontColor: "#fff",
-                fontSize: 16,
-                padding: 15,
+                fontSize: 14,
+                padding: 10,
                 fontFamily: "Rubik",
               }
             }
@@ -204,17 +206,6 @@ Vue.component('line-chart', {
       this.renderData.datasets.find(item => item.dataId === eyeSide).data = arrOfSizes
     }
   },
-  watch: {
-    // info: {
-    //   handler: function () {
-    //     this.xAxesGenerate()
-    //     this.info.eye.right.isTrue ? this.getAnnualIncrNumb('right') : false;
-    //     this.info.eye.left.isTrue ? this.getAnnualIncrNumb('left') : false;
-    //     this.renderChart(this.renderData, this.opitions)
-    //   },
-    //   deep: true
-    // },
-  },
   mounted() {
     this.xAxesGenerate()
     this.info.eye.right.isTrue ? this.getAnnualIncrNumb('right') : false;
@@ -247,9 +238,10 @@ Vue.component('line-chart-refractio', {
               },
               ticks: {
                 fontColor: "#fff",
-                fontSize: 16,
-                padding: 15,
+                fontSize: 14,
+                padding: 10,
                 fontFamily: "Rubik",
+                stepSize: 1,
               }
             }
           ],
@@ -263,8 +255,8 @@ Vue.component('line-chart-refractio', {
               },
               ticks: {
                 fontColor: "#fff",
-                fontSize: 16,
-                padding: 15,
+                fontSize: 14,
+                padding: 10,
                 fontFamily: "Rubik",
               }
             }
@@ -437,14 +429,6 @@ var vm = new Vue({
       this.currentStep = '6'
     },
     formatting(e, eye, input) {
-      // if(+e.value >= 100) {
-      //   e.value = 99
-      // } else if (+e.value <= 0) {
-      //   e.value = 0
-      // }
-      // let val = (+e.value).toFixed(2)
-      // let val = (Math.round(+e.value * 100) / 100).toFixed(2)
-      // e.value = val
       this.info.eye[eye][input] = e.value
     },
     nextStep(nextStep) {
@@ -462,6 +446,35 @@ var vm = new Vue({
     },
     areYouSure() {
       this.isModal = true
+    },
+    toStart() {
+      this.isModal = false
+      this.currentEye = null
+      this.currentStep = '1'
+      this.info = {
+        sex: '',
+          age: 11,
+          risksFactors: [],
+          controlMethods: '',
+          eye: {
+          left: {
+            isTrue: false,
+            myopia: '',
+            eyeSize: '',
+            keratometries: '',
+            annualIncr: false,
+            annualIncrNumb: ''
+          },
+          right: {
+            isTrue: false,
+            myopia: '',
+            eyeSize: '',
+            keratometries: '',
+            annualIncr: false,
+            annualIncrNumb: ''
+          },
+        }
+      }
     }
   },
   computed: {

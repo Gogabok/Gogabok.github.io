@@ -372,10 +372,10 @@ body {
 }
 
 .charts {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0px auto;
   display: none;
-  padding: 0px 15px;
+  padding: 0px;
 }
 
 .charts h3 {
@@ -445,6 +445,6 @@ body {
   font-size: 1.3rem;
 }
 
-
-
-/* transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; box-shadow: rgb(68, 68, 68) 0px 0px 10px 0px; */
+.btn-last-2 {
+  margin-top: 30px;
+}
