@@ -351,7 +351,11 @@ var vm = new Vue({
   el: '#calc-app',
   data () {
     return {
-      isModal: false,
+      isModal: {
+        first: false,
+        last: false
+      },
+      isUnBlock: false,
       currentStep: '1',
       currentEye: null,
       isBoth: false,
@@ -380,6 +384,9 @@ var vm = new Vue({
         }
       }
     }
+  },
+  mounted() {
+    this.isModal.first = true
   },
   methods: {
     riskFactorsMethod (e) {
@@ -440,15 +447,20 @@ var vm = new Vue({
       this.currentStep = step
     },
     calculate() {
-      this.isModal = false
+      this.isModal.last = false
       this.currentEye = 'graph'
       this.currentStep = 'graph'
     },
+    unblock() {
+      console.log(1)
+      this.isModal.first = false
+      this.isUnBlock = true
+    },
     areYouSure() {
-      this.isModal = true
+      this.isModal.last = true
     },
     toStart() {
-      this.isModal = false
+      this.isModal.last = false
       this.currentEye = null
       this.currentStep = '1'
       this.info = {

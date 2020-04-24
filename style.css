@@ -409,8 +409,10 @@ body {
 }
 
 .modal {
-  max-width: 480px;
+  max-width: 580px;
   width: calc(100% - 40px);
+  max-height: 80vh;
+  overflow: auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -424,6 +426,18 @@ body {
   font-size: 1.2rem;
   line-height: 1.3rem;
   user-select: none;
+}
+
+.modal .btn-quest {
+  width: auto;
+}
+
+.modal::-webkit-scrollbar {
+  background: #e4e4e4;
+  width: 8px;
+}
+.modal::-webkit-scrollbar-thumb {
+  background: rgba(45, 45, 45, 0.7);
 }
 
 .modal .text {
