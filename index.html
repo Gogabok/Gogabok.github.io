@@ -41,64 +41,65 @@
 
       <transition name="scale" mode="out-in">
         <div :class="currentStep === '3' ? 'active-tab' : ''" v-if="currentStep === '3'" class="tab step-3">
-          <h2 class="tab-title">Факторы риска?</h2>
+          <h2 class="tab-title">Выберите один или несколько указанных факторов риска прогрессирования близорукости.</h2>
           <div class="choosing choosing-risks">
             <div @click="CHOOSING_riskFactors('1')" :class="info.risksFactors.find(i => i === '1') ? 'active-risks' : ''" class="main-item">
               <div class="item">
                 <img ondragstart="return false" src="./images/risk-factors/1.svg" alt="">
               </div>
-              <p class="item-desc">Время, ежедневно проводимое на открытом воздухе менее 1,5 часов в день</p>
+              <p class="item-desc">Ваш ребенок гуляет на открытом воздухе мене 1,5 часов в день?</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('2')" :class="info.risksFactors.find(i => i === '2') ? 'active-risks' : ''" class="main-item">
               <div class="item">
                 <img ondragstart="return false" src="./images/risk-factors/2.png" alt="">
               </div>
-              <p class="item-desc">Ребенок затрачивает на работу вблизи более 3х часов в день, ежедневно</p>
+              <p class="item-desc">Ваш ребенок тратит на выполнение домашней работы более 3-х часов в день?</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('3')" :class="info.risksFactors.find(i => i === '3') ? 'active-risks' : ''" class="main-item">
               <div class="item">
                 <img ondragstart="return false" src="./images/risk-factors/3.svg" alt="">
               </div>
-              <p class="item-desc">Длительное использование мобильных девайсов(гаджетов,ПК)</p>
+              <p class="item-desc">Вы считаете, что Ваш ребенок чрезмерно пользуется компьютером, планшетом или смартфоном?</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('4')" :class="info.risksFactors.find(i => i === '4') ? 'active-risks' : ''" class="main-item">
               <div class="item">
                 <img ondragstart="return false" src="./images/risk-factors/4.png" alt="">
               </div>
-              <p class="item-desc">У ребенка выявлены аккомодационные нарушения(задержка, слабость аккомодации, низкие показатели ЗОА)</p>
+              <p class="item-desc">Врач выявил у Вашего ребенка какое-либо нарушение аккомодации?*</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('5')" :class="info.risksFactors.find(i => i === '5') ? 'active-risks' : ''" class="main-item">
               <div class="item">
                 <img ondragstart="return false" src="./images/risk-factors/5.png" alt="">
               </div>
-              <p class="item-desc">У ребенка выявлены бинокулярные нарушения(экзофория, аккомодационная экзотропия, высокое соотношение АК\А)</p>
+              <p class="item-desc">Врач выявил у Вашего ребенка какое-либо нарушение бинокулярного зрения?*</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('6')" :class="info.risksFactors.find(i => i === '6') ? 'active-risks' : ''" class="main-item">
               <div class="item">
                 <img ondragstart="return false" src="./images/risk-factors/6.svg" alt="">
               </div>
-              <p class="item-desc">Наследственность</p>
+              <p class="item-desc">У одного или обоих родителей есть близорукость</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('7')" :class="info.risksFactors.find(i => i === '7') ? 'active-risks' : ''" class="main-item">
               <div class="item">
                 <img ondragstart="return false" src="./images/risk-factors/7.png" alt="">
               </div>
-              <p class="item-desc">Возраст выявления близорукости менее(или равен) 7 годам</p>
+              <p class="item-desc">У Вашего ребенка обнаружили близорукость в возрасте до 7 лет?</p>
             </div>
           </div>
+          <p class="item-desc" style="margin: 20px 0px;">* - Эту информацию вы можете уточнить у своего врача-офтальмолога. Если вы не распологаете этой информацией, то не стоит выбирать этот фактор риска</p>
           <button @click="nextStep('4')" class="btn-next">Дальше</button>
         </div>
       </transition>
 
       <transition name="scale" mode="out-in">
         <div :class="currentStep === '4' ? 'active-tab' : ''" v-if="currentStep === '4'" class="tab step-4">
-          <h2 class="tab-title">Какой из указанных способов коррекции близорукости и\или контроля используется?</h2>
+          <h2 class="tab-title">Какой из указанных способов коррекции использует Ваш ребенок?</h2>
           <div class="choosing choosing-risks">
             <div @click="CHOOSING_controlMethods('1')" :class="info.controlMethods === '1' ? 'active-risks' : ''" class="main-item">
               <div class="item">
@@ -110,13 +111,13 @@
               <div class="item">
                 <img ondragstart="return false" src="./images/control-methods/2.png" alt="">
               </div>
-              <p class="item-desc">Бифокальные контактные линзы</p>
+              <p class="item-desc">Бифокальные (дефокусные) мягкие контактные линзы</p>
             </div>
             <div @click="CHOOSING_controlMethods('3')" :class="info.controlMethods === '3' ? 'active-risks' : ''" class="main-item">
               <div class="item">
                 <img ondragstart="return false" src="./images/control-methods/3.png" alt="">
               </div>
-              <p class="item-desc">Очковая коррекция или коррекция не используется</p>
+              <p class="item-desc">Очки, мягкие контактные линзы или не пользуется средствами коррекции</p>
             </div>
           </div>
           <button :disabled="!info.controlMethods" @click="nextStep('5')" class="btn-next">Дальше</button>
@@ -125,7 +126,7 @@
 
       <transition name="scale" mode="out-in">
         <div :class="currentStep === '5' ? 'active-tab' : ''" v-if="currentStep === '5'" class="tab step-5">
-          <h2 class="tab-title">На каком глазу близорукость у ребенка?</h2>
+          <h2 class="tab-title">Выберите глаз, на котором выявлена близорукость. Если близорукость в обоих глазах - выберите оба.</h2>
           <div class="choosing choosing-eyes">
             <div @click="CHOOSING_eye('left')" :class="info.eye.left.isTrue ? 'active-risks' : ''" class="main-item">
               <div class="item">
@@ -148,16 +149,16 @@
 
       <transition name="scale" mode="out-in">
         <div :class="currentStep === '6' ? 'active-tab' : ''" v-if="currentStep === '6'" class="tab step-6">
-          <h2 class="tab-title">Какова степень близорукости(дптр)?</h2>
+          <h2 class="tab-title">Укажие существующую степень близорукости. Используйте для этого стрелки или введите числовое значение без знака.</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
-            <input class="input-numb" min="0" max="10" placeholder="3.00" @input="formatting($event.target, 'left', 'myopia')" :value="info.eye.left.myopia"
+            <input class="input-numb" step="0.25" min="0" max="10" placeholder="3.00" @input="formatting($event.target, 'left', 'myopia')" :value="info.eye.left.myopia"
               type="number" name="">
           </div>
         
           <div v-if="currentEye === 'right'">
             <p class="subtitle">Для правого глаза</p>
-            <input class="input-numb" min="0" max="10" placeholder="3.00" @input="formatting($event.target, 'right', 'myopia')"
+            <input class="input-numb" step="0.5" min="0" max="10" placeholder="3.00" @input="formatting($event.target, 'right', 'myopia')"
               :value="info.eye.right.myopia" type="number" name="">
           </div>
 
@@ -167,16 +168,17 @@
 
       <transition name="scale" mode="out-in">
         <div :class="currentStep === '7' ? 'active-tab' : ''" v-if="currentStep === '7'" class="tab step-7">
-          <h2 class="tab-title">Укажите значение аксиального размера глаза(мм)?</h2>
+          <h2 class="tab-title">Если вам известна длина глазного яблока (ПЗО)*, укажите её в мм. Если это значение неизвестно, рекомендуем обратиться к
+          врачу для его измерения.</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
-            <input class="input-numb" min="23" max="40" placeholder="23.00" @input="formatting($event.target, 'left', 'eyeSize')"
+            <input class="input-numb" step="0.01" min="18" max="30" placeholder="23.00" @input="formatting($event.target, 'left', 'eyeSize')"
               :value="info.eye.left.eyeSize" type="number" name="">
           </div>
         
           <div v-if="currentEye === 'right'">
             <p class="subtitle">Для правого глаза</p>
-            <input class="input-numb" min="23" max="40" placeholder="23.00" @input="formatting($event.target, 'right', 'eyeSize')"
+            <input class="input-numb" step="0.01" min="18" max="30" placeholder="23.00" @input="formatting($event.target, 'right', 'eyeSize')"
               :value="info.eye.right.eyeSize" type="number" name="">
           </div>
 
@@ -186,16 +188,17 @@
 
       <transition name="scale" mode="out-in">
         <div :class="currentStep === '8' ? 'active-tab' : ''" v-if="currentStep === '8'" class="tab step-8">
-          <h2 class="tab-title">Укажите показатели кератометрии (Км)?</h2>
+          <h2 class="tab-title">Если вам известна оптическая сила роговицы* (среднее значение), укажите её в диоптриях. Если это значение неизвестно,
+          рекомендуем обратиться к врачу для его измерения.​</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
-            <input class="input-numb" min="43" max="60" placeholder="43.00" @input="formatting($event.target, 'left', 'keratometries')"
+            <input class="input-numb" step="0.25" min="38" max="48" placeholder="43.00" @input="formatting($event.target, 'left', 'keratometries')"
               :value="info.eye.left.keratometries" type="number" name="">
           </div>
         
           <div v-if="currentEye === 'right'">
             <p class="subtitle">Для правого глаза</p>
-            <input class="input-numb" min="43" max="60" placeholder="43.00" @input="formatting($event.target, 'right', 'keratometries')"
+            <input class="input-numb" step="0.25" min="38" max="48" placeholder="43.00" @input="formatting($event.target, 'right', 'keratometries')"
               :value="info.eye.right.keratometries" type="number" name="">
           </div>
 
@@ -205,7 +208,8 @@
 
       <transition name="scale" mode="out-in">
         <div :class="currentStep === '9' ? 'active-tab' : ''" v-if="currentStep === '9'" class="tab step-9">
-          <h2 class="tab-title">Известен ли вам годовой прирост аксиального размера глаза?</h2>
+          <h2 class="tab-title">Если вам известно, насколько изменилась длина глаза (ПЗО) за год, нажмите «Да» и укажите это значение. Если не известно,
+          нажмите «Нет»​</h2>
           <div v-if="currentEye === 'left'">
             <p class="subtitle">Для левого глаза</p>
             <div class="btns-wrapper">
@@ -218,7 +222,7 @@
                 Нет
               </button>
             </div>
-            <input v-if="info.eye.left.annualIncr" class="input-numb" min="0" max="10" placeholder="00.40"
+            <input v-if="info.eye.left.annualIncr" class="input-numb" step="0.01" min="0.01" max="2" placeholder="00.40"
               @input="formatting($event.target, 'left', 'annualIncrNumb')" :value="info.eye.left.annualIncrNumb" type="number"
               name="">
             <div @click="chooseEyeAndStep('right', '6')" v-if="!info.eye.right.isTrue" class="eye">
@@ -246,7 +250,7 @@
               </button>
           
             </div>
-            <input v-if="info.eye.right.annualIncr" class="input-numb" min="0" max="10" placeholder="00.40"
+            <input v-if="info.eye.right.annualIncr" class="input-numb" step="0.01" min="0.01" max="2" placeholder="00.40"
               @input="formatting($event.target, 'right', 'annualIncrNumb')" :value="info.eye.right.annualIncrNumb" type="number"
               name="">
             <div @click="chooseEyeAndStep('left', '6')" v-if="!info.eye.left.isTrue" class="eye">
@@ -272,9 +276,10 @@
       <transition name="scale" mode="out-in">
         <div class="modal" v-show="isModal.last">
           <p class="modal-title">Просим обратить внимание!</p>
-          <p class="text">Расчетные значения калькулятора могут отличаться от реальной скорости прогрессирования
-            близорукости у вашего ребенка под
-            влиянием различных факторов.</p>
+          <p class="text">Полученный на основании введенных вами данных прогноз носит исключительно информационный характер и может отличаться от
+          реальной скорости прогрессирования близорукости у Вашего ребенка. Только врач-офтальмолог в ходе постоянного наблюдения
+          за течением близорукости у Вашего ребенка может оценить степень прогрессирования миопии и предложить методы её контроля.
+          Нажимая на кнопку «Готово», вы соглашаетесь с данной информацией.​</p>
           <button @click="calculate" class="btn-quest btn-modal">Готово</button>
         </div>
       </transition>
