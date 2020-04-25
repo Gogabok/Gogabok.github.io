@@ -359,6 +359,7 @@ body {
 
 .scale-enter-active, .scale-leave-active {
   transform: scale(1);
+  transform-origin: 50%;
   transition-duration: .2s;
 }
 .scale-enter, .scale-leave-to {

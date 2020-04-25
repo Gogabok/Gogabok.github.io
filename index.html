@@ -16,10 +16,10 @@
           <h2 class="tab-title">Укажите пол вашего ребенка</h2>
           <div class="choosing">
             <div @click="CHOOSING_sex('sex-1')" :class="info.sex === 'sex-1' ? 'active' : ''" class="item">
-              <img ondragstart="return false" src="./images/man.svg" alt="">
+              <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/man.svg" alt="">
             </div>
             <div @click="CHOOSING_sex('sex-2')" :class="info.sex === 'sex-2' ? 'active' : ''" class="item">
-              <img ondragstart="return false" src="./images/woman.svg" alt="">
+              <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/woman.svg" alt="">
             </div>
           </div>
           <button :disabled="!info.sex || !isUnBlock" @click="nextStep('2')" class="btn-next">Дальше</button>
@@ -45,49 +45,49 @@
           <div class="choosing choosing-risks">
             <div @click="CHOOSING_riskFactors('1')" :class="info.risksFactors.find(i => i === '1') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/1.svg" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/risk-factors/1.svg" alt="">
               </div>
               <p class="item-desc">Ваш ребенок гуляет на открытом воздухе мене 1,5 часов в день?</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('2')" :class="info.risksFactors.find(i => i === '2') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/2.png" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/risk-factors/2.png" alt="">
               </div>
               <p class="item-desc">Ваш ребенок тратит на выполнение домашней работы более 3-х часов в день?</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('3')" :class="info.risksFactors.find(i => i === '3') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/3.svg" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/risk-factors/3.svg" alt="">
               </div>
               <p class="item-desc">Вы считаете, что Ваш ребенок чрезмерно пользуется компьютером, планшетом или смартфоном?</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('4')" :class="info.risksFactors.find(i => i === '4') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/4.png" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/risk-factors/4.png" alt="">
               </div>
               <p class="item-desc">Врач выявил у Вашего ребенка какое-либо нарушение аккомодации?*</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('5')" :class="info.risksFactors.find(i => i === '5') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/5.png" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/risk-factors/5.png" alt="">
               </div>
               <p class="item-desc">Врач выявил у Вашего ребенка какое-либо нарушение бинокулярного зрения?*</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('6')" :class="info.risksFactors.find(i => i === '6') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/6.svg" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/risk-factors/6.svg" alt="">
               </div>
               <p class="item-desc">У одного или обоих родителей есть близорукость</p>
             </div>
 
             <div @click="CHOOSING_riskFactors('7')" :class="info.risksFactors.find(i => i === '7') ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/risk-factors/7.png" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/risk-factors/7.png" alt="">
               </div>
               <p class="item-desc">У Вашего ребенка обнаружили близорукость в возрасте до 7 лет?</p>
             </div>
@@ -103,19 +103,19 @@
           <div class="choosing choosing-risks">
             <div @click="CHOOSING_controlMethods('1')" :class="info.controlMethods === '1' ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/control-methods/1.png" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/control-methods/1.png" alt="">
               </div>
               <p class="item-desc">Ортокератологические линзы(ночные линзы)</p>
             </div>
             <div @click="CHOOSING_controlMethods('2')" :class="info.controlMethods === '2' ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/control-methods/2.png" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/control-methods/2.png" alt="">
               </div>
               <p class="item-desc">Бифокальные (дефокусные) мягкие контактные линзы</p>
             </div>
             <div @click="CHOOSING_controlMethods('3')" :class="info.controlMethods === '3' ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/control-methods/3.png" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/control-methods/3.png" alt="">
               </div>
               <p class="item-desc">Очки, мягкие контактные линзы или не пользуется средствами коррекции</p>
             </div>
@@ -130,14 +130,14 @@
           <div class="choosing choosing-eyes">
             <div @click="CHOOSING_eye('left')" :class="info.eye.left.isTrue ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/eye.svg" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/eye.svg" alt="">
               </div>
               <p class="item-desc">Левый глаз</p>
             </div>
         
             <div @click="CHOOSING_eye('right')" :class="info.eye.right.isTrue ? 'active-risks' : ''" class="main-item">
               <div class="item">
-                <img ondragstart="return false" src="./images/eye.svg" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/eye.svg" alt="">
               </div>
               <p class="item-desc">Правый глаз</p>
             </div>
@@ -227,7 +227,7 @@
               name="">
             <div @click="chooseEyeAndStep('right', '6')" v-if="!info.eye.right.isTrue" class="eye">
               <div class="item">
-                <img ondragstart="return false" src="./images/eye.svg" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/eye.svg" alt="">
               </div>
               <p class="item-desc">Заполнить данные правого глаза</p>
             </div>
@@ -255,7 +255,7 @@
               name="">
             <div @click="chooseEyeAndStep('left', '6')" v-if="!info.eye.left.isTrue" class="eye">
               <div class="item">
-                <img ondragstart="return false" src="./images/eye.svg" alt="">
+                <img ondragstart="return false" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/eye.svg" alt="">
               </div>
               <p class="item-desc">Заполнить данные левого глаза</p>
             </div>
@@ -321,7 +321,6 @@
       </transition>
     </div>
   </div>
-
 
   <script src="https://unpkg.com/vue"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
