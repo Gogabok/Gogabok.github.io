@@ -25,8 +25,8 @@
 }
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -212,7 +212,23 @@ html {
   font-size: 15px;
 }
 .scroll-drag {
-        background: #f44b2f !important;
-      }
+  background: #f44b2f !important;
+}
 
+@media screen and (max-width: 1279px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 9px;
+  }
+}
       
