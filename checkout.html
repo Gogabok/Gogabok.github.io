@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заказа</title>
+  <link type="text/css" rel="stylesheet" href="./style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <div class="navigation-checkout">
+    <div class="navigation-wrapper-checkout">
+      <p class="title">Оформить</p>
+      <p class="price"><span class="price-span">0.00</span> грн.</p>
+    </div>
+  </div>
+
+  <div class="checkout-wrapper">
+    <div class="section">
+      <p class="title">Куда нам доставить заказ?</p>
+      <form method="post" action="">
+        <p class="form-title">Введите своё имя и адрес</p>
+        <div class="input">
+          <input id="input1" required type="text" class="form-textbox-input">
+          <label for="input1" class="placeholder">Имя</label>
+        </div>
+        <div class="input">
+          <input id="input2" required type="text" class="form-textbox-input">
+          <span for="input2" class="placeholder">Фамилия</span>
+        </div>
+        <div class="input">
+          <input id="input3" required type="text" class="form-textbox-input">
+          <span for="input3" class="placeholder">Почтовый адрес</span>
+        </div>
+        <div class="input">
+          <input id="input4" required type="text" class="form-textbox-input">
+          <span for="input4" class="placeholder">Квартира</span>
+        </div>
+        <p class="form-title">Укажите свои контактные данные</p>
+        <div class="input">
+          <input id="input5" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required type="tel" maxlength="14" class="form-textbox-input">
+          <span for="input5" class="placeholder">Номер мобильного телефона</span>
+        </div>
+        <p class="desc">Изменить номер телефона после размещения заказа будет нельзя. Проверьте, правильно ли указан номер.</p>
+        <button class="form-btn">Заказать</button>
+      </form>
+    </div>
+  </div>
+  
+</body>
+
+</html>
