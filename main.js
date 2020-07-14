@@ -60,12 +60,8 @@ $(document).ready(function () {
   priceCalculate(localStorage.getItem('active-item') ? JSON.parse(localStorage.getItem('active-item')).id : false)
   
 
-  if ($('.owl-carousel')) {
-    $('.owl-carousel').owlCarousel({
-      items: 1,
-      nav: true,
-    });
-  }
+
+  console.log($("#today"))
 
   if($("#today") && $("#tomorrow")) {
     let today = new Date();
@@ -77,8 +73,7 @@ $(document).ready(function () {
     $("#tomorrow").html(dateTomorrow)
   }
 
-
-
+  $('#amount-thanks').html(JSON.parse(localStorage.getItem('active-item')).amount)
 
 
 
