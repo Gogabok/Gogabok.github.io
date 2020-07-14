@@ -50,16 +50,49 @@ let canAnimate = true
     }
   }
 
+  const monthes = [
+    'января', 'февраля', 'марта', 'апреля','мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+  ]
+
 $(document).ready(function () {
   $("a.btn").addClass('disabled')
   canAnimate = localStorage.getItem('active-item') ? false : true
   priceCalculate(localStorage.getItem('active-item') ? JSON.parse(localStorage.getItem('active-item')).id : false)
   
 
-  
-  $('.owl-carousel').owlCarousel({
-    items: 1,
-    nav: true,
-  });
+  if ($('.owl-carousel')) {
+    $('.owl-carousel').owlCarousel({
+      items: 1,
+      nav: true,
+    });
+  }
+
+  if($("#today") && $("#tomorrow")) {
+    let today = new Date();
+    let tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+    let dateToday = `${today.getDate()} ${monthes[tomorrow.getMonth()]}` 
+    let dateTomorrow = `${tomorrow.getDate()} ${monthes[tomorrow.getMonth()]}` 
+
+    $("#today").html(dateToday)
+    $("#tomorrow").html(dateTomorrow)
+  }
+
+
+
+
+
+
+
 })
 
+
+
+$(document).on('scroll', function () {
+  let height = $(".navigate-icon").outerHeight()
+  let scrollHeight = $(document).scrollTop()
+  if (height < scrollHeight) {
+    $(".navigation").css('position', 'fixed')
+  } else {
+    $(".navigation").css('position', 'relative')
+  }
+})
