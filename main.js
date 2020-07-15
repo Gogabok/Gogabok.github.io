@@ -28,17 +28,19 @@
 
 let activeItem = null
 let canAnimate = false
-  function priceCalculate(id) {
+  function priceCalculate(id, isFocus) {
     if (id || id === 0) {
       let item = prices.find(i => i.id === id)
       console.log(item)
       $(`.form-selector-item`).removeClass('active')
-      let DOMitem = $(`#${item.id}`).addClass('active')
+      if (localStorage.getItem('active-item')) {
+        let DOMitem = $(`#${item.id}`).addClass('active')
+        $("a.btn").removeClass('disabled')
+      }
       activeItem = item
       $(".amount").html(item.amount)
       $(".price-span").html(item.price)
       localStorage.setItem('active-item', JSON.stringify(activeItem))
-      $("a.btn").removeClass('disabled')
       if (canAnimate) {
         setTimeout(() => {
           $([document.documentElement, document.body]).animate({
@@ -70,7 +72,7 @@ function amountOfBuyingSet () {
 
 $(document).ready(function () {
   $("a.btn").addClass('disabled')
-  priceCalculate(localStorage.getItem('active-item') ? JSON.parse(localStorage.getItem('active-item')).id : 0)
+  priceCalculate(localStorage.getItem('active-item') ? JSON.parse(localStorage.getItem('active-item')).id : 0, true)
   
 
 
