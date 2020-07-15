@@ -798,7 +798,7 @@ body {
 }
 
 .main-wrapper {
-    padding: 115px 0px 0px 0px;
+    padding: 85px 0px 0px 0px;
     max-width: 87.5%;
     margin: 0px auto;
     padding-bottom: 0px;
@@ -1182,7 +1182,8 @@ input[type='number'] {
 a.btn.disabled {
     pointer-events: none;
     cursor: default;
-    background-color: rgba(0, 114, 245, .6);
+    /* background-color: rgba(0, 114, 245, .6); */
+    opacity: .3;
 }
 
 
