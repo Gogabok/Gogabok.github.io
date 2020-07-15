@@ -763,12 +763,12 @@ div.area.screen-lg { min-width: 1170px; }div.area.screen-lg .container { width: 
 }
 
 .navigation-wrapper {
-    /* display: flex;
+    display: flex;
     align-items: center;
-    justify-content: space-between; */
+    justify-content: space-between;
     max-width: 980px;
     margin: 0px auto;
-    padding: 6px 15px 4px 15px;
+    padding: .9em 15px .4em 15px;
 }
 
 
@@ -784,7 +784,7 @@ div.area.screen-lg { min-width: 1170px; }div.area.screen-lg .container { width: 
 
 .navigation-wrapper .price {
     margin: 0px;
-        font-size: 14px;
+    font-size: 14px;
     line-height: 1.47059;
     letter-spacing: -.022em;
     font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -805,7 +805,7 @@ body {
 }
 
 .main-section {
-    padding: 35px 0px;
+    padding: 10px 0px;
 }
 
 .main-section .badge {
@@ -1003,8 +1003,8 @@ body {
     width: 100%;
     border-bottom: 1px solid hsla(0,0%,53.3%,.4);
     height: 50px;
-    backdrop-filter: saturate(180%) blur(20px);
-    background-color: rgba(255, 255, 255, 0.99);
+    /* backdrop-filter: saturate(180%) blur(20px); */
+    background-color: #fafafa;
     z-index: 9999;
 }
 
@@ -1014,12 +1014,13 @@ body {
     justify-content: space-between;
     max-width: 980px;
     margin: 0px auto;
-    padding: 1em 15px 0.6em 15px;
+    /* padding: 1em 15px 0.6em 15px; */
+    padding: 9px 16px 9px 16px;
 }
 
 
 .navigation-wrapper-checkout .title {
-    font-size: 21px;
+    font-size: 14px;
     line-height: 1.19048;
     font-weight: 600;
     letter-spacing: .011em;
@@ -1029,11 +1030,11 @@ body {
 }
 
 .navigation-wrapper-checkout .price {
+    font-size: 14px !important;
+    font-weight: 400;
     margin: 0px;
     color: #1d1d1f;
     font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
     letter-spacing: inherit;
     padding: 0;
     vertical-align: inherit;
@@ -1278,7 +1279,7 @@ a.btn.disabled {
     height: 8px;
     border-radius: 50%;
     border: none !important;
-    margin: 0px 4px;
+    margin: 0px 7px;
 }
 
 .owl-dot.active {

@@ -27,7 +27,7 @@
     ]
 
 let activeItem = null
-let canAnimate = true
+let canAnimate = false
   function priceCalculate(id) {
     if (id || id === 0) {
       let item = prices.find(i => i.id === id)
@@ -65,13 +65,12 @@ function amountOfBuyingSet () {
 }
 
   const monthes = [
-    'января', 'февраля', 'марта', 'апреля','мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+    'Янв', 'Фев', 'Мар', 'Апр','Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'
   ]
 
 $(document).ready(function () {
   $("a.btn").addClass('disabled')
-  canAnimate = localStorage.getItem('active-item') ? false : true
-  priceCalculate(localStorage.getItem('active-item') ? JSON.parse(localStorage.getItem('active-item')).id : false)
+  priceCalculate(localStorage.getItem('active-item') ? JSON.parse(localStorage.getItem('active-item')).id : 0)
   
 
 
