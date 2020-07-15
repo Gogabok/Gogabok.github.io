@@ -763,12 +763,12 @@ div.area.screen-lg { min-width: 1170px; }div.area.screen-lg .container { width: 
 }
 
 .navigation-wrapper {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
     max-width: 980px;
     margin: 0px auto;
-    padding: .9em 15px 0.6em 15px;
+    padding: 6px 15px 4px 15px;
 }
 
 
@@ -1278,7 +1278,7 @@ a.btn.disabled {
     height: 8px;
     border-radius: 50%;
     border: none !important;
-    margin: 0px 2px;
+    margin: 0px 4px;
 }
 
 .owl-dot.active {

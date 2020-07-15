@@ -47,8 +47,22 @@ let canAnimate = true
         }, 500);
       }
       canAnimate = true
+      amountOfBuyingSet()
     }
   }
+
+function amountOfBuyingSet () {
+  let amount = activeItem.amount
+  let text = ''
+  if (amount === 0) {
+    text = 'упаковок'
+  } else if (amount === 1) {
+    text = 'упаковка'
+  } else if (amount >= 2) {
+    text = 'упаковки'
+  }
+  $("#amountOfBuying").html(text)
+}
 
   const monthes = [
     'января', 'февраля', 'марта', 'апреля','мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
@@ -66,11 +80,12 @@ $(document).ready(function () {
   if($("#today") && $("#tomorrow")) {
     let today = new Date();
     let tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
-    let dateToday = `${today.getDate()} ${monthes[tomorrow.getMonth()]}` 
-    let dateTomorrow = `${tomorrow.getDate()} ${monthes[tomorrow.getMonth()]}` 
+    let afterTomorrow = new Date(tomorrow.getTime() + (24 * 60 * 60 * 1000));
+    let dateTomorrow = `${tomorrow.getDate()} ${monthes[tomorrow.getMonth()]}`
+    let dateAfterTomorrow = `${afterTomorrow.getDate()} ${monthes[afterTomorrow.getMonth()]}` 
 
-    $("#today").html(dateToday)
-    $("#tomorrow").html(dateTomorrow)
+    $("#today").html(dateTomorrow)
+    $("#tomorrow").html(dateAfterTomorrow)
   }
 
   $('#amount-thanks').html(JSON.parse(localStorage.getItem('active-item')).amount)
@@ -87,7 +102,9 @@ $(document).on('scroll', function () {
   let scrollHeight = $(document).scrollTop()
   if (height < scrollHeight) {
     $(".navigation").css('position', 'fixed')
+    $("body").css('padding-top', '50px')
   } else {
     $(".navigation").css('position', 'relative')
+    $("body").css('padding-top', '0px')
   }
 })
