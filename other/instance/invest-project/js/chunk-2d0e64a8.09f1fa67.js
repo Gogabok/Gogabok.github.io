@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e64a8"],{"97b6":function(e){e.exports=JSON.parse('[{"date":1577836800000,"desc":"отчет по Партнерской программе","action":"Начисление комиссии $20.00","isCloudFilled":false},{"date":1577836800000,"desc":"отчет по Партнерской программе","action":"Начисление комиссии $20.00","isCloudFilled":false},{"date":1577836800000,"desc":"отчет по Партнерской программе","action":"Начисление комиссии $20.00","isCloudFilled":false}]')}}]);
-//# sourceMappingURL=chunk-2d0e64a8.09f1fa67.js.map
