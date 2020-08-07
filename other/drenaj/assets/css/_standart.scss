@@ -1,0 +1,222 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+ html {font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; } body {margin: 0; } article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {display: block; } audio, canvas, progress, video {display: inline-block; vertical-align: baseline; } audio:not([controls]) {display: none; height: 0; } [hidden], template {display: none; } a {background-color: transparent; } a:active, a:hover {outline: 0; } abbr[title] {border-bottom: 1px dotted; } b, strong {font-weight: bold; } dfn {font-style: italic; } h1 {font-size: 2em; margin: 0.67em 0; } mark {background: #ff0; color: #000; } small {font-size: 80%; } sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } sup {top: -0.5em; } sub {bottom: -0.25em; } img {border: 0; } svg:not(:root) {overflow: hidden; } figure {margin: 1em 40px; } hr {box-sizing: content-box; height: 0; } pre {overflow: auto; } code, kbd, pre, samp {font-family: monospace, monospace; font-size: 1em; } button, input, optgroup, select, textarea {color: inherit; font: inherit; margin: 0; } button {overflow: visible; } button, select {text-transform: none; } button, html input[type="button"], input[type="reset"], input[type="submit"] {-webkit-appearance: button; cursor: pointer; } button[disabled], html input[disabled] {cursor: default; } button::-moz-focus-inner, input::-moz-focus-inner {border: 0; padding: 0; } input {line-height: normal; } input[type="checkbox"], input[type="radio"] {box-sizing: border-box; padding: 0; } input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {height: auto; } input[type="search"] {-webkit-appearance: textfield; box-sizing: content-box; } input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {-webkit-appearance: none; } fieldset {border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; } legend {border: 0; padding: 0; } textarea {overflow: auto; } optgroup {font-weight: bold; } table {border-collapse: collapse; border-spacing: 0; } td, th {padding: 0; } 
+@media print {*, *:before, *:after, *:first-letter, *:first-line {background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; } a, a:visited {text-decoration: underline; } a[href]:after {content: " (" attr(href) ")"; } abbr[title]:after {content: " (" attr(title) ")"; } a[href^="#"]:after, a[href^="javascript:"]:after {content: ""; } pre, blockquote {border: 1px solid #999; page-break-inside: avoid; } thead {display: table-header-group; } tr, img {page-break-inside: avoid; } img {max-width: 100% !important; } p, h2, h3 {orphans: 3; widows: 3; } h2, h3 {page-break-after: avoid; } }
+/*#########################################  grid  ###########################################*/
+ * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+.wrap {
+  max-width: $wrap-width;
+  padding: $wrap-padding;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.wrap:after, .fw:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+@for $i from 1 through 6 {
+    h#{$i},.h#{$i}{font-size:#{$font-size / (1 + $i / 5)}em;} 
+}
+@for $i from 1 to 20 {
+    .cc#{$i * 5}{width:#{$i * 5 + '%'} }
+    .pc#{$i * 5}{margin-left:#{$i * 5 + '%'} }
+}
+.fw{
+    [class^='cc']:first-child,[class*=' cc']:first-child{padding-left: 0; }
+    [class^='cc']:last-child, [class*=' cc']:last-child{padding-right: 0; }
+}
+@for $i from 1 through 10 {
+    .mt#{$i}{margin-top:#{$i * 10 + 'px'} }
+    .mt-#{$i}{margin-top:-#{$i * 10 + 'px'} }
+    .mb#{$i}{margin-bottom:#{$i * 10 + 'px'} }
+    .mb-#{$i}{margin-bottom:-#{$i * 10 + 'px'} }
+}
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+    $f-min: strip-unit($f-min);
+    $f-max: strip-unit($f-max);
+    $w-min: strip-unit($w-min);
+    $w-max: strip-unit($w-max);
+  
+    $k: ($f-max - $f-min)/($w-max - $w-min);
+    $b: $f-min - $k * $w-min;
+
+    $b: $b + $units;
+
+    @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin ffs($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+    font-size: $f-min;
+  
+    @media (min-width: $w-min) {
+        @if ($fallback) {
+          font-size: $fallback;
+        }
+        font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);  
+    }
+    @media (min-width: $w-max) {
+        font-size: $f-max;
+    }
+}
+
+[class^='cc'],
+[class*=' cc'] {
+  float: left;
+  padding: 0 10px
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 400;
+}
+
+.nosel, .noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default
+}
+
+ul {padding: 0px; }
+li {list-style: none; }
+
+body, p {
+  margin: 0;
+  padding: 0;
+}
+
+img, iframe {max-width: 100%; }
+
+.browserupgrade {
+  background: #fd9;
+  color: #000;
+  padding: 0.5em 0;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.clear,.clearfix{width:100%;overflow: auto;}
+code{background: rgba(255,255,255,.5)}
+
+.hidden {display: none }
+.cc23 {width: 23.33333333%; }
+.cc33 {width: 33.33333333%; }
+.cc43 {width: 43.33333333%; }
+.pc12 {margin-left: 12.5%; }
+.pc16 {margin-left: 16.5%; }
+.pc33 {margin-left: 33.33333333%; }
+.mt0 {margin-top: 0; } 
+.mb0 {margin-bottom: 0; }
+
+.left{float:left} .right{float:right}
+.tar{text-align:right} .tal{text-align:left} .tac{text-align:center} .taj{text-align:justify}
+.jcsb{justify-content: space-between;display: inline-flex;flex-wrap: wrap;}
+.jcsa{justify-content: space-around;display: inline-flex;flex-wrap: wrap;}
+.dif{display: inline-flex; align-items: center;}
+.bold{font-weight:600}
+.upper{text-transform:uppercase}
+.vtop,.vat{vertical-align:top}
+.vbot,.vab{vertical-align:bottom}
+.dib,.block{display:inline-block;}
+.middle{display:flex;align-items:center;}
+.fixed{position: fixed;}
+.underline{text-decoration:underline;}
+.tdn{text-decoration:none;}
+.rel,.relative{position: relative; }
+hr{border:1px solid #DDD;border-style:none none solid}
+form{
+    input, textarea{
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border:1px solid #ddd;
+        border-radius:5px;
+        font-size: 0.9em;
+        min-height: 2.7em;
+        transition: ease 0.3s;
+    }
+    input[type="submit"]{
+        background: $btn-color;
+        color: #fff;
+        padding: 0.5rem 2.75rem;
+
+        &:hover{
+            background: $btn-color-hover;
+        }
+        // &:focus{
+        //     background: $btn-color-hover;
+        // }
+    }
+    textarea{
+        resize: vertical;
+    }
+}
+input,textarea {
+    outline: none;
+    &:hover:invalid:hover:not([type='submit']),&:focus:invalid:focus:not([type='submit']) {border: 1px solid #f00; }
+    &:hover:valid:hover:not([type='submit']), &:focus:valid:focus:not([type='submit']) {border: 1px solid $btn-color; }
+}
+.pc{display:block;}
+.mob, .mb{display:none;}
+@media all and (max-width:900px){
+    [class^='cc'],[class*=' cc']{width:100%}
+    [class^="pc"], [class*=" pc"]{margin-left: 0; }
+    .pc{display:none !important;}
+    .mob, .mb{display:block;}
+    .right,.left{float:none;}
+}
+.btn{
+    background: $btn-color;
+    padding: 0.8em 3em;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+    transition: ease 0.2s;
+    cursor: pointer;
+    white-space: nowrap;
+ 
+    &:hover{
+        background: $btn-color-hover;
+    }
+    iframe{height: 400px;}
+}
+@media all and (max-width:640px){
+    iframe{height: 300px;}
+}
+@media all and (max-width:480px){
+    .mt9,.mt8,.mt7,.mt6,.mt5,.mt4,.mt3,.mt2{margin-top: 10px;}
+    .mb9,.mb8,.mb7,.mb6,.mb5,.mb4,.mb3,.mb2{margin-bottom: 10px;}
+
+    iframe{height: 250px;}
+}
+
+section{
+    position: relative;
+    padding: $section-padding;
+    overflow: hidden;
+}
+
+body{
+    @include ffs(16px, 20px, 480px, 1280px, 18px);
+}
