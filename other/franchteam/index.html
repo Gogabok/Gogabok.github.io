@@ -1,0 +1,658 @@
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <title>Расчет стоимости ОСАГО</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+  </head>
+  <body>
+   <header class="header">
+    <nav class="navbar navbar-expand navbar-light ">
+     <div class="container"> 
+      <div class="row w-100  justify-content-between m-0 header-top">
+       <a class="navbar-brand text-uppercase font-weight-bold" href="#"><img src="img/logo.png" alt="Логотип"></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+       </button>   
+       <div class="collapse navbar-collapse  justify-content-between  " id="navbarNavAltMarkup">
+        <ul class="navbar-nav col-12 col-md-12    justify-content-between " id="menu">  
+         <li class="nav-item order-2 order-md-1"> 
+          <div class="header__title header-title">
+            <span class="header-title__text text-uppercase">УПАКОВКА  <br>
+              И ПРОДАЖА  <br>
+              ФРАНШИЗ</span>
+          </div>
+         </li> 
+         <li class="nav-item order-1 order-md-2">  
+          <div class="header-telegram">
+            <p class="header-telegram__title"><span>Есть вопрос?</span> <br>
+             Спроси в Telegram </p>
+             <a href="#" class="header-telegram__link">Ссылка на телеграм</a>
+          </div>
+         </li> 
+         </ul>    
+        </div>  
+       </div>  
+      </div>  
+     </nav>   
+     
+     <div class="container">
+      <div class="header-content">
+       <div class="row ">
+         <div class="col-md-6">
+           <h1 class="header-content__head">
+            <b>Рассчитайте стоимость упаковки бизнеса</b> во франшизу за 2 минуты
+           </h1>
+           <span class="header-content__subhead">и узнайте, готов ли ваш бизнес <br> масштабироваться</span>
+           <div class="header-sliderblock">
+             <span class="header-sliderblock__title">Хотите так же?</span>
+             <p class="header-sliderblock__text"><i>Узнайте, готов ли ваш бизнес к созданию франшизы, <br>
+              и рассчитайте стоимость упаковки</i><b> <br> в пяти ценовых категориях</b></p>
+              <button class="button header-sliderblock__button col-md-7">рассчитать <br> стоимость упаковки</button>
+           </div>
+         </div>
+         <div class="col-md-6 ml-auto">
+           <div class="header-man">  
+             <div class="header-man__text"> 
+              <button class="header-man__plus">+</button>
+              <span class="header-man__name">Тихомолов  
+                Станислав</span>  
+               <span class="header-man__post"> 
+                Основатель  <br>
+                компании  <br>
+                FranchTeam</span>
+              </div>
+            <img src="img/header-man.png" alt="Картинка парня в заголовке" class="header-man__img">
+           </div>
+         </div> 
+        </div>
+      </div>
+     </div>
+    </header> 
+   <main> 
+    <section class="quiz">
+      <div class="container">
+        <div class="quiz-block">
+          <div class="quiz-centering">
+            <h2 class="quiz-head text-center">Узнайте, готов ли ваш бизнес к франшизе,  <br>
+              и рассчитайте стоимость упаковки в пяти ценовых категориях</h2>
+              <div class="quiz-question quiz-1 quiz-one">
+                <ul class="quiz-prorgess row list-unstyled justify-content-between">
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                </ul>
+                <span class="quiz-progress__title">Вопрос <b>1 из 5</b></span>
+                <h3 class="quiz-question__head">Укажите, <b>какой бизнес</b> хотите  <br>  <b>масштабировать</b></h3>
+                <div class="row no-gutters">
+                  <div class="col-md-8">
+                    <form id="question-1" action="#" class="d-flex flex-row justify-content-between flex-wrap quiz-form">
+                      <fieldset class="col-md-6  quiz-form__item question-1-1">
+                        <label for="question-1-1" class="quiz-form-center"> 
+                          <div class="quiz-blur"> 
+                          </div>
+                          <img src="img/salon.png" alt="Каритнка салона красоты" class="quiz-form__image"> <br>
+                          <div class="quiz-form__bottom">
+                            <input value="Салон красоты" type="radio" class="quiz-form__radio" name="question-1" id="question-1-1">
+                            <label for="question-1-1">Салон красоты</label>
+                          </div>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-6  quiz-form__item question-1-2">
+                        <label for="question-1-2" class="quiz-form-center"> 
+                          <img src="img/coffee-house.png" alt="Каритнка кофейного дома" class="quiz-form__image">
+                          <br>
+                          <div class="quiz-blur">
+                          </div>
+                          <div class="quiz-form__bottom"> 
+                            <input value="Кофейня / Пиццерия / Бургерная" type="radio" class="quiz-form__radio" name="question-1" id="question-1-2">
+                            <label for="question-1-2">Кофейня / Пиццерия /  <br>
+                              Бургерная</label>
+                          </div> 
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-6  quiz-form__item question-1-3">
+                        <label for="question-1-3" class="quiz-form-center">
+                          <img src="img/drink.png" alt="Каритнка пивного бара" class="quiz-form__image">
+                          <br>
+                          <div class="quiz-blur">
+                          </div>
+                          <div class="quiz-form__bottom">
+                            <input value="Разливные напитки" type="radio" class="quiz-form__radio" name="question-1"
+                              id="question-1-3">
+                            <label for="question-1-3">Разливные напитки</label>
+                          </div>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-6  quiz-form__item question-1-4">
+                        <label for="question-1-4" class="quiz-form-center">
+                          <img src="img/hookah-bar.png" alt="Каритнка кальянки" class="quiz-form__image">
+                          <br>
+                          <div class="quiz-blur">
+                          </div>
+                          <div class="quiz-form__bottom">
+                            <input value="Кальянная / Лаундж-кафе" type="radio" class="quiz-form__radio" name="question-1" id="question-1-4">
+                            <label for="question-1-4">Кальянная / Лаундж-кафе</label>
+                          </div>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-6  quiz-form__item question-1-5">
+                        <label for="question-1-5" class="quiz-form-center">
+                          <img src="img/kindergarten.png" alt="Каритнка детского сада" class="quiz-form__image">
+                          <br>
+                          <div class="quiz-blur">
+                          </div>
+                          <div class="quiz-form__bottom">
+                            <input value="Детский сад / Обучение для детей" type="radio" class="quiz-form__radio" name="question-1"
+                              id="question-1-5">
+                            <label for="question-1-5">Детский сад / <br> Обучение для детей</label>
+                          </div>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-6  quiz-form__item question-1-6">
+                        <label for="question-1-6" class="quiz-form-center">
+                          <img src="img/tuning.png" alt="Картинка тюнинга автомобилей" class="quiz-form__image">
+                          <br>
+                          <div class="quiz-blur">
+                          </div>
+                          <div class="quiz-form__bottom">
+                            <input value="Тюнинг автомобилей" type="radio" class="quiz-form__radio" name="question-1"
+                              id="question-1-6">
+                            <label for="question-1-6">Тюнинг автомобилей</label>
+                          </div>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-6  quiz-form__item question-1-7">
+                        <label for="question-1-7" class="quiz-form-center">
+                          <img src="img/shop.png" alt="Картинка магазина" class="quiz-form__image">
+                          <br>
+                          <div class="quiz-blur">
+                          </div>
+                          <div class="quiz-form__bottom">
+                            <input value="Торговля / Магазин" type="radio" class="quiz-form__radio" name="question-1" id="question-1-7">
+                            <label for="question-1-7">Торговля / Магазин</label>
+                          </div>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-6  quiz-form__item question-1-8">
+                        <label for="question-1-8" class="quiz-form-center">
+                          <div class="quiz-form-questionnew">
+                            <span class="text-center">
+                              Напишите <br> свой вариант
+                            </span>
+                          </div>
+                          <br>
+                          <div class="quiz-blur">
+                          </div>
+                          <div class="quiz-form__bottom">
+                            <input type="radio" class="quiz-form__radio" name="question-1" id="question-1-8">
+                            <label for="question-1-8"></label>
+                            <input type="text" name="" id="question-1-8-inputText" placeholder="Введите свой текст">
+                          </div>
+                        </label>
+                      </fieldset>
+                    </form>
+                    <div class="quiz-buttonlist">
+                     
+                      <button class="button col-md-5   quiz-next-active quiz-next" >Следующий шаг</button>
+                    </div>
+                  </div>
+                  <div class="col-md-4 p-0">
+                    <div class="quiz-leftblock">
+                       <div class="quiz-leftblock__centering">
+                        <h4 class="quiz-leftblock__title">Виды бизнесов из которых <br> получаются самые удачные <br> франшизы:</h4>
+                        <ul class="quiz-leftblock__list quiz-leftblocklist list-unstyled">
+                          <li class="quiz-leftblocklist__item">- общественное питание </li>
+                          <li class="quiz-leftblocklist__item">- салон красоты;</li>
+                          <li class="quiz-leftblocklist__item">- разливные напитки;</li> 
+                          <li class="quiz-leftblocklist__item">- кальянная;</li>
+                          <li class="quiz-leftblocklist__item">- лаундж-кафе;</li>
+                          <li class="quiz-leftblocklist__item">- детский сад;</li>
+                          <li class="quiz-leftblocklist__item">- ментальная арифметика;</li>
+                          <li class="quiz-leftblocklist__item">- детские обучающие программы;</li>
+                          <li class="quiz-leftblocklist__item">- автотюнинг;</li>
+                          <li class="quiz-leftblocklist__item">- магазин одежды.</li>
+                          <li class="quiz-leftblocklist__item"></li>
+                        </ul>
+                        <span class="quiz-leftblock__subtitle"><b>За 10 лет мы упаковали во <br>   франшизу  36 бизнесов.</b></span>
+                        
+                       </div>
+                      <img src="img/case-logo.png" alt="Картинка с логотипами" class="quiz-logos">
+                    </div> 
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-question quiz-2 quiz-two">
+                <ul class="quiz-prorgess row list-unstyled justify-content-between">
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                </ul>
+                <span class="quiz-progress__title">Вопрос <b>2 из 5</b></span>
+                <h3 class="quiz-question__head">Как долго работает  <br> 
+                  ваш бизнес?</h3>
+                <div class="row no-gutters">
+                  <div class="col-md-8">
+                    <form id="question-2" action="#" class="d-flex flex-row justify-content-between flex-wrap quiz-form">
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-2-1">
+                        <label for="question-2-1" class="quiz-radioitem__center">
+                          <input value="Меньше 1 года" type="radio" class="quiz-form__radio" name="question-2" id="question-2-1">
+                          <label for="question-2-1">Меньше 1 года</label>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-2-2">
+                        <label for="question-2-2" class="quiz-radioitem__center">
+                          <input value="От 1 года до 3 лет" type="radio" class="quiz-form__radio" name="question-2" id="question-2-2">
+                          <label for="question-2-2">От 1 года до 3 лет</label>
+                        </label>
+                      </fieldset> 
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-2-3">
+                        <label for="question-2-3" class="quiz-radioitem__center">
+                          <input value="Больше 3 лет" type="radio" class="quiz-form__radio" name="question-2" id="question-2-3">
+                          <label for="question-2-3">Больше 3 лет</label>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-2-4">
+                        <label for="question-2-4" class="quiz-radioitem__center">
+                          <input value="Не помню" type="radio" class="quiz-form__radio" name="question-2" id="question-2-4">
+                          <label for="question-2-4">Не помню</label>
+                        </label>
+                      </fieldset> 
+                    </form>
+                    <div class="quiz-buttonlist">
+                      <button class="button col-md-5   quiz-prev-active quiz-leftbutton" >Назад</button>
+                      <button class="button col-md-5   quiz-next-active quiz-next" >Следующий шаг</button>
+                    </div>
+                  </div>
+                  <div class="col-md-4 p-0">
+                    <div class="quiz-leftblock">
+                       <div class="quiz-leftblock__centering">
+                        <h4 class="quiz-leftblock__title quiz-two__title">ВАЖНО!</h4>
+                        <p class="quiz-two__description">При упаковке бизнеса во франшизу обязательно составляется финансовая модель <br> бизнеса.  <br>
+                          Из этой модели ваши франчайзи будут видеть окупаемость франшизы, прибыль от бизнеса, затратную часть.  <br> <br> 
+                          
+                          Чтобы мы смогли составить достоверную финансовую модель, бизнес должен работать и приносить прибыль больше <br> года.  </p>
+                        
+                       </div>
+                     
+                    </div> 
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-question quiz-3 quiz-three">
+                <ul class="quiz-prorgess row list-unstyled justify-content-between">
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                </ul>
+                <span class="quiz-progress__title">Вопрос <b>3 из 5</b></span>
+                <h3 class="quiz-question__head">Сколько торговых точек или филиалов <br> насчитывает ваш бизнес сейчас?</h3>
+                <div class="row no-gutters">
+                  <div class="col-md-8">
+                    <form id="question-3" action="#" class="d-flex flex-row justify-content-between flex-wrap quiz-form">
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-3-1">
+                        <label for="question-3-1" class="quiz-radioitem__center">
+                          <input value="У меня одна точка" type="radio" class="quiz-form__radio" name="question-3" id="question-3-1">
+                          <label for="question-3-1">У меня одна точка</label>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-12  quiz-form__item quiz-radio-item question-3-2">
+                        <label for="question-3-2" class="quiz-radioitem__center">
+                          <input value="2—3 точки" type="radio" class="quiz-form__radio" name="question-3" id="question-3-2">
+                          <label for="question-3-2">2—3 точки</label>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item  question-3-3">
+                        <label for="question-3-3" class="quiz-radioitem__center">
+                          <input value="Больше 3 точек" type="radio" class="quiz-form__radio" name="question-3" id="question-3-3">
+                          <label for="question-3-3">Больше 3 точек</label>
+                        </label>
+                      </fieldset>  
+                    </form>
+                    <div class="quiz-buttonlist">
+                      <button class="button col-md-5   quiz-prev-active quiz-leftbutton" >Назад</button>
+                      <button class="button col-md-5   quiz-next-active quiz-next" >Следующий шаг</button>
+                    </div>
+                  </div>
+                  <div class="col-md-4 p-0">
+                    <div class="quiz-leftblock">
+                       <div class="quiz-leftblock__centering">
+                        <h4 class="quiz-leftblock__title quiz-three__title">Обратите внимание!</h4>
+                        <p class="quiz-two__description">Если в вашем бизнесе уже есть несколько точек или филиалов, вам будет легче разработать бизнес-процессы для управляющей компании. <br> <br>
+
+                          Если у вас только одна точка, мы выстроим и пропишем все бизнес-процессы для управления филиалами.</p>
+                        
+                       </div>
+                     
+                    </div> 
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-question quiz-4 quiz-six">
+                <ul class="quiz-prorgess row list-unstyled justify-content-between">
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                </ul>
+                <span class="quiz-progress__title">Вопрос <b>4 из 5</b></span>
+                <h3 class="quiz-question__head">Какова чистая прибыль вашего бизнеса <br> в месяц?</h3>
+                <div class="row no-gutters">
+                  <div class="col-md-8">
+                    <form id="question-4" action="#" class="d-flex flex-row justify-content-between flex-wrap quiz-form">
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-4-1">
+                        <label for="question-4-1" class="quiz-radioitem__center">
+                          <input value="До 100 тыс. руб." type="radio" class="quiz-form__radio" name="question-4" id="question-4-1">
+                          <label for="question-4-1">До 100 тыс. руб.</label>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-4-2">
+                        <label for="question-4-2" class="quiz-radioitem__center">
+                          <input value="От 100 до 300 тыс. руб." type="radio" class="quiz-form__radio" name="question-4" id="question-4-2">
+                          <label for="question-4-2">От 100 до 300 тыс. руб.</label>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-4-3">
+                        <label for="question-4-3" class="quiz-radioitem__center">
+                          <input value="Больше 300 тыс. руб." type="radio" class="quiz-form__radio" name="question-4" id="question-4-3">
+                          <label for="question-4-3">Больше 300 тыс. руб.</label>
+                        </label>
+                      </fieldset>
+                    </form>
+                    <div class="quiz-buttonlist">
+                      <button class="button col-md-5   quiz-prev-active quiz-leftbutton">Назад</button>
+                      <button class="button col-md-5   quiz-next-active quiz-next">Следующий шаг</button>
+                    </div>
+                  </div>
+                  <div class="col-md-4 p-0">
+                    <div class="quiz-leftblock">
+                      <div class="quiz-leftblock__centering">
+                        <h4 class="quiz-leftblock__title quiz-four__title">Кейс</h4>
+                        <span class="quiz-four__subtitle">Yep Coffee</span>
+                        <p class="quiz-four__description">Было 4 кофейни в Ростове. Каждая точка <br> приносила 140—160 тыс. рублей в
+                          месяц чистой <br> прибыли. Мы упаковали и продали 10 франшиз по РФ. На данный момент сеть включает 14
+                          кофеен.</p>
+                        <img src="img/case-images.png" alt="Картинка для кейсов" class="quiz-logos">
+                      </div>
+              
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="quiz-question quiz-5 quiz-five">
+                <ul class="quiz-prorgess row list-unstyled justify-content-between">
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step"></div>
+                  </li>
+                </ul>
+                <span class="quiz-progress__title">Вопрос <b>5 из 6</b></span>
+                <h3 class="quiz-question__head">У вас есть зарегистрированный товарный знак?</h3>
+                <div class="row no-gutters">
+                  <div class="col-md-8">
+                    <form id="question-5" action="#" class="d-flex flex-row justify-content-between flex-wrap quiz-form">
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-5-1">
+                        <label for="question-5-1" class="quiz-radioitem__center">
+                          <input value="Да" type="radio" class="quiz-form__radio" name="question-4" id="question-5-1">
+                          <label for="question-5-1">Да, товарный знак зарегистрирован</label>
+                        </label>
+                      </fieldset>
+                      <fieldset class="col-md-12  quiz-form__item twoquiz-form__item quiz-radio-item question-5-2">
+                        <label for="question-5-2" class="quiz-radioitem__center">
+                          <input value="Нет" type="radio" class="quiz-form__radio" name="question-4" id="question-5-2">
+                          <label for="question-5-2">Нет, товарный знак не зарегистрирован</label>
+                        </label>
+                      </fieldset> 
+                    </form>
+                    <div class="quiz-buttonlist">
+                      <button class="button col-md-5   quiz-prev-active quiz-leftbutton" >Назад</button>
+                      <button class="button col-md-5   quiz-next-active quiz-next" >Следующий шаг</button>
+                    </div>
+                  </div>
+                  <div class="col-md-4 p-0">
+                    <div class="quiz-leftblock">
+                       <div class="quiz-leftblock__centering">
+                        <h4 class="quiz-leftblock__title quiz-four__title">Кейс</h4>
+                        <span class="quiz-four__subtitle">Yep Coffee</span>
+                        <p class="quiz-four__description">Было 4 кофейни в Ростове. Каждая точка <br> приносила 140—160 тыс. рублей в месяц чистой <br> прибыли. Мы упаковали и продали 10 франшиз по РФ.  На данный момент сеть включает 14 кофеен.</p>
+                        <img src="img/case-images.png" alt="Картинка для кейсов" class="quiz-logos">
+                       </div>
+                       
+                    </div> 
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-question quiz-6 quiz-six" style="height: 1000px">
+                <ul class="quiz-prorgess activated row list-unstyled justify-content-between">
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                  <li class="quiz-prorgess__item col-md-2">
+                    <div class="quiz-progress-step quiz-progress-step--active"></div>
+                  </li>
+                </ul>
+                <span class="quiz-progress__title">Вопрос <b>6 из 6</b></span>
+                <h3 class="quiz-question__head">В разработке</h3>
+              </div>
+
+              <div class="row justify-content-between quiz__bottom">
+                 
+                <div class="col"> 
+                  <a href="./Politika_konfidentsialnosti.pdf" target="_blank" class="text-uppercase presents-polytic">политика конфиденциальности</a>
+                  <p class="quiz__bottom-text">
+                    ООО "БТС"
+                    ОГРН 1200200013420
+                    ИНН 0273933616
+                  </p> 
+                </div>
+                <div class="col text-md-right">
+                  <span class="presents__bottom-info">Разработано в <b><a href="https://quiz24.ru/">Quiz24.ru</a></b></span>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </div> 
+  </main>
+ 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <h2 class="text-center modal-head"><b>Получите полис <br>
+              ОСАГО сегодня</b> с гарантией <br>
+            лучшей цены</h2>
+          <div class="row">
+            <div class="col-md-8  mx-auto">
+              <span class="modal-title">+ дополнительную скидку 5% <br>
+                от нашего агентства</span>
+              <form action="#" class="modal-form">
+                <legend class="modal-form__title"><b>Доставка по Уфе бесплатная</b></legend>
+                <input type="text" name="" id="polis-input" class="modal-form__number  text-center phone-input"
+                  placeholder="+7 ( _ _ _ ) _ _ _ - _ _  - _ _  ">
+                <span id="modal-text-polis-success" class="text-modal-desc success">Спасибо, заявка отправлена!</span>
+                <span id="modal-text-polis-error" class="text-modal-desc error">Пожалуйста, введите корректный номер</span>
+                <input type="submit" value="Заказать полис" class="btn-polis button button__yellow modal-form__submit  ">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade small" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+              <form action="#" class="modal-form">
+                <input required type="text" name="" id="phone-input" class="modal-form__number  text-center phone-input"
+                  placeholder="+7 ( _ _ _ ) _ _ _ - _ _  - _ _  ">
+                <span id="modal-text-phone-success" class="text-modal-desc success">Спасибо, заявка отправлена!</span>
+                <span id="modal-text-phone-error" class="text-modal-desc error">Пожалуйста, введите корректный номер</span>
+                <input type="submit" value="Заказать звонок" class="button btn-phone button__yellow modal-form__submit  ">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script>
+    //  var swiper = new Swiper('.swiper-container', {
+    //    pagination: {
+    //      el: '.swiper-pagination',
+    //      type: 'progressbar', 
+
+    //    }, 
+    //  });
+    // var mySwiper = new Swiper('.swiper-slider', {
+    //     speed: 400,
+    //     spaceBetween: 100
+    //   });
+   </script>
+<script src="js/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+  <script src="https://unpkg.com/imask@6.0.5/dist/imask.js"></script>
+  <script src="js/main.js"></script>
+  
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(67199779, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/67199779" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  
+   </body>
+</html>

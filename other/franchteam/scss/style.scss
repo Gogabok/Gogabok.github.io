@@ -1,0 +1,240 @@
+ 
+@import "vars";
+@import "libs";
+@import "fonts";  
+@import "media"; 
+
+* {
+ outline: none;
+}
+  
+body {
+  font-family: 'Montserrat', sans-serif; 
+}
+ 
+
+.navbar-nav { 
+  * {
+    font-weight: 500;
+  }
+} 
+.navbar-brand { 
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+
+
+
+.button{ 
+  display: block;
+  padding: 18px 0px; 
+  background: $blue;
+  color: #fff;
+  border: none; 
+  outline: none; 
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover,&:active,&:focus {
+    outline: none;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 300px;
+    margin-left: 60px;
+    background: #fff;
+    position: absolute;
+    left: -40px;
+    top: -150px;
+    z-index: 1;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    -webkit-animation-name: slideme;
+    animation-name: slideme;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-delay: 0.05s;
+    animation-delay: 0.05s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+  }
+}
+
+button {
+  
+  outline: none;
+  border: none; 
+  &:hover,&:active,&:focus { 
+    outline: none;
+    border: none; 
+  }
+}
+
+@-webkit-keyframes slideme { 0% { left: -30px; margin-left: 0px; }
+  30% { left: 110%; margin-left: 80px; }
+  100% { left: 110%; margin-left: 80px; } }
+
+.header {
+  &-telegram {
+    &__link {
+      display: block;
+      font-size: 0px; 
+    }
+  }
+  &-content {
+    &__subhead {
+      font-weight: 500;
+    }
+  }
+  &-sliderblock {
+    &__title {
+      font-weight: 500;
+      color: $blue; 
+    }
+    &__text {
+      font-weight: 400;
+      b{ 
+        font-style: italic;
+        font-weight: 600;
+      }
+    }
+  }
+  &-man { 
+    &__plus  {
+      background-color: rgb(44, 152, 224);
+      border-radius: 50%;
+      color: #fff;
+      font-weight: bold;  
+      text-align: center;
+    }
+    &__name {
+      font-weight: 600;
+    }
+    &__post {
+      display: inline-block;
+      font-weight: 400 ;
+    }
+  }
+}
+
+h1 {
+  font-weight: 400;
+  b {
+    font-weight:  700;
+    color: $blue; 
+  } 
+}
+
+
+.quiz {
+  &-progress { 
+    &-step { 
+     background: #dde7ed; 
+     &--active {
+      background: $blue;
+     }
+    }
+  } 
+  &-form {
+    &-questionnew {
+      background: #e5eef4;
+    }
+  }
+}
+
+label {
+  margin: 0;
+}
+
+.quiz-form__radio {
+	position: absolute;
+	z-index: -1;
+	opacity: 0
+}
+
+
+.quiz-form__radio+label {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.quiz-form__radio+label::before {
+	content: '';
+	display: inline-block; 
+  width: 26px;
+  height: 27px;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	-webkit-box-flex: 0;
+	-ms-flex-positive: 0;
+	flex-grow: 0;
+	border: 2px solid #0bb0f8;
+	border-radius: 50%;
+	margin-right: .5em;
+	background-color: rgba(229,238,244,0)
+}
+
+.quiz-form__radio:not(:disabled):not(:checked)+label:hover::before {
+	border-color: #0bb0f8
+}
+
+.quiz-form__radio:not(:disabled):active+label::before {
+	background-color: #fff;
+	border-color: #0bb0f8
+}
+
+.quiz-form__radio:focus+label::before {
+	-webkit-box-shadow: 0 0 0 1px #0bb0f8;
+	box-shadow: 0 0 0 1px #0bb0f8
+}
+
+.quiz-form__radio:focus:not(:checked)+label::before {
+	border-color: #80bdff
+}
+
+.quiz-form__radio:checked+label::before { 
+  width: 26px;
+  height: 27px;
+	background: #0bb0f8;
+	border-color: #fff
+}
+
+.quiz-form__radio:disabled+label::before {
+	background-color: #e9ecef
+}
+
+.quiz-form__center-active {
+	border: 2px solid #0bb0f8!important;
+	background-color: #0bb0f8!important;
+	color: #fff
+}
+
+.quiz-form__center-active .quiz-form__radio:checked+label::before {
+	border-color: #fff;
+	background-color: #fff
+}
+
+
+
+ 
