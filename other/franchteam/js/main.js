@@ -154,3 +154,18 @@ $(".header-sliderblock__button").on("click", function () {
     scrollTop: $(".quiz-centering").offset().top
   }, 500);
 })
+
+
+
+
+
+
+$(document).ready(function () {
+  $("#carousel").waterwheelCarousel({
+    separation: 100
+    // include options like this:
+    // (use quotes only for string values, and no trailing comma after last option)
+    // option: value,
+    // option: value
+  });
+});
