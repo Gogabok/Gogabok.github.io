@@ -169,3 +169,9 @@ $(document).ready(function () {
     // option: value
   });
 });
+
+
+$("#contacts-form .button").on("click", function () {
+  $("main").fadeOut()
+  $(".page-results").fadeIn()
+})
