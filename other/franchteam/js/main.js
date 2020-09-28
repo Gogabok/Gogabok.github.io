@@ -12,7 +12,8 @@ let answers = {}
 let changeQuestionBlock = false
 
 $(document).ready(function () {
-  $(".quiz-question input").on('input', function (e) {
+  $(`.quiz-question .quiz-form__radio`).on('input', function (e) {
+    console.log(3333333333, changeQuestionBlock)
     if(!changeQuestionBlock) {
       changeQuestionBlock = true
       // $("#question-1 .quiz-form__item .quiz-blur").css('opacity', ".8")
@@ -22,6 +23,7 @@ $(document).ready(function () {
       $(`.quiz .${$(`input[name=question-${currentQuestion}]:checked`).attr('id')} .quiz-blur`).css('opacity', ".8")
       $(`.quiz-${currentQuestion} .quiz-next`).prop('disabled', false)
       if (currentQuestion === 1 && $(`input[name=question-${currentQuestion}]:checked`).attr('id') === "question-1-8") {
+        console.log(123)
         $("#question-1-8-inputText").focus()
       } else {
         answers[currentQuestion] = $(`input[name=question-${currentQuestion}]:checked`).val()
@@ -33,6 +35,25 @@ $(document).ready(function () {
     // $(`#question-1 .quiz-form__item- .quiz-blur`).css('opacity', ".8")
     // console.log($(`input[name=question-${currentQuestion}]:checked`).val())
   })
+  $("#question-1-8-inputText").on("input", function (e) {
+    if($("#question-1-8-inputText").val().length >= 2) {
+      console.log(111)
+      $("#question-1-8").attr('checked', true)
+      $(`#question-${currentQuestion} .quiz-form__item .quiz-blur`).css('opacity', "0")
+      $(`#question-${currentQuestion} .quiz-form__item`).removeClass("active")
+      $(`.quiz .${$(`input[name=question-${currentQuestion}]:checked`).attr('id')}`).addClass("active")
+      $(`.quiz .${$(`input[name=question-${currentQuestion}]:checked`).attr('id')} .quiz-blur`).css('opacity', ".8")
+      $(`.quiz-${currentQuestion} .quiz-next`).prop('disabled', false)
+    } else {
+      $("#question-1-8").attr('checked', false)
+      $(`#question-${currentQuestion} .quiz-form__item .quiz-blur`).css('opacity', "0")
+      $(`#question-${currentQuestion} .quiz-form__item`).removeClass("active")
+      // $(`.quiz .${$(`input[name=question-${currentQuestion}]:checked`).attr('id')}`).addClass("active")
+      // $(`.quiz .${$(`input[name=question-${currentQuestion}]:checked`).attr('id')} .quiz-blur`).css('opacity', ".8")
+      $(`.quiz-${currentQuestion} .quiz-next`).prop('disabled', true)
+      
+    }
+  })
 })
 
 function changePage() {
@@ -42,15 +63,17 @@ function changePage() {
   $([document.documentElement, document.body]).animate({
     scrollTop: $(".quiz-centering").offset().top
   }, 500);
-
+  console.log(answers)
 
   $(".quiz-question").fadeOut()
+  $(`.big-image`).fadeOut()
   $(".quiz-question").css("opacity", "0")
   $(`.quiz-${currentQuestion}`).css("opacity", "1")
   disabledButton()
   setTimeout(() => {
     $(".quiz-question").fadeOut()
     $(`.quiz-${currentQuestion}`).fadeIn()
+    $(`.big-image.${currentQuestion}`).fadeIn()
     changeQuestionBlock = false
   }, 400);
   if (currentQuestion >= amountOfQuestions) {
