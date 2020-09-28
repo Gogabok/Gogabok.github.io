@@ -73,7 +73,7 @@ function changePage() {
   setTimeout(() => {
     $(".quiz-question").fadeOut()
     $(`.quiz-${currentQuestion}`).fadeIn()
-    $(`.big-image.${currentQuestion}`).fadeIn()
+    $(`.img-${currentQuestion}`).fadeIn()
     changeQuestionBlock = false
   }, 400);
   if (currentQuestion >= amountOfQuestions) {
@@ -198,3 +198,13 @@ $("#contacts-form .button").on("click", function () {
   $("main").fadeOut()
   $(".page-results").fadeIn()
 })
+
+
+
+
+
+
+
+
+
+counterAnimate()
