@@ -762,6 +762,10 @@ header::before {
       text-transform: uppercase;
       font-size: 24px;
     }
+    .header-title__text {
+      margin-bottom: -5px;
+      display: block;
+    }
     .results-sale-text {
       color: #000;
       font-size: 18px;
@@ -1015,7 +1019,19 @@ position: absolute;
 .firstStep-btns img {
   left: 60px;
 }
+    .table-body-row-item-title .text {
+      max-width: 80%;
+    }
+
+@media screen and (max-width: 1500px) {
+  .cube-1 {
+    left: -200px;
+  }
+}
 @media screen and (max-width: 1200px) {
+  .cube-1 {
+    left: -300px;
+  }
   .quiz-next-active::after {
     display: none;
   }
@@ -1124,6 +1140,12 @@ position: absolute;
   .table-body-row-item-title .text {
     max-width: 80%;
   }
+  .results-video-side:before {
+    display: none;
+  }
+  .results-cube-1 {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -1197,6 +1219,94 @@ position: absolute;
   }
   .header-sliderblock__text:after {
     display: none;
+  }
+  .col-md-4.p-0 {
+    max-width: 300px;
+  }
+  .results-container {
+    max-width: 720px !important;
+  }
+  .results-caption-h2 {
+    font-size: 26px;
+  }
+  .results-video {
+    flex-direction: column;
+  }
+  .results-present {
+    max-width: 100%;
+  }
+  .results-present-text {
+    text-align: center;
+  }
+  .results-present-link {
+    margin-left: 0px;
+    text-align: center;
+  }
+  .results-present img {
+    margin: 0px auto 15px auto;
+  }
+  .results-present-link::after {
+    left: calc(50% - 140px);
+    top: -220px;
+    transform: rotate(35deg);
+  } 
+  .results-video {
+    margin-top: 0px;
+  }
+  .results-video-side {
+    width: 100%;
+    margin-top: 30px;
+    left: 0px;
+    text-align: center;
+  }
+  .results-video-side .btn-results {
+    margin: 15px auto;
+  }
+  .results-video-side:after {
+    right: 0px;
+  }
+  .results-video {
+    margin-bottom: 30px;
+  }
+  .results-form-section-title {
+    font-size: 18px;
+  }
+  .results-form-section-desc {
+    font-size: 20px;
+  }
+  .res-desc-cont {
+    flex-direction: column;
+  }
+  .results-sale {
+    order: 1;
+  }
+  .results-form-section-desc-title-text {
+    order: 2;
+  }
+  .results-form-section-desc-title {
+    flex-direction: column;
+  }
+  .results-sale {
+    margin: 0px auto;
+  }
+  .results-form-section-desc {
+    margin-top: 30px;
+  }
+  .desc-list-item {
+    margin-bottom: 15px;
+  }
+  .res-desc-cont {
+    margin-top: 15px;
+  }
+  .results-form-section-desc-title-text {
+    margin-top: 30px;
+  }
+  .res-desc-form {
+    margin: 0px auto;
+    margin-top: 30px;
+  }
+  .results-cube-2 {
+    opacity: 0.4;
   }
 }
 
@@ -1289,6 +1399,42 @@ position: absolute;
   .quiz-results-leftSide img {
     width: 200px;
   }
+  .header .navbar {
+    padding: 0px;
+  }
+  .header-telegram {
+    margin-top: 15px;
+  }
+  .header-content__head {
+    margin: 5px auto;
+  }
+  .header-content__subhead {
+    margin-bottom: 0px;
+  }
+  #carousel {
+    margin-top: 0px;
+  }
+  .quiz-question {
+    margin-top: 20px;
+  }
+  .results-container {
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: none;
+    background: none;
+  }
+  .results-form-section {
+    padding: 15px;
+  }
+  .results-video-side:after {
+    display: none;
+  }
+  .results-caption-h2 {
+    max-width: 80%;
+  }
+  #tariff-form {
+    max-width: 380px;
+  }
 }
 
 @media screen and (max-width: 670px) {
@@ -1327,6 +1473,48 @@ position: absolute;
   .quiz-buttonlist .button::before {
     display: none;
   }
+  .results-video-side img {
+    width: 100%;
+  }
+  .results-video {
+    padding: 15px;
+  }
+  .results-caption {
+    padding: 15px;
+  }
+  .results-caption img {
+    width: 40px;
+  }
+  .results-caption-h2 {
+    max-width: calc(100% - 50px);
+    margin-left: 10px;
+    font-size: 24px;
+    line-height: 1;
+  }
+  .results-caption-desc {
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+  .results-cube-2 {
+    display: none;
+  }
+  .results-price {
+    flex-direction: column;
+  }
+  .price-text-desc {
+    margin: 15px 0px;
+  }
+  .table {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  #tariff-form .button {
+    max-width: calc(100% - 20px);
+    margin: 0px auto;
+  }
+  .last-form {
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -1334,6 +1522,7 @@ position: absolute;
     width: 280px;
     height: 200px;
     margin-top: 0px;
+    margin: 40px auto;
   }
   #carousel img {
     max-width: 320px;
@@ -1362,13 +1551,88 @@ position: absolute;
 
 
 
+/* #carousel img {
+  max-width: 100%;
+} */
+
+.car-image-1 {
+  max-width: 380px;
+  max-height: 355px;
+  border-radius: 6px;
+}
+
+.car-image-2 {
+  margin-top: 20px !important;
+}
+
+.car-image-3 {
+  max-width: 360px;
+  max-height: 355px;
+  border-radius: 9px;
+}
+
+.car-image-2.carousel-center {
+  left: 50% !important;
+  transform: translate(-50%, 0);
+}
 
 
 
 
-
-
-/* .page-results {
+/* 
+.page-results {
   display: block;
   opacity: 1;
 } */
+
+
+
+.info-folder {
+  opacity: 0;
+  position: absolute;
+  transition-duration: .3s;
+  border: 3px solid #2c98e0;
+  border-radius: 8px;
+  max-width: 300px;
+  width: 300px;
+  background: #fff;
+  padding: 5px 10px;
+  pointer-events: none;
+  top: 45px;
+  transform: translate(0, 0);
+  z-index: 222;
+  box-shadow: 0px 0px 15px 1px #2c98e0;
+  color: #000;
+  font-size: 14px;
+}
+
+.info-folder .info-text {
+  color: #000;
+  font-size: 14px;
+}
+
+.info:hover .info-folder {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.info {
+  position: relative;
+  cursor: default;
+}
+
+.info::after {
+    content: ''; 
+    position: absolute; /* Абсолютное позиционирование */
+    right: 20px; top: -20px; /* Положение треугольника */
+    border: 15px solid transparent; /* Прозрачные границы */
+    border-bottom: 15px solid #2c98e0; /* Добавляем треугольник */
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+  transition-duration: .3s;
+   }
+.info:hover::after {
+    opacity: 1;
+}

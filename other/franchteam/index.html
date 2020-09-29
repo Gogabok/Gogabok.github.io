@@ -35,7 +35,7 @@
           <div class="header-telegram">
             <p class="header-telegram__title"><span>Есть вопрос?</span> <br>
              Спроси в Telegram </p>
-             <a href="#" class="header-telegram__link">Ссылка на телеграм</a>
+             <a target="_blank" href="https://t.me/tihomolovstas" class="header-telegram__link">Ссылка на телеграм</a>
           </div>
          </li> 
          </ul>    
@@ -54,9 +54,9 @@
            <span class="header-content__subhead">и узнайте, готов ли ваш бизнес <br> масштабироваться</span>
            <div class="header-sliderblock">
              <div id="carousel">
-                <img ondragstart="return false" src="./img/swiper-slide-2.png" alt="">
-                <img ondragstart="return false" src="./img/swiper-slide-2.png" alt="">
-                <img ondragstart="return false" src="./img/swiper-slide-2.png" alt="">
+                <img class="car-image-2" ondragstart="return false" src="./img/swiper-slide-2.png" alt="">
+                <img class="car-image-1" ondragstart="return false" src="./img/swiper-slide-1.jpg" alt="">
+                <img class="car-image-3" ondragstart="return false" src="./img/swiper-slide-3.jpg" alt="">
              </div>
              <span class="header-sliderblock__title">Хотите так же?</span>
              <p class="header-sliderblock__text"><i>Узнайте, готов ли ваш бизнес к созданию франшизы, <br>
@@ -673,22 +673,23 @@
       <img class="results-cube-1" ondragstart="return false" src="./img/results-image-1.png" alt="">
       <div class="results-caption">
         <img ondragstart="return false" src="./img/lock-results.png" alt="">
-        <h2 class="results-caption-h2">Стоимость упаковки вашего бизнеса<br/><strong>в пяти ценовых категориях</strong></h2>
+        <h2 class="results-caption-h2">Стоимость упаковки вашего бизнеса <br/><strong>в пяти ценовых категориях</strong></h2>
         <p class="results-caption-desc">Ниже приведены тарифы на разработку франшизы</p>
       </div>
       <div class="results-video">
         <div class="results-present">
           <p class="results-present-text">Ваш подарок</p>
           <img ondragstart="return false" src="./img/book.png" alt="">
-          <a class="results-present-link" href="#">Скачать пример франчбука<br/>в PDF-формате</a>
+          <a class="results-present-link" href="./Franchbook.pdf" target="_blank">Скачать пример франчбука<br/>в PDF-формате</a>
         </div>
         <div class="results-video-side">
           <p class="video-desc">Посмотрите видео с пояснением<br/>
           эксперта во франчайзинге:<br />
           <strong>что такое франчбук и из чего он состоит</strong></p>
-          <iframe src="https://www.youtube.com/embed/e21ZjwZGjiQ?controls=0" frameborder="0"
+          <!-- <iframe src="https://www.youtube.com/embed/e21ZjwZGjiQ?controls=0" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+            allowfullscreen></iframe> -->
+          <img style="margin-top: 15px" src="./img/video.png" ondragstart="return false" alt="">
           <button class="button btn-results">Записаться на консультацию</button>
         </div>
       </div>
@@ -702,11 +703,11 @@
           <div class="results-form-section-desc">
             <div class="results-form-section-desc-title">
               <p class="results-form-section-desc-title-text">
-                В онлайн-консультацию<br />входит:
+                В онлайн-консультацию <br />входит:
               </p>
               <div class="results-sale">
                 <p class="results-sale-title">Акция</p>
-                <p class="results-sale-text">до 25 августа!<br />
+                <p class="results-sale-text">до <span style="text-decoration: none; color: #000;" class="dateTo"></span>! <br />
                   скидка на консультацию — 30%<br />
                   <span>5 000 руб.</span> 3 500 руб.</p>
               </div>
@@ -727,7 +728,7 @@
               </div>
               <div class="res-desc-form">
                 <p class="res-desc-form-title">
-                  Записаться на консультацию<br/> со <span>скидкой 30%</span>
+                  Записаться на консультацию <br/> со <span>скидкой 30%</span>
                 </p>
                 <p class="res-desc-form-desc">
                   Проверьте номер телефона<br />
@@ -789,7 +790,11 @@
             <div class="table-body-row-item clm-25-b">
               <div class="table-body-row-item-title">
                 <p class="text">1. Регистрация <br />товарного знака</p>
-                <div class="info">i</div>
+                <div class="info">i
+                  <div class="info-folder">
+                    <p class="info-text">Чтобы название вашего бренда не смогли украсть или использовать его против вас</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="table-body-row-item table-body-row-item-img clm-15-b">
@@ -812,7 +817,126 @@
             <div class="table-body-row-item clm-25-b">
               <div class="table-body-row-item-title">
                 <p class="text">2. Финансовая <br />модель</p>
-                <div class="info">i</div>
+                <div class="info">i
+                  <div class="info-folder">
+                    <p class="info-text">Оцифровка всех показателей открытия точки - затратной части, доходной и инвестиционной</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-25-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+          </div>
+          <div class="table-body-row">
+            <div class="table-body-row-item clm-25-b">
+              <div class="table-body-row-item-title">
+                <p class="text">3. Маркетинк-кит (презентация прфншизы)</p>
+                <div class="info">i
+                  <div class="info-folder">
+                    <p class="info-text">Красочная презентация вашей компании и франшизы, с условиями и кейсами действующих точек</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-25-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+          </div>
+          <div class="table-body-row">
+            <div class="table-body-row-item clm-25-b">
+              <div class="table-body-row-item-title">
+                <p class="text">4. ПДКК — <br />
+                  предварительный <br />
+                  договор <br />
+                  коммерческой <br />
+                  концессии. <br />
+                  ДКК — договор <br />
+                  коммерческой <br />
+                  концессии</p>
+                <div class="info">i
+                  <div class="info-folder">
+                    <p class="info-text">В договоре прописаны все условия использования бренда, ноу-хау, кто за что отвечает, какие отчисления.
+                    ДКК - регистрируется в Роспатенте.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <span class="bold">ПДКК</span>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <span class="bold">ДКК</span>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <span class="bold">ДКК</span>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-25-b">
+              <span class="bold">ДКК</span>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <span class="bold">ДКК</span>
+            </div>
+          </div>
+          <div class="table-body-row">
+            <div class="table-body-row-item clm-25-b">
+              <div class="table-body-row-item-title">
+                <p class="text">5. Описание алгоритма открытия точки и управления бизнесом</p>
+                <div class="info">i
+                  <div class="info-folder">
+                    <p class="info-text">Передается франчайзи и используется на всех этапах действия франшизы - от выбора помещения до прибыли и оплаты роялти</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-25-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+          </div>
+          <div class="table-body-row">
+            <div class="table-body-row-item clm-25-b">
+              <div class="table-body-row-item-title">
+                <p class="text">6. Единый стандарт оформления всей франчайзиноговой сети</p>
+                <div class="info">i
+                <div class="info-folder">
+                  <p class="info-text">Прописываем и создаем единый стиль</p>
+                </div></div>
               </div>
             </div>
             <div class="table-body-row-item table-body-row-item-img clm-15-b">
@@ -831,34 +955,79 @@
               <img ondragstart="return false" src="./img/table-ok.png" alt="">
             </div>
           </div>
-          <div class="table-body-row blnone">
-            <div class="table-body-row-item bl clm-25-b">
+          <div class="table-body-row">
+            <div class="table-body-row-item clm-25-b">
               <div class="table-body-row-item-title">
-                <p class="text">3. ДКК — <br />
-                  предварительный <br />
-                  договор <br />
-                  коммерческой <br />
-                  концессии. <br />
-                  ДКК — договор <br />
-                  коммерческой <br />
-                  концессии</p>
-                <div class="info">i</div>
+                <p class="text">7. Первичное собеседовение с франчайзи</p>
               </div>
             </div>
             <div class="table-body-row-item table-body-row-item-img clm-15-b">
-              <span class="bold">ДКК</span>
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
             </div>
             <div class="table-body-row-item table-body-row-item-img clm-15-b">
-              <span class="bold">ДКК</span>
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
             </div>
             <div class="table-body-row-item table-body-row-item-img clm-15-b">
-              <span class="bold">ДКК</span>
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
             </div>
             <div class="table-body-row-item table-body-row-item-img clm-25-b">
-              <span class="bold">ДКК</span>
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
             </div>
             <div class="table-body-row-item table-body-row-item-img clm-15-b">
-              <span class="bold">ДКК</span>
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+          </div>
+          <div class="table-body-row">
+            <div class="table-body-row-item clm-25-b">
+              <div class="table-body-row-item-title">
+                <p class="text">8. Подготовка проекта финансовой моделе под инвестиции</p>
+                <div class="info">i
+                <div class="info-folder">
+                  <p class="info-text">Подготовим финансовую модель как для инвестиций, так и для собственной капитализации компании</p>
+                </div></div>
+              </div>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-25-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
+            </div>
+          </div>
+          <div class="table-body-row blnone">
+            <div class="table-body-row-item bl clm-25-b">
+              <div class="table-body-row-item-title">
+                <p class="text">9. Продажа первой франшизы компании</p>
+                <div class="info">i
+                  <div class="info-folder">
+                    <p class="info-text">Для вас это очевидная экономия средств - около 250 000 руб.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-25-b">
+              <img ondragstart="return false" src="./img/table-false.png" alt="">
+            </div>
+            <div class="table-body-row-item table-body-row-item-img clm-15-b">
+              <img ondragstart="return false" src="./img/table-ok.png" alt="">
             </div>
           </div>
           </div>
@@ -904,7 +1073,7 @@
           </div>
       </div>
       <div class="last-form">
-        <p class="last-form-title"><strong>Выберите наиболее подходящий вам тариф и запишитесь</strong><br/>на бесплатную консультацию с экспертом во франчайзинге</p>
+        <p class="last-form-title"><strong>Выберите наиболее подходящий вам тариф и запишитесь</strong> <br/>на бесплатную консультацию с экспертом во франчайзинге</p>
         <form id="tariff-form" action="">
           <label class="contacts-form-item" for="tariff-1">
             <input checked value="Начинающий" class="" id="tariff-1" type="radio" name="tariff">

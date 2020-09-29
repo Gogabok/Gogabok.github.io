@@ -13,7 +13,6 @@ let changeQuestionBlock = false
 
 $(document).ready(function () {
   $(`.quiz-question .quiz-form__radio`).on('input', function (e) {
-    console.log(3333333333, changeQuestionBlock)
     if(!changeQuestionBlock) {
       changeQuestionBlock = true
       // $("#question-1 .quiz-form__item .quiz-blur").css('opacity', ".8")
@@ -23,7 +22,6 @@ $(document).ready(function () {
       $(`.quiz .${$(`input[name=question-${currentQuestion}]:checked`).attr('id')} .quiz-blur`).css('opacity', ".8")
       $(`.quiz-${currentQuestion} .quiz-next`).prop('disabled', false)
       if (currentQuestion === 1 && $(`input[name=question-${currentQuestion}]:checked`).attr('id') === "question-1-8") {
-        console.log(123)
         $("#question-1-8-inputText").focus()
       } else {
         answers[currentQuestion] = $(`input[name=question-${currentQuestion}]:checked`).val()
@@ -37,7 +35,6 @@ $(document).ready(function () {
   })
   $("#question-1-8-inputText").on("input", function (e) {
     if($("#question-1-8-inputText").val().length >= 2) {
-      console.log(111)
       $("#question-1-8").attr('checked', true)
       $(`#question-${currentQuestion} .quiz-form__item .quiz-blur`).css('opacity', "0")
       $(`#question-${currentQuestion} .quiz-form__item`).removeClass("active")
@@ -156,7 +153,6 @@ function counterAnimate() {
         easing: 'swing',
         step: function (now) {
           $(this).text(Math.ceil(now) + '%');
-          console.log(123)
         },
         complete: function () {
           $('.percentage').html(' <img src="img/checks.png"> ');
@@ -197,14 +193,63 @@ $(document).ready(function () {
 $("#contacts-form .button").on("click", function () {
   $("main").fadeOut()
   $(".page-results").fadeIn()
+  $([document.documentElement, document.body]).animate({
+    scrollTop: $(".page-results").offset().top
+  }, 500);
 })
 
 
 
 
+$(window).on('resize', function () {
+  if ($(window).width() <= 720) {
+
+    var windowHeight = $(window).height();
+    $(document).on('scroll', function () {
+      $('.quiz').each(function () {
+        var self = $(this),
+          height = self.offset().top;
+        if ($(document).scrollTop() >= height - windowHeight) {
+          $(".quiz-buttonlist").fadeIn()
+        } else {
+          $(".quiz-buttonlist").fadeOut()
+        }
+      });
+    })
+  }
+})
+
+$(document).ready(function () {
+  if ($(window).width() <= 720) {
+
+    var windowHeight = $(window).height();
+    $(document).on('scroll', function () {
+      $('.quiz-block').each(function () {
+        var self = $(this),
+          height = self.offset().top;
+        if ($(document).scrollTop() >= height - windowHeight) {
+          $(".quiz-buttonlist").fadeIn()
+        } else {
+          $(".quiz-buttonlist").fadeOut()
+        }
+      });
+    })
+  }
 
 
 
 
 
-counterAnimate()
+
+
+
+
+  const monthes = [
+    'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+  ]
+  let today = new Date();
+  let after5days = new Date(today.getTime() + (24 * 60 * 60 * 1000) * 5);
+  let dateAfter5days = `${after5days.getDate()} ${monthes[after5days.getMonth()]}`
+
+  $(".dateTo").html(dateAfter5days)
+})
