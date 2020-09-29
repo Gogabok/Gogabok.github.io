@@ -191,11 +191,14 @@ $(document).ready(function () {
 
 
 $("#contacts-form .button").on("click", function () {
-  $("main").fadeOut()
-  $(".page-results").fadeIn()
-  $([document.documentElement, document.body]).animate({
-    scrollTop: $(".page-results").offset().top
-  }, 500);
+  $("main").fadeOut(1)
+  $(".page-results").fadeIn(1)
+  setTimeout(() => {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $(".results-caption").offset().top
+    }, 500);
+    $(".contacts-form-phone-input[name=phone]").val(answers.phone)
+  }, 2);
 })
 
 
@@ -237,8 +240,8 @@ $(document).ready(function () {
   }
 
 
-
-
+  // $('.quiz-logos').EZView();
+  // console.log(EZView())
 
 
 
@@ -253,3 +256,8 @@ $(document).ready(function () {
 
   $(".dateTo").html(dateAfter5days)
 })
+
+
+
+// $(function () {
+// });
