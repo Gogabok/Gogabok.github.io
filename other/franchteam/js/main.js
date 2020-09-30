@@ -11,6 +11,14 @@ let amountOfQuestions = 6
 let answers = {}
 let changeQuestionBlock = false
 
+let results = {
+  "1": "Бизнес: ",
+  "2": "Как долго работает бизнес: ",
+  "3": "Кол-во торговых точек или филиалов: ",
+  "4": "Чистая прибыль: ",
+  "5": "Есть ли товарный знак: "
+}
+
 $(document).ready(function () {
   $(`.quiz-question .quiz-form__radio`).on('input', function (e) {
     if(!changeQuestionBlock) {
@@ -77,6 +85,9 @@ function changePage() {
     counterAnimate()
     $("main").css('padding-bottom', '120px')
     answers["way"] = $(`input[name=contacts]:checked`).val()
+    ym(67621756, 'reachGoal', '6')
+  } else {
+    ym(67621756, 'reachGoal', currentQuestion)
   }
 }
 
@@ -172,6 +183,7 @@ $(".header-sliderblock__button").on("click", function () {
   $([document.documentElement, document.body]).animate({
     scrollTop: $(".quiz-centering").offset().top
   }, 500);
+  ym(67621756, 'reachGoal', '1')
 })
 
 
@@ -193,19 +205,49 @@ $(document).ready(function () {
 $("#contacts-form .button").on("click", function () {
   $("main").fadeOut(1)
   $(".page-results").fadeIn(1)
+  ym(67621756, 'reachGoal', '7')
   setTimeout(() => {
     $([document.documentElement, document.body]).animate({
       scrollTop: $(".results-caption").offset().top
     }, 500);
     $(".contacts-form-phone-input[name=phone]").val(answers.phone)
+    $('.table-slides').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    })
+
+    let res = {}
+    res["phone"] = `Телефон: ${answers["phone"]}`
+    res["way"] = `Способ связи: ${answers["way"]}`
+    for (let i = 1; i < amountOfQuestions; i++) {
+      res[`answer${i}`] = `${results[i]}${answers[i]}`
+    }
+    console.log(res)
+    $.ajax({
+      type: "POST",
+      url: "send.php",
+      data: res,
+      success: function () { }
+    })
   }, 2);
 })
 
 
 
-
 $(window).on('resize', function () {
+
+
+  $('.table-slides').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  })
+
+
+
   if ($(window).width() <= 720) {
+    
 
     var windowHeight = $(window).height();
     $(document).on('scroll', function () {
@@ -261,3 +303,23 @@ $(document).ready(function () {
 
 // $(function () {
 // });
+
+
+$(".btn-results").on("click", function () {
+  $([document.documentElement, document.body]).animate({
+    scrollTop: $(".results-sale").offset().top
+  }, 500);
+})
+
+
+$("#tariff-form .button").on("click", function () {
+  $(".modal-consultation").fadeIn()
+  $(".chosenTarif").text($(`input[name=tariff]:checked`).val())
+})
+
+
+$(document).ready(function () {
+  $(".bg-modal").on("click", function () {
+    $(".modal-consultation").fadeOut()
+  })
+})

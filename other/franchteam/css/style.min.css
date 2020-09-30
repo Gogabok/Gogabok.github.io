@@ -205,6 +205,7 @@ img {
   display: block;
   margin-bottom: 1px;
   font-weight: 500;
+  max-width: calc(100% - 40px)
 }
 
 .contacts-form-item input {
@@ -805,7 +806,7 @@ header::before {
       line-height: 1;
     }
     .results-form-section-desc.text {
-      font-weight: 600;
+      font-weight: 500;
       color: #2c98e0;
       font-size: 20px;
       text-align: center;
@@ -1101,7 +1102,11 @@ position: absolute;
     margin-top: 160px;
   }
   .contacts-form-phone::after {
-    display: none;
+    /* display: none; */
+    top: -300px;
+    right: 50px;
+    left: auto ;
+    transform: rotateY(.5turn) rotate(50deg);
   }
   .quiz-results-leftSide {
     margin-top: 30px;
@@ -1649,4 +1654,209 @@ position: absolute;
 }
 .fancybox-content img {
   transform: scale(2) !important;
+}
+
+
+.table.mobile {
+  display: none;
+}
+@media screen and (max-width: 550px) {
+  .table.desktop {
+    display: none;
+  }
+  .table.mobile {
+    display: flex;
+    align-items: flex-start;
+    overflow: visible;
+    
+  }
+}
+
+.table-item-name-title {
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 3px solid #2c98e0;
+  border-top-left-radius: 10px;
+  color: #2c98e0;
+  font-weight: 900;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.table-item-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+  border-top: 3px solid #2c98e0;
+  height: 120px;
+}
+
+.table-slide-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 5px;
+  border-top: 3px solid #2c98e0;
+  height: 120px;
+}
+
+.table-item-name .text {
+    max-width: 80%;
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.table-item-name .info {
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    background: #2c98e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.table-names {
+  border-left: 3px solid #2c98e0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 180px;
+  /* border-right: 3px solid #2c98e0; */
+  border-bottom: 3px solid #2c98e0;
+  min-width: 180px;
+}
+
+.table-slide {
+  width: 100%;
+  /* border-right: 3px solid #2c98e0; */
+  border-bottom: 3px solid #2c98e0;
+  border-top-right-radius: 10px;
+  /* border-bottom-right-radius: 10px; */
+}
+
+.table-slide .table-item-name-title {
+  border-radius: 0;
+  width: 100%;
+  
+}
+
+.table-item-name-title span {
+  text-transform: lowercase;
+  color: #000;
+}
+
+.table-item-name-title span strong {
+  color: #2c98e0
+}
+
+.table-slide-item .bold {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.table-slide {
+  max-width: calc(100% - 180px);
+  border-left: 3px solid #2c98e0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 10px;
+}
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+.table-slide-item.extra {
+  height: 60px;
+  border-bottom-left-radius: 3px;
+  line-height: 1;
+}
+
+.table-slides {
+  border-right: 3px solid #2c98e0;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.table-slides .table-item-name-title {
+  border-top-right-radius: 10px !important;
+}
+
+@media screen and (max-width: 400px) {
+  .table-slide-item.extra {
+    height: 90px;
+    border-bottom-left-radius: 3px;
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .table-item-name-title {
+    height: 90px;
+  }
+  .table-item-name-title {
+    font-size: 8px;
+  }
+}
+
+
+.bg-modal {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.modal-consultation {
+  position: fixed;
+  z-index: 10000;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+
+.modal-consultation-container {
+  max-width: 400px;
+  width: 100%;
+  z-index: 10000;
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.modal-consultation-container .res-desc-form {
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+  .zoom {
+    bottom: 10px;
+    top: auto;
+    z-index: 50;
+  }
+}
+
+.chosenTarif {
+  color: #000 !important;
+  font-weight: 500 !important;
 }
