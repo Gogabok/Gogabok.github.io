@@ -226,7 +226,7 @@ $("#contacts-form .button").on("click", function () {
     console.log(res)
     $.ajax({
       type: "POST",
-      url: "send.php",
+      url: "./send.php",
       data: res,
       success: function () { }
     })
