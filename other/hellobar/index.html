@@ -18,6 +18,11 @@
         <h3 class="hellobar-title-desc">по приемлимой цене у официального дилера</h3>
         <button class="hellobar-btn">Подобрать септик<br/><span>ответив на 6 вопросов</span></button>
       </div>
+      <div class="hellobar-btns">
+        <button class="hellobar-btns-item-1">Свернуть <img ondragstart="return false" src="./img/hellobar-btn-bottom.png"
+            alt=""></button>
+        <button class="hellobar-btns-item-2">Закрыть<br/>и не показывать</button>
+      </div>
     </div>
   </div>
 
@@ -26,9 +31,66 @@
 
 
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+  crossorigin="anonymous"></script>
+<script>
+  $(".hellobar-btns-item-1").on('click', function () {
+    $('.hellobar').slideUp()
+    setTimeout(() => {
+      $('.hellobar').slideDown()
+    }, 30000);
+  })
+  $(".hellobar-btns-item-2").on('click', function () {
+    $('.hellobar').slideUp()
+    sessionStorage.setItem('hellobar', false)
+  })
+  if(sessionStorage.getItem('hellobar') === 'false') {
+    $('.hellobar').css('display', 'none')
+  }
+  $(".hellobar-btn").on('click', function () {
+    window.location.href = "https://septik-family.ru/opros/"
+  })
+</script>
   <style>
+    @media screen and (max-width: 960px) {
+      .hellobar {
+        display: none;
+      }
+    }
+    .hellobar-btns-item-2 {
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 23px;
+      font-family: 'Helvetica';
+      font-weight: 400;
+      border-radius: 50px;
+      border: 1px solid #fff;
+      padding: 15px 25px;
+      margin-top: 25px;
+    }
+    .hellobar-btns-item-1 img {
+      margin-left: 5px;
+    }
+    .hellobar-btns-item-1 {
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 23px;
+      font-family: 'Helvetica';
+      font-weight: 400;
+    }
+    .hellobar-btns {
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     .hellobar-btn:after {
       content: '';
       position: absolute;
@@ -100,6 +162,7 @@
     .hellobar-wrapper {
       margin: 0px auto;
       max-width: 950px;
+      width: 100%;
       display: flex;
       padding-bottom: 10px;
     }
