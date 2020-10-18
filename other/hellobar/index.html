@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+  <div class="hellobar">
+    <div class="hellobar-wrapper">
+      <img ondragstart="return false" src="./img/hellobar-image.png" alt="">
+      <div class="hellobar-title">
+        <h2 class="hellobar-title-h2">Подберите подходящую<br/> модель септика</h2>
+        <h3 class="hellobar-title-desc">по приемлимой цене у официального дилера</h3>
+        <button class="hellobar-btn">Подобрать септик<br/><span>ответив на 6 вопросов</span></button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <style>
+    .hellobar-btn:after {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: -2px;
+      width: 68px;
+      height: 70px;
+      background: url('./img/quiz-action-bg.png') center;
+      animation: btnAnim 10s ease infinite;
+    }
+    @keyframes btnAnim {   
+      0% {     
+        left: -20%;  
+      }   
+      10% {     
+        left: 120%;
+      } 
+      100% {
+        left: 120%;
+      }
+    }
+    .hellobar-btn span {
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: none;
+    }
+    .hellobar-btn {
+      background: #ed7869;
+      color: #fff;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      padding: 15px 45px;
+      display: inline;
+      margin: auto 0px 0px 0px;
+      font-family: 'Helvetica';
+      font-weight: 700;
+      font-size: 21px;
+      text-transform: uppercase;
+      outline: none;
+      line-height: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    .hellobar-title-desc {
+      font-family: 'Helvetica';
+      font-weight: 400;
+      color: #fff;
+      line-height: 1;
+      margin-top: 10px;
+      font-size: 20px;
+    }
+    .hellobar-title-h2 {
+      font-family: 'Rubik';
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      font-size: 29px;
+    }
+    .hellobar-title {
+      margin: 0px 25px;
+      padding: 10px 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .hellobar-wrapper {
+      margin: 0px auto;
+      max-width: 950px;
+      display: flex;
+      padding-bottom: 10px;
+    }
+    .hellobar {
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      background: #265c99;
+      user-select: none;
+    }
+    @font-face{
+      font-family:Helvetica;
+      src:url(./fonts/HelveticaBold.ttf);
+      font-weight:700;
+      font-style:normal;
+    }
+    @font-face{
+      font-family:Helvetica;
+      src:url(./fonts/HelveticaRegular.ttf);
+      font-weight: 400;
+      font-style:normal;
+    }
+    p, h1, h2, h3, h4, h5, h6 {
+      margin: 0px;
+    }
+  </style>
+</body>
+</html>
