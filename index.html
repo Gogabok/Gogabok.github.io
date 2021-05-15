@@ -5,37 +5,199 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-    <input id="link" type="text" placeholder="Ссылка на аккаунт">
-    <input id="wins" type="text" placeholder="Кол-во побед">
-    <input id="games" type="text" placeholder="Кол-во игр">
-    <input id="description" type="text" placeholder="Описание">
-    <input id="steamLevel" type="text" placeholder="Уровень в стиме">
-    <input id="price" type="text" placeholder="Стоимость">
+    <div class="modal fade in">
+        <div class="modal-wrapper">
+            <h4 class="modal-title">Serious problems found <br />for your <span class="device"></span></h4>
+            <h5 class="modal-text">We found that your <span class="device"></span> is 13% damaged due to (8) viruses from the latest adult sites.<br />
+                This can cause your <span class="device"></span> to lagging a lot, besides that it also can ruin your data (contacts, pictures, apps).
+            </h5>
+            <div class="modal-antivirus">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <path style="fill:#32BEA6;" d="M256,0C177.328,82.672,46.672,64,46.672,64s0,92,0,224S256,512,256,512s209.328-92,209.328-224
+                        	s0-224,0-224S334.672,82.672,256,0z" />
+                    <polygon style="fill:#FFFFFF;" points="240.88,355.664 148.048,283.152 167.728,257.936 233.632,309.376 340.576,151.888 
+                        	367.04,169.856 " />
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                </svg>
+                <span class="modal-antivirus-text">
+                    If you do not protect your <span class="device"></span>, then irreparable changes may occur in your operating system.
+                </span>
+            </div>
+        </div>
+        <div class="modal-actions">
+            <button class="cancel">Cancel</button>
+            <button class="submit">Download now</button>
+        </div>
+    </div>
+    <div class="modal-bg"></div>
 
-    <button onclick="addToDB()" id="addToDB">Добавить в базу данных</button>
-
-    <script>
-        function addToDB () {
-            const account = {}
-            document.querySelectorAll("input").forEach(input => {
-                account[input.id] = input.value
-            })
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://localhost:5050/api/addAccount/', false);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify(account));
-
-            console.log(xhr.status)
-
-            if (xhr.status != 200) {
-                alert("Произошла ошибка")
-            } else {
-                alert("Аккаунт добавлен в БД")
-            }
+<style>
+    body {
+        margin: 0px;
+    }
+    body * {
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    .modal {
+        border: 1px solid #979797;
+        max-width: 420px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: #fff;
+        z-index: 9999;
+        border-radius: 12px;
+        box-shadow: 0px 0px 10px 2px #979797;
+    }
+    .modal-wrapper {
+        padding: 30px 20px;
+    }
+    .modal-bg {
+        content: '';
+        display: block;
+        min-height: 100vh;
+        min-width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+    }
+    .modal-title {
+        font-size: 24px;
+        font-family: "Recursive", sans-serif;
+        font-weight: 700;
+        margin: 0px;
+        color: hsl(0,100%,64%);
+    }
+    .modal-text {
+        font-size: 16px;
+        font-family: "Recursive", sans-serif;
+        margin: 20px 0px;
+    }
+    .modal-antivirus svg {
+        width: 76px;
+        height: 76px;
+        min-width: 76px;
+        min-height: 76px;
+        box-shadow: 0 0 0 0 rgba(50, 190, 166, 1);
+        transform: scale(1);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+    }
+    .modal-antivirus {
+        display: flex;
+        align-items: center;
+    }
+    .modal-antivirus-text {
+        font-size: 13px;
+        font-family: "Recursive", sans-serif;
+        margin-left: 15px;
+    }
+    .modal-actions {
+        display: flex;
+    }
+    .submit {
+        width: 70%;
+        font-family: "Recursive", sans-serif;
+        text-transform: uppercase;
+        background: rgba(50, 190, 166, 1);
+        color: #fff;
+        font-size: 23px;
+        border: none;
+        border-bottom-right-radius: 12px;
+        cursor: pointer;
+        padding: 12px 5px;
+    }
+    .submit:hover {
+        opacity: .7;
+    }
+    .cancel {
+        width: 30%;
+        font-family: "Recursive", sans-serif;
+        background: hsl(0,100%,64%);
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 13px;
+        border: none;
+        border-bottom-left-radius: 12px;
+        cursor: pointer;
+        padding: 12px 5px;
+    }
+    .cancel:hover {
+        opacity: .7;
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(0.75);
+            box-shadow: 0 0 0 0 rgba(50, 190, 166, .7);
         }
-    </script>
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(50, 190, 166, 0);
+        }
+
+        100% {
+            transform: scale(0.75);
+            box-shadow: 0 0 0 0 rgba(50, 190, 166, 0);
+        }
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
+<script>
+    const device = new MobileDetect(window.navigator.userAgent);
+    console.log(device)
+    let message = '';
+    if(device.phone()) {
+        message = device.phone();
+    } else if(device.tablet()) {
+        message = device.tablet();
+    } else if (device.os()) {
+        message = device.os();
+    } else {
+        message = 'device'
+    }
+    $(".device").text(message)
+</script>
 </body>
 </html>
