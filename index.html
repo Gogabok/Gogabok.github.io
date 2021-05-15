@@ -12,7 +12,6 @@
 <body>
     <div class="modal fade in">
         <div class="modal-wrapper">
-            <span class="device1"></span>
             <h4 class="modal-title">Serious problems found <br />for your <span class="device"></span></h4>
             <h5 class="modal-text">We found that your <span class="device"></span> is 13% damaged due to (8) viruses from the latest adult sites.<br />
                 This can cause your <span class="device"></span> to lagging a lot, besides that it also can ruin your data (contacts, pictures, apps).
@@ -191,7 +190,7 @@
     if(device) {
         message = device;
         if(platform.product) {
-            message += platform.product;
+            message += ` ${platform.product}`;
         }
     } else {
         message = 'device'
