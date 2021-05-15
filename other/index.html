@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="link" type="text" placeholder="Ссылка на аккаунт">
+    <input id="wins" type="text" placeholder="Кол-во побед">
+    <input id="games" type="text" placeholder="Кол-во игр">
+    <input id="description" type="text" placeholder="Описание">
+    <input id="steamLevel" type="text" placeholder="Уровень в стиме">
+    <input id="price" type="text" placeholder="Стоимость">
+
+    <button onclick="addToDB()" id="addToDB">Добавить в базу данных</button>
+
+    <script>
+        function addToDB () {
+            const account = {}
+            document.querySelectorAll("input").forEach(input => {
+                account[input.id] = input.value
+            })
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:5050/api/addAccount/', false);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(account));
+
+            console.log(xhr.status)
+
+            if (xhr.status != 200) {
+                alert("Произошла ошибка")
+            } else {
+                alert("Аккаунт добавлен в БД")
+            }
+        }
+    </script>
+</body>
+</html>
