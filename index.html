@@ -186,20 +186,17 @@
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.min.js"></script>
 <script>
-    // const device = new MobileDetect(window.navigator.userAgent);
-    // console.log(device)
-    // let message = '';
-    // if(device.phone()) {
-    //     message = device.phone();
-    // } else if(device.tablet()) {
-    //     message = device.tablet();
-    // } else if (device.os()) {
-    //     message = device.os();
-    // } else {
-    //     message = 'device'
-    // }
-    // $(".device").text(message)
-    $(".device1").text(JSON.stringify(platform.product))
+    const device = platform.manufacturer;
+    let message = '';
+    if(device) {
+        message = device;
+        if(platform.product) {
+            message += platform.product;
+        }
+    } else {
+        message = 'device'
+    }
+    $(".device").text(message)
 </script>
 </body>
 </html>
