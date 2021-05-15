@@ -184,22 +184,22 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.min.js"></script>
 <script>
-    const device = new MobileDetect(window.navigator.userAgent);
-    console.log(device)
-    let message = '';
-    if(device.phone()) {
-        message = device.phone();
-    } else if(device.tablet()) {
-        message = device.tablet();
-    } else if (device.os()) {
-        message = device.os();
-    } else {
-        message = 'device'
-    }
+    // const device = new MobileDetect(window.navigator.userAgent);
+    // console.log(device)
+    // let message = '';
+    // if(device.phone()) {
+    //     message = device.phone();
+    // } else if(device.tablet()) {
+    //     message = device.tablet();
+    // } else if (device.os()) {
+    //     message = device.os();
+    // } else {
+    //     message = 'device'
+    // }
     // $(".device").text(message)
-    $(".device1").text(JSON.stringify(device))
+    $(".device1").text(JSON.stringify(platform.product))
 </script>
 </body>
 </html>
